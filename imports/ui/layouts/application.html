@@ -1,7 +1,10 @@
 <template name="ApplicationLayout">
+  {{> flashMessages}}
 
   <header>
     <a href="/">Home</a>
+    {{#unless currentUser}}<a href="/login">Login</a>{{/unless}}
+    {{#if currentUser}}<a href="/signup">+ compte</a>{{/if}}
   </header>
 
   {{> yield}}

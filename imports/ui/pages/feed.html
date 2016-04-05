@@ -1,3 +1,15 @@
 <template name="Feed">
-  <p>HELLO WORLD</p>
+  {{#if currentUser}}
+  <div>
+    <form class="new-post">
+      <input type="text" name="message" placeholder="Partager une pensée">
+      <input type="submit" value="Go">
+    </form>
+  </div>
+  {{/if}}
+  <div>
+  {{#each posts}}
+    {{> post}}
+  {{/each}}
+  </div>
 </template>
