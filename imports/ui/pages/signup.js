@@ -18,15 +18,16 @@ Template.Signup.events({
 
     if (pwdConfirmation !== password) {
       FlashMessages.sendError("Les mots de passe ne correspondent pas");
-    } else {
-      Accounts.createUser({username, password}, function(error) {
-        if(error){
-          FlashMessages.sendError("Veuillez remplir correctement les champs");
-        } else {
-          FlashMessages.sendSuccess("Compte créé");
-          Router.go("/");
-        }
-      });
+      return
     }
+
+    Accounts.createUser({username, password}, function(error) {
+      if(error){
+        FlashMessages.sendError("Veuillez remplir correctement les champs");
+      } else {
+        FlashMessages.sendSuccess("Compte créé");
+        Router.go("/");
+      }
+    });
   }
 });

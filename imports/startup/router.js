@@ -6,6 +6,11 @@ Router.route('/', function () {
   this.render('Feed');
 });
 
+Router.route('/agenda', function () {
+  this.render('Agenda');
+});
+
+
 Router.route('/login', function () {
   this.render('Login');
 });
