@@ -17,6 +17,8 @@ Meteor.methods({
 
     Posts.insert({
       message,
+      owner: Meteor.userId(),
+      username: Meteor.user().username,
       createdAt: new Date(),
     });
   },

@@ -2,6 +2,7 @@
   {{> flashMessages}}
 
   <header>
+    {{ currentUser.username }}
     <a href="/">Home</a>
     <a href="/agenda">Programme</a>
     {{#unless currentUser}}<a href="/login">Login</a>{{/unless}}
