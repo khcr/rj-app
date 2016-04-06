@@ -4,6 +4,7 @@
     <form class="new-post">
       <input type="text" name="message" placeholder="Partager une pensée">
       <input type="file" name="image" accept="image/*">
+      {{#if isCordova}} OU <button type="button" class="take-picture">Prendre une photo</button>{{/if}}
       <input type="submit" value="Go">
     </form>
   </div>
