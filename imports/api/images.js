@@ -1,13 +1,14 @@
 import { FS } from 'meteor/cfs:base-package';
 import { Meteor } from 'meteor/meteor';
 
-const resize = function(fileObj, readStream, writeStream) {
-  gm(readStream, fileObj.name()).resize('250>').stream().pipe(writeStream);
-};
-
 export const Images = new FS.Collection("images", {
   stores: [
-    new FS.Store.FileSystem("images", { path: "~/uploads", transformWrite: resize })
+    new FS.Store.FileSystem("images", { path: "~/uploads", transformWrite: function(fileObj, readStream, writeStream) {
+      gm(readStream, fileObj.name()).resize('200>').stream().pipe(writeStream);
+    }}),
+    new FS.Store.FileSystem("thumbs", { path: "~/uploads/thumbs", transformWrite: function(fileObj, readStream, writeStream) {
+      gm(readStream, fileObj.name()).resize('50>').stream().pipe(writeStream);
+    }}),
   ],
   filter: {
     allow: {
@@ -15,6 +16,12 @@ export const Images = new FS.Collection("images", {
     }
   }
 });
+
+if (Meteor.isServer) {
+  Meteor.publish('userImage', function userImagePublication(user) {
+    return Images.find();
+  });
+}
 
 if (Meteor.isServer) {
   Images.allow({

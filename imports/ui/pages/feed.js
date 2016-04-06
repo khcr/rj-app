@@ -7,6 +7,7 @@ import { Images } from '../../api/images.js';
 
 import './feed.html';
 import '../components/post.js';
+import '../components/picture-upload.js';
 
 Template.Feed.onCreated(function bodyOnCreated() {
   const template = this;
@@ -33,9 +34,6 @@ Template.Feed.helpers({
   images() {
     return Images.find();
   },
-  isCordova() {
-    return Meteor.isCordova;
-  }
 });
 
 Template.Feed.events({
@@ -52,23 +50,6 @@ Template.Feed.events({
     Meteor.call('posts.insert', message, fileObject._id);
 
     target.reset();
-  },
-  'click .take-picture'(event) {
-
-    event.preventDefault();
-
-    const fileInput = event.target.image;
-    const cameraOptions = {
-      width: 800,
-      height: 800,
-      quality: 100
-    };
-
-    MeteorCamera.getPicture(cameraOptions, function (error, data) {
-      if (!error) {
-        fileInput.attr('src', data);
-      }
-    });
   },
 });
 

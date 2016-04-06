@@ -1,5 +1,8 @@
 <template name="post">
   <p><b>{{ username }}</b></p>
+  <a href="{{ user.image.url }}" target="_blank">
+    <img src="{{ user.image.url store='thumbs' }}" alt="">
+  </a>
   <p>{{ message }}</p>
   <a href="{{ image.url }}" target="_blank">
     <img src="{{ image.url }}" alt="">

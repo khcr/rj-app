@@ -3,6 +3,7 @@
 
   <header>
     {{ currentUser.username }}
+    {{#if currentUser}}<a href="/profile">Profil</a>{{/if}}
     <a href="/">Home</a>
     <a href="/agenda">Programme</a>
     {{#unless currentUser}}<a href="/login">Login</a>{{/unless}}

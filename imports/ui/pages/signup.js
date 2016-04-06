@@ -21,7 +21,7 @@ Template.Signup.events({
       return
     }
 
-    Accounts.createUser({username, password}, function(error) {
+    Accounts.createUser({username, password, profile: {}}, function(error) {
       if(error){
         FlashMessages.sendError("Veuillez remplir correctement les champs");
       } else {

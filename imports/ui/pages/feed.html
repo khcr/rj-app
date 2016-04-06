@@ -1,13 +1,17 @@
 <template name="Feed">
   {{#if currentUser}}
-  <div>
-    <form class="new-post">
-      <input type="text" name="message" placeholder="Partager une pensée">
-      <input type="file" name="image" accept="image/*">
-      {{#if isCordova}} OU <button type="button" class="take-picture">Prendre une photo</button>{{/if}}
-      <input type="submit" value="Go">
-    </form>
-  </div>
+    {{#if currentUser.image}}
+      <div>
+        <form class="new-post">
+          <input type="text" name="message" placeholder="Partager une pensée">
+          {{> pictureUpload }}
+          <input type="submit" value="Go">
+        </form>
+      </div>
+    {{else}}
+      <p>Veuillez ajouter une photo de profil (onglet "Profil") avant de poster.</p>
+      <p>Please add a profile picture before posting (tab "Profil").</p>
+    {{/if}}
   {{/if}}
 
   <div>

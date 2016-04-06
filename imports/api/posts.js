@@ -11,11 +11,25 @@ if (Meteor.isServer) {
       find() {
         return Posts.find({}, { sort: { createdAt: -1 }, limit: limit });
       },
-      children: [{
-        find(post) {
-          return Images.find({ _id: post.imageId }, { limit: 1 });
+      children: [
+        {
+          find(post) {
+            return Images.find({ _id: post.imageId }, { limit: 1 });
+          },
         },
-      }],
+        {
+          find(post) {
+            return Meteor.users.find({ _id: post.owner }, { limit: 1, fields: { profile: 1 } });
+          },
+          children: [
+            {
+              find(user, post) {
+                return Images.find({ _id: user.profile.imageId }, { limit: 1 })
+              },
+            },
+          ],
+        },
+      ],
     };
   });
 }
@@ -39,5 +53,8 @@ Meteor.methods({
 Posts.helpers({
   image() {
     return Images.findOne({ _id: this.imageId });
+  },
+  user() {
+    return Meteor.users.findOne({ _id: this.owner })
   }
 });

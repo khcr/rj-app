@@ -1,0 +1,12 @@
+<template name="Profile">
+  <h2>Ajouter une photo de profil</h2>
+
+  <a href="{{ currentUser.image.url }}" target="_blank">
+    <img src="{{ currentUser.image.url }}" alt="">
+  </a>
+
+  <form class="profile-picture">
+    {{> pictureUpload }}
+    <input type="submit" value="Go">
+  </form>
+</template>
