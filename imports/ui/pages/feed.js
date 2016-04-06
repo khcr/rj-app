@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 
 import { Posts } from '../../api/posts.js';
+import { Images } from '../../api/images.js';
 
 import './feed.html';
 import '../components/post.js';
@@ -29,6 +30,9 @@ Template.Feed.helpers({
   hasMoreResults() {
     return hasMoreResults(Template.instance());
   },
+  images() {
+    return Images.find();
+  }
 });
 
 Template.Feed.events({
@@ -38,8 +42,11 @@ Template.Feed.events({
 
     const target = event.target;
     const message = target.message.value;
+    const image = target.image.files[0];
 
-    Meteor.call('posts.insert', message);
+    const fileObject = Images.insert(image);
+
+    Meteor.call('posts.insert', message, fileObject._id);
 
     target.reset();
   },

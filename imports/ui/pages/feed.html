@@ -3,10 +3,12 @@
   <div>
     <form class="new-post">
       <input type="text" name="message" placeholder="Partager une pensée">
+      <input type="file" name="image" accept="image/*">
       <input type="submit" value="Go">
     </form>
   </div>
   {{/if}}
+
   <div>
   {{#each posts}}
     {{> post}}
