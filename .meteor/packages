@@ -28,3 +28,4 @@ dburles:collection-helpers
 cfs:graphicsmagick
 mdg:camera
 appcache
+mdg:geolocation

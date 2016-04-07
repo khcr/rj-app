@@ -1,7 +1,7 @@
-import { Images } from '../../api/images.js'
+import { Images } from '../../../api/images.js'
 
 import './profile.html';
-import '../components/picture-upload.js';
+import '../../components/picture-upload.js';
 
 Template.Profile.onCreated(function bodyOnCreated() {
   Meteor.subscribe('userImage', Meteor.user());

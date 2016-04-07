@@ -1,0 +1,47 @@
+<template name="Map">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100%;
+    }
+  </style>
+
+  <div id="map"></div>
+
+  <script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 46.6169, lng: 7.0664 },
+      zoom: 16
+    });
+
+    var ctaLayer = new google.maps.KmlLayer({
+      url: 'https://storage.googleapis.com/rj-app-ch/maps/testv4.kmz',
+      map: map,
+      preserveViewport: true,
+    });
+
+    var currentLocation = Geolocation.currentLocation()
+    if (currentLocation) {
+      var pos = {
+        lat: currentLocation.coords.latitude,
+        lng: currentLocation.coords.longitude
+      };
+      var icon = 'https://storage.googleapis.com/rj-app-ch/maps/here-icon.png'
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        title: 'Vous êtes ici !',
+        icon: icon,
+      });
+      map.setCenter(pos);
+    }
+  }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKHcMud_63CUYP3CVE1ivmvqK7ubm1reQ&callback=initMap"></script>
+</template>

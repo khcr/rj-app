@@ -4,8 +4,10 @@
   <header>
     {{ currentUser.username }}
     {{#if currentUser}}<a href="/profile">Profil</a>{{/if}}
-    <a href="/">Home</a>
+    <a href="/">Feed</a>
     <a href="/agenda">Programme</a>
+    <a href="/tips">Tips</a>
+    <a href="/map">Map</a>
     {{#unless currentUser}}<a href="/login">Login</a>{{/unless}}
     {{#if currentUser}}<a href="/signup">+ compte</a>{{/if}}
   </header>
