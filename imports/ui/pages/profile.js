@@ -17,6 +17,10 @@ Template.Profile.events({
     const image = target.image.files[0];
     const userId = Meteor.userId();
 
+    if (!image) {
+      return
+    }
+
     const fileObject = Images.insert(image);
 
     Meteor.users.update(userId, { $set: { "profile.imageId": fileObject._id } })

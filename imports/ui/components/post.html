@@ -4,7 +4,9 @@
     <img src="{{ user.image.url store='thumbs' }}" alt="">
   </a>
   <p>{{ message }}</p>
+  {{#if image}}
   <a href="{{ image.url }}" target="_blank">
     <img src="{{ image.url }}" alt="">
   </a>
+  {{/if}}
 </template>

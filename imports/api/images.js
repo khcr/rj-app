@@ -29,7 +29,7 @@ if (Meteor.isServer) {
       return userId !== null;
     },
     update() {
-      return true;
+      return userId !== null;
     },
     download:function(){
       return true;

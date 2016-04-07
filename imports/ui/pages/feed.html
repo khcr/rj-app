@@ -3,7 +3,7 @@
     {{#if currentUser.image}}
       <div>
         <form class="new-post">
-          <input type="text" name="message" placeholder="Partager une pensée">
+          <input type="text" name="message" placeholder="Partager une pensée" required>
           {{> pictureUpload }}
           <input type="submit" value="Go">
         </form>

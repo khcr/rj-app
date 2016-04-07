@@ -1,5 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
+import { Validator } from '../lib/validator.js'
 
 import { Images } from './images.js';
 
@@ -35,10 +37,17 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'posts.insert'(message, imageId) {
+  'posts.insert'(message, image) {
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
+
+    let imageId = null;
+    if (image) {
+      imageId = Images.insert(image)._id;
+    }
+
+    Validator.isNotEmptyString(message);
 
     Posts.insert({
       message,
