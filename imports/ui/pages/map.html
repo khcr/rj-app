@@ -1,26 +1,16 @@
 <template name="Map">
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      height: 100%;
-    }
-  </style>
 
   <div id="map"></div>
 
   <script>
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: 46.6169, lng: 7.0664 },
+      center: { lat: 46.6179385, lng: 7.0574878 },
       zoom: 16
     });
 
     var ctaLayer = new google.maps.KmlLayer({
-      url: 'https://storage.googleapis.com/rj-app-ch/maps/testv4.kmz',
+      url: 'https://storage.googleapis.com/rj-app-ch/maps/layer.kml',
       map: map,
       preserveViewport: true,
     });
