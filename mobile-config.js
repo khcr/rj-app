@@ -7,6 +7,8 @@ App.info({
   version: '0.0.1'
 });
 
+App.setPreference('Orientation', 'portait');
+
 // App.icons({
 //   'iphone_2x': 'resources/icons/icon-60@2x.png'
 //   'iphone_2x': '120x120'
