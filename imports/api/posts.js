@@ -56,6 +56,14 @@ Meteor.methods({
       username: Meteor.user().username,
       createdAt: new Date(),
     });
+
+    Push.send({
+      from: Meteor.user().username,
+      title: 'Nouveau message !',
+      text: message,
+      badge: 1,
+      query: {}
+    });
   },
 });
 

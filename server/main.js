@@ -4,6 +4,8 @@ import '../imports/api/posts.js';
 import '../imports/api/images.js';
 import '../imports/api/users.js';
 
+import '../imports/startup/authorization.js';
+
 Meteor.startup(() => {
 
   // create admin account

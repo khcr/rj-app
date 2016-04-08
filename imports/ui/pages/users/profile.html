@@ -9,4 +9,6 @@
     {{> pictureUpload }}
     <input type="submit" value="Go">
   </form>
+
+  {{#if currentUser}}<a href="/signup">Ajouter des comptes (admin only)</a>{{/if}}
 </template>
