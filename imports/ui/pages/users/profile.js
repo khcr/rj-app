@@ -5,6 +5,7 @@ import '../../components/picture-upload.js';
 
 Template.Profile.onCreated(function bodyOnCreated() {
   Meteor.subscribe('userImage', Meteor.user());
+  Meteor.subscribe('userData');
 });
 
 

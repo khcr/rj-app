@@ -5,7 +5,7 @@ import './signup.html';
 Template.Signup.events({
   'submit .register'(event) {
 
-    if (! Meteor.userId()) {
+    if (! Meteor.userId() || ! Meteor.user().isAdmin) {
       throw new Meteor.Error('not-authorized');
     }
 

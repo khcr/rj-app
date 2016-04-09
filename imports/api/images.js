@@ -19,7 +19,7 @@ export const Images = new FS.Collection("images", {
 
 if (Meteor.isServer) {
   Meteor.publish('userImage', function userImagePublication(user) {
-    return Images.find();
+    return Images.find({ _id: user.profile.imageId });
   });
 }
 
@@ -28,7 +28,7 @@ if (Meteor.isServer) {
     insert(userId) {
       return userId !== null;
     },
-    update() {
+    update(userId) {
       return userId !== null;
     },
     download:function(){
