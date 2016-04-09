@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Lato;
+  font-size: 1.2em;
+  font-weight: 100;
+  background: #eee;
+  margin-bottom: 50px;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 50px;
+  overflow-y: scroll;
+}

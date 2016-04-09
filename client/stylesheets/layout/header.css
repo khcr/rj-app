@@ -1,0 +1,28 @@
+header {
+  font-size: .6em;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: scroll;
+  z-index: 100;
+}
+
+  header a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+  }
+  header a:nth-child(even) {
+    background: #4dc0a1;
+  }
+  header a:nth-child(odd) {
+    background: #4abe9a;
+  }
+
+    header a img {
+      width: 40px;
+    }

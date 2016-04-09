@@ -1,5 +1,4 @@
 /* CSS declarations go here */
-
-header {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }

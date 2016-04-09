@@ -1,0 +1,27 @@
+#agenda {
+}
+
+  #agenda p.day {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+    #agenda .schedule .row {
+      padding: 5px 5px;
+    }
+
+      #agenda .schedule .row div:first-child {
+        line-height: 1.2em;
+        background: #FA5456;
+        padding: 20px;
+        font-size: 0.8em;
+        color: #fff;
+      }
+        #agenda .schedule .row div:first-child b {
+          font-weight: inherit;
+        }
+      #agenda .schedule .row div:not(:first-child) {
+        padding: 20px;
+        background: #fff;
+      }

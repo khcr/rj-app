@@ -2,17 +2,34 @@
   {{> flashMessages}}
 
   <header>
-    {{ currentUser.username }}
-    {{#if currentUser}}<a href="/profile">Profil</a>{{/if}}
-    <a href="/">Feed</a>
-    <a href="/agenda">Programme</a>
-    <a href="/tips">Tips</a>
-    <a href="/map">Map</a>
+    {{#if currentUser}}
+    <a href="/profile">
+      <img src="images/user.png">
+      {{currentUser.username}}
+    </a>{{/if}}
+    <a href="/">
+      <img src="images/agenda.png">
+      Feed
+    </a>
+    <a href="/agenda">
+      <img src="images/agenda.png">
+      Programme
+    </a>
+    <a href="/tips">
+      <img src="images/tips.png">
+      Tips
+    </a>
+    <a href="/map">
+      <img src="images/map.png">
+      Map
+    </a>
     {{#unless currentUser}}<a href="/login">Login</a>{{/unless}}
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   </header>
 
-  {{> yield}}
-
-  <footer>RJ ©</footer>
+  <div id="container">
+    {{> yield}}
+    <footer class="shy">Application RJ 2016 - team communication</footer>
+  </div>
 
 </template>
