@@ -45,7 +45,12 @@ Template.Feed.events({
     const message = target.message.value;
     const image = target.image.files[0];
 
-    Meteor.call('posts.insert', message, image);
+    let imageId = null;
+    if (image) {
+      imageId = Images.insert(image)._id;
+    }
+
+    Meteor.call('posts.insert', message, imageId);
 
     target.reset();
   },

@@ -18,8 +18,8 @@ export const Images = new FS.Collection("images", {
 });
 
 if (Meteor.isServer) {
-  Meteor.publish('userImage', function userImagePublication(user) {
-    return Images.find({ _id: user.profile.imageId });
+  Meteor.publish('userImage', function userImagePublication() {
+    return Images.find({ _id: this.profile.imageId });
   });
 }
 

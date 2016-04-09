@@ -3,12 +3,6 @@ import { Images } from '../../../api/images.js'
 import './profile.html';
 import '../../components/picture-upload.js';
 
-Template.Profile.onCreated(function bodyOnCreated() {
-  Meteor.subscribe('userImage', Meteor.user());
-  Meteor.subscribe('userData');
-});
-
-
 Template.Profile.events({
   'submit .profile-picture'(event) {
 

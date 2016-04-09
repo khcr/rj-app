@@ -37,14 +37,9 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'posts.insert'(message, image) {
+  'posts.insert'(message, imageId) {
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
-    }
-
-    let imageId = null;
-    if (image) {
-      imageId = Images.insert(image)._id;
     }
 
     Validator.isNotEmptyString(message);

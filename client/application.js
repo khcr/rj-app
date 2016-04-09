@@ -2,6 +2,7 @@ import './head.html';
 
 import '../imports/startup/router.js';
 import '../imports/startup/authorization.js';
+import '../imports/startup/subscriptions.js';
 
 import '../imports/ui/layouts/application.js';
 import '../imports/ui/pages/feed.js';
