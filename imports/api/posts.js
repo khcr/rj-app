@@ -52,10 +52,12 @@ Meteor.methods({
       createdAt: new Date(),
     });
 
+    const notificationMessage = message.substring(0, 40) + '...';
+
     Push.send({
       from: Meteor.user().username,
-      title: 'Nouveau message !',
-      text: message,
+      title: 'RJ: Nouveau message !',
+      text: notificationMessage,
       badge: 1,
       query: {}
     });
