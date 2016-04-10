@@ -18,13 +18,6 @@ export const Images = new FS.Collection("images", {
 });
 
 if (Meteor.isServer) {
-  Meteor.publish('userImage', function userImagePublication() {
-    const user = Meteor.users.findOne({ _id: this.userId })
-    return Images.find({ _id: user.profile.imageId });
-  });
-}
-
-if (Meteor.isServer) {
   Images.allow({
     insert(userId) {
       return userId !== null;
