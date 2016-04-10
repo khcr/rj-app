@@ -11,7 +11,6 @@
     "cert": "PushCertProd.pem",
     "gateway": "gateway.push.apple.com"
   },
-  }
   "gcm": {
     "apiKey": "AIzaSyC_rAm6un-XM9piMeZVqmlX_Eq2Da6mgp0",
     "projectNumber": 1024703692385

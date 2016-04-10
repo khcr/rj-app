@@ -27,23 +27,23 @@ App.setPreference('Orientation', 'portait');
 //   'android_xxhdpi': '144x144'
 //   'android_xxxhdpi': '192x192'
 // });
-//
-// App.launchScreens({
-//   'iphone_2x': '640x960'
-//   'iphone5': '640x1136'
-//   'iphone6': '750x1334'
-//   'iphone6p_portrait': '1242x2208'
-//   'iphone6p_landscape': '2208x1242'
-//   'ipad_portrait': '768x1024'
-//   'ipad_portrait_2x': '1536x2048'
-//   'ipad_landscape': '1024x768'
-//   'ipad_landscape_2x': '2048x1536'
-//   'android_mdpi_portrait': '320x470'
-//   'android_mdpi_landscape': '470x320'
-//   'android_hdpi_portrait': '480x640'
-//   'android_hdpi_landscape': '640x480'
-//   'android_xhdpi_portrait': '720x960'
-//   'android_xhdpi_landscape': '960x720'
-//   'android_xxhdpi_portrait': '1080x1440'
-//   'android_xxhdpi_landscape': '1440x1080'
-// });
+
+App.launchScreens({
+  'iphone_2x': 'resources/screens/640x960.png'
+  'iphone5': 'resources/screens/640x1136.png'
+  'iphone6': 'resources/screens/750x1334.png'
+  'iphone6p_portrait': 'resources/screens/1242x2208.png'
+  'iphone6p_landscape': 'resources/screens/2208x1242.png'
+  'ipad_portrait': 'resources/screens/768x1024.png'
+  'ipad_portrait_2x': 'resources/screens/1536x2048.png'
+  'ipad_landscape': 'resources/screens/1024x768.png'
+  'ipad_landscape_2x': 'resources/screens/2048x1536.png'
+  'android_mdpi_portrait': 'resources/screens/320x470.png'
+  'android_mdpi_landscape': 'resources/screens/470x320.png'
+  'android_hdpi_portrait': 'resources/screens/480x640.png'
+  'android_hdpi_landscape': 'resources/screens/640x480.png'
+  'android_xhdpi_portrait': 'resources/screens/720x960.png'
+  'android_xhdpi_landscape': 'resources/screens/960x720.png'
+  'android_xxhdpi_portrait': 'resources/screens/1080x1440.png'
+  'android_xxhdpi_landscape': 'resources/screens/1440x1080.png'
+});
