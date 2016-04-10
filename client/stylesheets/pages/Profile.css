@@ -1,0 +1,15 @@
+#profile {
+
+}
+
+  #profile h3 {
+    padding: 10px 0;
+  }
+
+  #profile .img {
+    display: block;
+    text-align: center;
+  }
+    #profile .img img {
+      border-radius: 50%;
+    }

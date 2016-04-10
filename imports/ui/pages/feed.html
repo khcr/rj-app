@@ -1,28 +1,36 @@
 <template name="Feed">
-  {{#if currentUser}}
-    {{#if currentUser.image}}
-      <div>
-        <form class="new-post">
-          <input type="text" name="message" placeholder="Partager une pensée" required>
-          {{> pictureUpload }}
-          <input type="submit" value="Go">
-        </form>
+  <div id="feed">
+
+    {{#if currentUser}}
+      <div class="newpost">
+        {{#if currentUser.image}}
+          <div>
+            <form class="new-post">
+              <input type="text" name="message" placeholder="Partager une pensée" required>
+              {{> pictureUpload }}
+              <input type="submit" value="Go">
+            </form>
+          </div>
+        {{else}}
+          <p>Veuillez ajouter une photo de profil avant de poster.</p>
+          <p>Please add a profile picture before posting.</p>
+        {{/if}}
       </div>
-    {{else}}
-      <p>Veuillez ajouter une photo de profil avant de poster.</p>
-      <p>Please add a profile picture before posting.</p>
     {{/if}}
-  {{/if}}
 
-  <div>
-  {{#each posts}}
-    {{> post}}
-  {{/each}}
-  </div>
+    <div>
+    {{#each posts}}
+      <div class="post">
+        {{> post}}
+      </div>
+    {{/each}}
+    </div>
 
-  {{#if hasMoreResults}}
-  <div>
-    Loading...
+    {{#if hasMoreResults}}
+    <div>
+      Loading...
+    </div>
+    {{/if}}
+
   </div>
-  {{/if}}
 </template>

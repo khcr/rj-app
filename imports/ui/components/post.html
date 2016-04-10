@@ -1,12 +1,20 @@
 <template name="post">
-  <p><b>{{ username }}</b></p>
-  <a href="{{ user.image.url }}" target="_blank">
-    <img src="{{ user.image.url store='thumbs' }}" alt="">
-  </a>
-  <p>{{ message }}</p>
-  {{#if image}}
-  <a href="{{ image.url }}" target="_blank">
-    <img src="{{ image.url }}" alt="">
-  </a>
-  {{/if}}
+  <div id="post">
+
+    <div class="userpost shy">
+      {{ username }}<br>
+      <a href="{{ user.image.url }}" target="_blank">
+        <img src="{{ user.image.url store='thumbs' }}" alt="">
+      </a>
+    </div>
+    <div class="message">
+      <p class="txt">{{ message }}</p>
+      {{#if image}}
+      <a href="{{ image.url }}" target="_blank">
+        <img src="{{ image.url }}" alt="">
+      </a>
+      {{/if}}
+    </div>
+
+  </div>
 </template>

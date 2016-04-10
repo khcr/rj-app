@@ -1,14 +1,18 @@
 <template name="Profile">
-  <h2>Ajouter une photo de profil</h2>
+  <div id="profile">
 
-  <a href="{{ currentUser.image.url }}" target="_blank">
-    <img src="{{ currentUser.image.url }}" alt="">
-  </a>
+    <h3>Ajouter une photo de profil</h3>
 
-  <form class="profile-picture">
-    {{> pictureUpload }}
-    <input type="submit" value="Go">
-  </form>
+    <a class="img" href="{{ currentUser.image.url }}" target="_blank">
+      <img src="{{ currentUser.image.url }}" alt="">
+    </a>
 
-  {{#if currentUser.isAdmin}}<a href="/signup">Ajouter des comptes</a>{{/if}}
+    <form class="profile-picture">
+      {{> pictureUpload }}
+      <input type="submit" value="Go">
+    </form>
+
+    {{#if currentUser.isAdmin}}<a href="/signup">Ajouter des comptes</a>{{/if}}
+
+  </div>
 </template>
