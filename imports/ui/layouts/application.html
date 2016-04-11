@@ -4,23 +4,23 @@
   <div id="container">
     <header>
       {{#if currentUser}}
-      <a href="/profile">
+      <a href="/profile" {{attributes "/profile"}}>
         <img src="images/user.png">
         {{currentUser.username}}
       </a>{{/if}}
-      <a href="/">
+      <a href="/" {{attributes "/"}}>
         <img src="images/feed.png">
         Feed
       </a>
-      <a href="/agenda">
+      <a href="/agenda" {{attributes "/agenda"}}>
         <img src="images/agenda.png">
         Programme
       </a>
-      <a href="/tips">
+      <a href="/tips" {{attributes "/tips"}}>
         <img src="images/tips.png">
         Tips
       </a>
-      <a href="/map">
+      <a href="/map" {{attributes "/map"}}>
         <img src="images/map.png">
         Map
       </a>

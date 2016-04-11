@@ -23,6 +23,9 @@ header {
   header a:nth-child(odd) {
     background: #4abe9a;
   }
+  header a.current {
+    background: #2B7D64;
+  }
 
     header a img {
       width: 40px;

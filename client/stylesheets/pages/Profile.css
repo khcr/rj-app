@@ -13,3 +13,9 @@
     #profile .img img {
       border-radius: 50%;
     }
+  #profile .log-out {
+    margin-top: 20px;
+  }
+  #profile .profile-picture {
+    margin-bottom: 20px;
+  }
