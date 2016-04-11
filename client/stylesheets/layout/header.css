@@ -10,6 +10,7 @@ header {
   box-sizing: border-box;
   overflow: scroll;
   z-index: 100;
+  background: #4dc0a1;
 }
 
   header a {
