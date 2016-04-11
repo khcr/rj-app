@@ -11,7 +11,7 @@ import '../components/picture-upload.js';
 
 Template.Feed.onCreated(function FeedOnCreated() {
   const template = this;
-  const increment = 5;
+  const increment = 30;
   template.scrolling = new ReactiveDict();
   template.scrolling.set('limit', increment);
 

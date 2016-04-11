@@ -32,4 +32,8 @@ Template.Profile.events({
     pictureUpload.$('.camera-preview').attr('src', '');
     target.reset();
   },
+  'click .log-out'() {
+    Meteor.logout();
+    Router.go('/');
+  }
 });

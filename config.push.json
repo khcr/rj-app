@@ -2,14 +2,12 @@
   "apn-dev": {
     "passphrase": "poney",
     "key": "PushKey.pem",
-    "cert": "PushCert.pem",
-    "gateway": "gateway.sandbox.push.apple.com"
+    "cert": "PushCert.pem"
   },
   "apn": {
     "passphrase": "God is able and powerful",
     "key": "PushKeyProd.pem",
-    "cert": "PushCertProd.pem",
-    "gateway": "gateway.push.apple.com"
+    "cert": "PushCertProd.pem"
   },
   "gcm": {
     "apiKey": "AIzaSyC_rAm6un-XM9piMeZVqmlX_Eq2Da6mgp0",
