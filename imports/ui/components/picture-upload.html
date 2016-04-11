@@ -1,4 +1,8 @@
 <template name="pictureUpload">
-  <input type="file" name="image" class="image" accept="image/*">
-  {{#if isCordova}} OU <button type="button" class="take-picture">Prendre une photo</button>{{/if}}
+  <div class="picture-upload">
+    <input type="file" name="image" class="image" accept="image/*">
+    OU <button type="button" class="take-picture">Prendre une photo</button>
+
+    <img class="camera-preview">
+  </div>
 </template>

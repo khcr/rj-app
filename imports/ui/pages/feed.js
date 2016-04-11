@@ -9,9 +9,9 @@ import './feed.html';
 import '../components/post.js';
 import '../components/picture-upload.js';
 
-Template.Feed.onCreated(function bodyOnCreated() {
+Template.Feed.onCreated(function FeedOnCreated() {
   const template = this;
-  const increment = 20;
+  const increment = 5;
   template.scrolling = new ReactiveDict();
   template.scrolling.set('limit', increment);
 
@@ -29,7 +29,7 @@ Template.Feed.helpers({
     return Posts.find({}, { sort: { createdAt: -1 }});
   },
   hasMoreResults() {
-    return hasMoreResults(Template.instance());
+    return Posts.find().count() >= Template.instance().scrolling.get("limit");
   },
   images() {
     return Images.find();
@@ -45,23 +45,25 @@ Template.Feed.events({
     const message = target.message.value;
     const image = target.image.files[0];
 
+    const pictureUpload = Blaze.getView($('.picture-upload')[0]).templateInstance();
+    const cameraImage = pictureUpload.upload.get('image');
+
     let imageId = null;
-    if (image) {
+    if (cameraImage) {
+      imageId = Images.insert(cameraImage)._id;
+    } else if (image) {
       imageId = Images.insert(image)._id;
     }
 
     Meteor.call('posts.insert', message, imageId);
 
+    pictureUpload.$('.camera-preview').attr('src', '');
     target.reset();
   },
 });
 
-function hasMoreResults(instance) {
-  return Posts.find().count() >= instance.scrolling.get("limit");
-}
-
 function loadMore(instance, increment) {
-  if (hasMoreResults(instance) && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
     instance.scrolling.set("limit", instance.scrolling.get("limit") + increment);
   }
 }

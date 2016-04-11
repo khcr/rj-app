@@ -1,5 +1,6 @@
 <template name="Feed">
   <div id="feed">
+    {{#unless currentUser}}<a href="/login">Login</a>{{/unless}}
 
     {{#if currentUser}}
       <div class="newpost">

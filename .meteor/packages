@@ -22,7 +22,6 @@ accounts-password
 mrt:flash-messages
 reactive-dict
 cfs:standard-packages
-cfs:filesystem
 reywood:publish-composite
 dburles:collection-helpers
 cfs:graphicsmagick
@@ -30,3 +29,4 @@ mdg:camera
 appcache
 mdg:geolocation
 raix:push
+cfs:gridfs

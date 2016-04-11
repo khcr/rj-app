@@ -1,3 +1,5 @@
+import { Session } from 'meteor/session';
+
 import { Images } from '../../../api/images.js'
 
 import './profile.html';
@@ -12,14 +14,22 @@ Template.Profile.events({
     const image = target.image.files[0];
     const userId = Meteor.userId();
 
-    if (!image) {
+    const pictureUpload = Blaze.getView($('.picture-upload')[0]).templateInstance();
+    const cameraImage = pictureUpload.upload.get('image');
+
+    let fileObject;
+
+    if (cameraImage) {
+      fileObject = Images.insert(cameraImage);
+    } else if (image) {
+      fileObject = Images.insert(image);
+    } else {
       return
     }
 
-    const fileObject = Images.insert(image);
-
     Meteor.users.update(userId, { $set: { "profile.imageId": fileObject._id } })
 
+    pictureUpload.$('.camera-preview').attr('src', '');
     target.reset();
   },
 });

@@ -1,8 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { MeteorCamera } from 'meteor/mdg:camera';
+import { Session } from 'meteor/session';
 
 import './picture-upload.html';
+
+Template.pictureUpload.onCreated(function pictureUploadOnCreated() {
+  this.upload = new ReactiveDict();
+});
 
 Template.pictureUpload.helpers({
   isCordova() {
@@ -23,7 +28,8 @@ Template.pictureUpload.events({
 
     MeteorCamera.getPicture(cameraOptions, function (error, data) {
       if (!error) {
-        template.$('.image').attr('src', data);
+        template.$('.camera-preview').attr('src', data);
+        template.upload.set("image", data);
       }
     });
   },

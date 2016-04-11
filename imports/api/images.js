@@ -3,17 +3,17 @@ import { Meteor } from 'meteor/meteor';
 
 export const Images = new FS.Collection("images", {
   stores: [
-    new FS.Store.FileSystem("images", { path: "~/uploads", transformWrite: function(fileObj, readStream, writeStream) {
+    new FS.Store.GridFS("images", { transformWrite: function(fileObj, readStream, writeStream) {
       gm(readStream, fileObj.name()).resize('200>').stream().pipe(writeStream);
     }}),
-    new FS.Store.FileSystem("thumbs", { path: "~/uploads/thumbs", transformWrite: function(fileObj, readStream, writeStream) {
+    new FS.Store.GridFS("thumbs", { transformWrite: function(fileObj, readStream, writeStream) {
       gm(readStream, fileObj.name()).resize('50>').stream().pipe(writeStream);
     }}),
   ],
   filter: {
     allow: {
-      contentTypes: ['image/*']
-    }
+      extensions: ['png', 'jpg', 'jpeg', 'bmp', 'gif', '']
+    },
   }
 });
 
