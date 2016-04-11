@@ -19,6 +19,7 @@ body {
   overflow-y: scroll;
   max-width: 500px;
   margin: auto;
+  overflow-x: hidden;
 }
 
 #content-container {

@@ -12,6 +12,7 @@
   }
     #profile .img img {
       border-radius: 50%;
+      max-width: 100%;
     }
   #profile .log-out {
     margin-top: 20px;

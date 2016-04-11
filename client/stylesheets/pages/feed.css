@@ -17,3 +17,7 @@
   #feed .post {
     padding: 5px 0;
   }
+
+    #feed .post img {
+      max-width: 100%;
+    }
