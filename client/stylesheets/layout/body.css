@@ -8,7 +8,6 @@ body {
   font-size: 16px;
   font-weight: 100;
   background: #eee;
-  margin-bottom: 50px;
 }
 
 #container {
@@ -18,4 +17,10 @@ body {
   left: 0;
   bottom: 50px;
   overflow-y: scroll;
+  max-width: 500px;
+  margin: auto;
+}
+
+#content-container {
+  padding-bottom: 50px;
 }

@@ -1,34 +1,35 @@
 <template name="ApplicationLayout">
   {{> flashMessages}}
 
-  <header>
-    {{#if currentUser}}
-    <a href="/profile">
-      <img src="images/user.png">
-      {{currentUser.username}}
-    </a>{{/if}}
-    <a href="/">
-      <img src="images/feed.png">
-      Feed
-    </a>
-    <a href="/agenda">
-      <img src="images/agenda.png">
-      Programme
-    </a>
-    <a href="/tips">
-      <img src="images/tips.png">
-      Tips
-    </a>
-    <a href="/map">
-      <img src="images/map.png">
-      Map
-    </a>
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-  </header>
-
   <div id="container">
-    {{> yield}}
-    <footer class="shy">Application RJ 2016 - team communication</footer>
+    <header>
+      {{#if currentUser}}
+      <a href="/profile">
+        <img src="images/user.png">
+        {{currentUser.username}}
+      </a>{{/if}}
+      <a href="/">
+        <img src="images/feed.png">
+        Feed
+      </a>
+      <a href="/agenda">
+        <img src="images/agenda.png">
+        Programme
+      </a>
+      <a href="/tips">
+        <img src="images/tips.png">
+        Tips
+      </a>
+      <a href="/map">
+        <img src="images/map.png">
+        Map
+      </a>
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    </header>
+    <div id="content-container">
+      {{> yield}}
+      <footer class="shy">Application RJ 2016 - team communication</footer>
+    </div>
   </div>
 
 </template>

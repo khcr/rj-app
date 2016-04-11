@@ -1,0 +1,11 @@
+.picture-upload {
+  text-align: center;
+}
+
+  .picture-upload p {
+    padding: 5px 0;
+  }
+
+  .picture-upload img.camera-preview {
+    max-width: 100%;
+  }

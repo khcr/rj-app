@@ -4,6 +4,7 @@ header {
   bottom: 0;
   text-align: center;
   width: 100%;
+  max-width: inherit;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;

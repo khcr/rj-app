@@ -3,6 +3,10 @@
 }
 
   #feed .newpost {
+    text-align: center;
+    border-bottom: 10px solid #fff;
+    padding: 0 0 5px 0;
+    margin: 0 0 10px 0;
   }
 
   #feed input {

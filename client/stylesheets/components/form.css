@@ -6,4 +6,28 @@ input[type="submit"] {
 input {
   width: 100%;
   padding: 10px;
+  margin: 5px 0;
 }
+
+input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+input[type=file] + label, button {
+  color: #fff;
+  background-color: #4dc0a1;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border: 0;
+}
+  input[type=file] + label img {
+    width: 20px;
+    margin: 0 5px 0 0;
+  }
