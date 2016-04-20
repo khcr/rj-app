@@ -62,6 +62,15 @@ Meteor.methods({
       query: {}
     });
   },
+  'posts.remove'(postId) {
+    check(postId, String);
+
+    if (! Meteor.userId() || ! Meteor.user().isAdmin) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    Posts.remove(postId);
+  },
 });
 
 Posts.helpers({
@@ -69,6 +78,9 @@ Posts.helpers({
     return Images.findOne({ _id: this.imageId });
   },
   user() {
-    return Meteor.users.findOne({ _id: this.owner })
+    return Meteor.users.findOne({ _id: this.owner });
+  },
+  date() {
+    return moment(this.createdAt).fromNow();
   }
 });

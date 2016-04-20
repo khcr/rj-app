@@ -1,6 +1,7 @@
 <template name="post">
   <div id="post">
 
+    {{ #if currentUser.isAdmin }}<button class="delete-post">&times;</button>{{/if}}
     <div class="userpost shy">
       {{ username }}<br>
       <div class="circular--landscape">
@@ -9,6 +10,7 @@
         </a>
       </div>
     </div>
+    <div>{{ date }}</div>
     <div class="message">
       <p class="txt">{{ message }}</p>
       {{#if image}}
