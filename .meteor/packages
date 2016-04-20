@@ -26,7 +26,6 @@ reywood:publish-composite
 dburles:collection-helpers
 cfs:graphicsmagick
 mdg:camera
-appcache
 mdg:geolocation
 raix:push
 cfs:gridfs
