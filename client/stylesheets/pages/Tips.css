@@ -1,0 +1,14 @@
+#tips {
+
+}
+
+  #tips section {
+    background: #fff;
+    margin: 10px;
+    padding: 10px;
+    text-align: justify;
+  }
+
+    #tips section h2 {
+      line-height: 2em;
+    }

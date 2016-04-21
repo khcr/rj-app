@@ -26,3 +26,7 @@ body {
   padding-bottom: 50px;
   height: 100%;
 }
+
+p {
+  padding: 5px 0 3px 0;
+}

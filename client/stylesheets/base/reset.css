@@ -3,3 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+ul li {
+  list-style-type: none;
+  background: url('images/bullet.svg') no-repeat 3px 7px;
+  background-size: 7px;
+  padding: 0 0 0 25px;
+}
