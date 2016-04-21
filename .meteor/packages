@@ -30,3 +30,4 @@ mdg:geolocation
 raix:push
 cfs:gridfs
 momentjs:moment
+meteorhacks:kadira
