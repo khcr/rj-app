@@ -15,7 +15,7 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  bottom: 50px;
+  bottom: 80px;
   overflow-y: scroll;
   max-width: 500px;
   margin: auto;
@@ -23,7 +23,7 @@ body {
 }
 
 #content-container {
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   height: 100%;
 }
 

@@ -32,7 +32,10 @@
     </header>
     <div id="content-container">
       {{> yield}}
-      <footer class="shy">Application RJ 2016 - team communication</footer>
+      <footer class="shy">
+        {{#unless currentUser}}<a href="/login">Login</a> | {{/unless}}
+        Application RJ 2016 - team communication
+      </footer>
     </div>
   </div>
 
