@@ -8,6 +8,7 @@
   }
     #post .userpost img {
       border-radius: 50%;
+      width: 64px;
     }
 
   #post .message {
