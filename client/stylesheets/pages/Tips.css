@@ -3,11 +3,15 @@
 }
 
   #tips section {
-    background: #fff;
-    margin: 10px;
-    padding: 10px;
-    text-align: justify;
+    background: #2e2e9b;
+    margin: 20px;
+    padding: 20px;
+    color: #fff;
   }
+
+    #tips section p {
+      padding: 8px 0;
+    }
 
     #tips section h2 {
       line-height: 2em;
