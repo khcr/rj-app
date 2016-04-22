@@ -2,12 +2,12 @@
   <div id="post">
 
     <div class="userpost shy">
-      {{ username }} - {{ date }}<br>
       <div>
         <a href="{{ user.image.url }}" target="_blank">
           <img src="{{ user.image.url store='thumbs' }}" alt="">
         </a>
       </div>
+      {{ username }} - {{ date }}
     </div>
     <div class="message">
       <p class="txt">{{ message }}</p>

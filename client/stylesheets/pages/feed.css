@@ -2,6 +2,22 @@
   padding: 0 5px;
 }
 
+  #feed .cesoir {
+    text-align: center;
+    padding: 0 0 20px 0;
+  }
+    #feed .cesoir h2 {
+      padding: 40px 0;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+    #feed .cesoir p {
+      padding: 10px;
+    }
+    #feed .cesoir img {
+      max-width: 100%;
+    }
+
   #feed .newpost {
     text-align: center;
     border-bottom: 10px solid #fff;
