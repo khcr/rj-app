@@ -4,7 +4,7 @@ App.info({
   author: 'JS Tech',
   email: 'we@jstech.ch',
   website: 'http://rencontredejeunesse.ch',
-  version: '1.1'
+  version: '1.0.1'
 });
 
 App.icons({
