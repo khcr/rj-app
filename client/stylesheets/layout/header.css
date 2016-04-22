@@ -10,7 +10,7 @@ header {
   box-sizing: border-box;
   overflow: scroll;
   z-index: 100;
-  background: #4dc0a1;
+  background: #FA5456;
 }
 
   header a {
@@ -19,13 +19,13 @@ header {
     color: #fff;
   }
   header a:nth-child(even) {
-    background: #4dc0a1;
+    background: #FA5456;
   }
   header a:nth-child(odd) {
-    background: #4abe9a;
+    background: #FA5456;
   }
   header a.current {
-    background: #2B7D64;
+    background: #EB5A5C;
   }
 
     header a img {
