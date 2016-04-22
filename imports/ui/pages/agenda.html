@@ -9,33 +9,34 @@
     <script type="text/javascript">
       $(".event").each(function() {
         var etime = $(this).data("etime");
-        var time = moment().utc().valueOf();
+        var time = moment().unix();
         if(etime > time) {
           $(this).children('div:first-child').css("background-color", "#FA5456");
-          $('html, body').animate({
-            scrollTop: $(this).offset().top
-          }, 2000);
-          // return(false);
+          $(this).attr('id', 'test');
+          return(false);
         }
+      });
+      $(document).ready(function(){
+        location.hash = '#' + 'test';
       });
     </script>
 
     <p class="day">Vendredi</p>
 
       <div class="schedule">
-        <div class="row event" data-etime="1461354300000">
+        <div class="row event" data-etime="1461347100" id="test">
           <div><b>18h30</b></div><div>Accueil, ouverture du village et des dortoirs</div>
         </div>
-        <div class="row event" data-etime="1461356100000">
+        <div class="row event" data-etime="1461348900">
           <div><b>19h45</b></div><div>Ouverture des portes</div>
         </div>
-        <div class="row event" data-etime="1461364200000">
+        <div class="row event" data-etime="1461357000">
           <div><b>20h15</b></div><div>Opening<br>Louange avec Contagious Worship<br>SESSION 1 avec Todd White</div>
         </div>
-        <div class="row event" data-etime="1461371400000">
+        <div class="row event" data-etime="1461364200">
           <div><b>22h30</b></div><div>Ouverture de la zone « Village » (FunPark, stands,...)</div>
         </div>
-        <div class="row event" data-etime="1461398400000">
+        <div class="row event" data-etime="1461391200">
           <div><b>00h30</b></div><div>Fermeture des stands</div>
         </div>
       </div>
@@ -43,40 +44,40 @@
       <p class="day">Samedi</p>
 
       <div class="schedule">
-        <div class="row event" data-etime="1461402900000">
+        <div class="row event" data-etime="1461395700">
           <div><b>8h00</b></div><div>Ouverture de la zone « Village »</div>
         </div>
-        <div class="row event" data-etime="1461404700000">
+        <div class="row event" data-etime="1461397500">
           <div><b>9h15</b></div><div>Ouverture des portes</div>
         </div>
-        <div class="row event" data-etime="1461411900000">
+        <div class="row event" data-etime="1461404700">
           <div><b>9h45</b></div><div><br>Louange avec Horizon Music<br>SESSION 2 avec Todd White</div>
         </div>
-        <div class="row event" data-etime="1461418200000">
+        <div class="row event" data-etime="1461411000">
           <div><b>11h45</b></div><div>Pause de midi</div>
         </div>
-        <div class="row event" data-etime="1461421800000">
+        <div class="row event" data-etime="1461414600">
           <div><b>13h30</b></div><div>Atelier 1: "Les relations" avec David Pothier</div>
         </div>
-        <div class="row event" data-etime="1461425400000">
+        <div class="row event" data-etime="1461418200">
           <div><b>14h30</b></div><div>Atelier 2: "Marcher avec le St-Esprit" avec Todd White</div>
         </div>
-        <div class="row event" data-etime="1461429000000">
+        <div class="row event" data-etime="1461421800">
           <div><b>15H30</b></div><div>Atelier 3: "Tables rondes animées par Jérémie Bader"</div>
         </div>
-        <div class="row event" data-etime="1461438900000">
+        <div class="row event" data-etime="1461431700">
           <div><b>16h30</b></div><div>Atelier 4: "Lever des leaders" avec Phil Smith</div>
         </div>
-        <div class="row event" data-etime="1461441000000">
+        <div class="row event" data-etime="1461433800">
           <div><b>19h15</b></div><div>Ouverture des portes</div>
         </div>
-        <div class="row event" data-etime="1461450600000">
+        <div class="row event" data-etime="1461443400">
           <div><b>19h50</b></div><div>Opening<br>Louange avec Horizon Music<br>SESSION 3 avec David Pothier</div>
         </div>
-        <div class="row event" data-etime="1461457800000">
+        <div class="row event" data-etime="1461450600">
           <div><b>22h30</b></div><div>Ouverture de la zone « Village » (FunPark, stands et jeux)</div>
         </div>
-        <div class="row event" data-etime="1461484800000">
+        <div class="row event" data-etime="1461477600">
           <div><b>00h30</b></div><div>Fermeture des stands</div>
         </div>
       </div>
@@ -84,25 +85,25 @@
       <p class="day">Dimanche</p>
 
       <div class="schedule">
-        <div class="row event" data-etime="1461489300000">
+        <div class="row event" data-etime="1461482100">
           <div><b>8h00</b></div><div>Ouverture de la zone « Village »</div>
         </div>
-        <div class="row event" data-etime="1461491100000">
+        <div class="row event" data-etime="1461483900">
           <div><b>9h15</b></div><div>Ouverture des portes</div>
         </div>
-        <div class="row event" data-etime="1461496500000">
+        <div class="row event" data-etime="1461489300">
           <div><b>9h45</b></div><div>Louange avec Contagious Worship<br>Temps de ministère<br>Message avec David Pothier</div>
         </div>
-        <div class="row event" data-etime="1461502800000">
+        <div class="row event" data-etime="1461495600">
           <div><b>11h15</b></div><div>Pause de midi</div>
         </div>
-        <div class="row event" data-etime="1461503700000">
+        <div class="row event" data-etime="1461496500">
           <div><b>13h00</b></div><div>Ouverture des portes</div>
         </div>
-        <div class="row event" data-etime="1461510000000">
+        <div class="row event" data-etime="1461502800">
           <div><b>13h15</b></div><div>Input puissant<br>Worship Party avec Contagious<br>Closing à ne pas manquer!</div>
         </div>
-        <div class="row event" data-etime="1461513600000">
+        <div class="row event" data-etime="1461506400">
           <div><b>15h00</b></div><div>Fin de la RJ 2016</div>
         </div>
       </div>
