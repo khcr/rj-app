@@ -12,13 +12,13 @@
         var time = moment().unix();
         if(etime > time) {
           $(this).children('div:first-child').css("background-color", "#FA5456");
-          $(this).attr('id', 'test');
+          // $(this).attr('id', 'test');
           return(false);
         }
       });
-      $(document).ready(function(){
-        location.hash = '#' + 'test';
-      });
+      // $(document).ready(function(){
+      //   location.hash = '#' + 'test';
+      // });
     </script>
 
     <p class="day">Vendredi</p>
