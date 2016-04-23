@@ -1,0 +1,32 @@
+#testimonies {
+  padding: 0 5px;
+}
+
+  #testimonies .testimony {
+    background: #fff;
+    padding: 5px;
+  }
+    #testimonies .testimony .txt {
+      position: relative;
+      text-indent: 20px;
+      text-align: justify;
+      padding: 15px 0 10px 0;
+    }
+      #testimonies .testimony .txt:before {
+        content: '“';
+        font-size: 3em;
+        position: absolute;
+        left: -20px;
+        top: -7px;
+      }
+      #testimonies .testimony .txt:after {
+        content: '”';
+        font-size: 3em;
+        position: absolute;
+        right: 0px;
+        bottom: -40px;
+      }
+      #testimonies .testimony .author {
+        font-style: italic;
+        text-align: left;
+      }
