@@ -4,20 +4,27 @@
     <img src="images/header_applirj.jpg">
   </div>
 
-    <div id="testimonies">
+  <div id="testimonies">
 
-      <div class="testimony">
-        <p class="txt">Dieu a transformé ma vie! Depuis plusieurs année je sentais en moi que quelque chose
-        n'allait pas. Ce weekend m'a permis de me recentrer. Merci à tous pour ce weekend de folie!</p>
-        <p class="author">Sophie Aleman</p>
-      </div>
+    <form class="new-testimony">
+      <input type="text" name="name" placeholder="Ton nom et prénom" required>
+      <input type="text" name="content" placeholder="Ton témoignage" required>
+      <input type="submit" value="Envoyer">
+    </form>
+
+    <div class="testimony">
+      <p class="txt">Dieu a transformé ma vie! Depuis plusieurs année je sentais en moi que quelque chose
+      n'allait pas. Ce weekend m'a permis de me recentrer. Merci à tous pour ce weekend de folie!</p>
+      <p class="author">Sophie Aleman</p>
+    </div>
     {{#each testimonies}}
       <div class="testimony">
         <p>{{ name }}</p>
         <p>{{ content }}</p>
       </div>
     {{/each}}
+  </div>
 
-    </div>
+
 
 </template>
