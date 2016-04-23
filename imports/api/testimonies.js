@@ -5,8 +5,8 @@ import { Validator } from '../lib/validator.js'
 export const Testimonies = new Mongo.Collection('testimonies');
 
 if (Meteor.isServer) {
-  Meteor.publish('testimonies', function testimoniesPublication() {
-    return Testimonies.find();
+  Meteor.publish('testimonies', function testimoniesPublication(isValid) {
+    return Testimonies.find({ isValid: isValid });
   });
 }
 
@@ -19,8 +19,12 @@ Meteor.methods({
     Testimonies.insert({
       name,
       content,
+      isValid: false,
       createdAt: new Date()
     });
 
+  },
+  'testimony.validate'(testimonyId) {
+    Testimonies.update(testimonyId, { $set: { isValid: true } });
   }
 });

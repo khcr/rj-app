@@ -41,3 +41,11 @@ Router.route('/profile', function () {
     this.render('Profile');
   }
 });
+
+Router.route('/users/testimonies', function () {
+  if (! Meteor.userId()) {
+    this.render('Login');
+  } else {
+    this.render('UsersTestimonies');
+  }
+});

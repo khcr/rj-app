@@ -12,15 +12,10 @@
       <input type="submit" value="Envoyer">
     </form>
 
-    <div class="testimony">
-      <p class="txt">Dieu a transformé ma vie! Depuis plusieurs année je sentais en moi que quelque chose
-      n'allait pas. Ce weekend m'a permis de me recentrer. Merci à tous pour ce weekend de folie!</p>
-      <p class="author">Sophie Aleman</p>
-    </div>
     {{#each testimonies}}
       <div class="testimony">
-        <p>{{ name }}</p>
-        <p>{{ content }}</p>
+        <p class="txt">{{ content }}</p>
+        <p class="author">{{ name }}</p>
       </div>
     {{/each}}
   </div>

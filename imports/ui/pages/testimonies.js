@@ -5,7 +5,7 @@ import './testimonies.html';
 import { Template } from 'meteor/templating';
 
 Template.Testimonies.onCreated(function TestimoniesOnCreated() {
-  Meteor.subscribe('testimonies');
+  Meteor.subscribe('testimonies', true);
 });
 
 Template.Testimonies.helpers({
