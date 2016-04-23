@@ -7,3 +7,6 @@
   z-index: 999;
   position: relative;
 }
+  .alert button, .success button {
+    margin: 0 0 10px 0;
+  }
