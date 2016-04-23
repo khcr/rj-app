@@ -1,12 +1,20 @@
 <template name="Testimonies">
 
-    <div>
-    {{#each testimonies}}
-      <div class="testimony">
-        <p>{{ name }}</p>
-        <p>{{ content }}</p>
-      </div>
-    {{/each}}
+  <div>
+    <form class="new-testimony">
+      <input type="text" name="name" placeholder="Ton nom et prénom" required>
+      <input type="text" name="content" placeholder="Ton témoignage" required>
+      <input type="submit" value="Envoyer">
+    </form>
+  </div>
+
+  <div>
+  {{#each testimonies}}
+    <div class="testimony">
+      <p>{{ name }}</p>
+      <p>{{ content }}</p>
     </div>
+  {{/each}}
+  </div>
 
 </template>
