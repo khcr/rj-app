@@ -18,4 +18,7 @@ Template.UsersTestimonies.events({
   'click .validate-testimony'() {
     Meteor.call('testimony.validate', this._id);
   },
+  'click .delete-testimony'() {
+    Meteor.call('testimony.delete', this._id);
+  },
 });

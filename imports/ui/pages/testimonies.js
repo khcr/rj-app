@@ -10,7 +10,7 @@ Template.Testimonies.onCreated(function TestimoniesOnCreated() {
 
 Template.Testimonies.helpers({
   testimonies() {
-    return Testimonies.find();
+    return Testimonies.find({}, { sort: { createdAt: -1 } });
   },
 });
 

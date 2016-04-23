@@ -26,5 +26,8 @@ Meteor.methods({
   },
   'testimony.validate'(testimonyId) {
     Testimonies.update(testimonyId, { $set: { isValid: true } });
+  },
+  'testimony.delete'(testimonyId) {
+    Testimonies.remove(testimonyId);
   }
 });
