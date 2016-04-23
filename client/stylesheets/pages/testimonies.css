@@ -2,9 +2,17 @@
   padding: 0 5px;
 }
 
+  #testimonies .form {
+    /*background: #45b690;*/
+    padding: 5px;
+    margin: 5px 0;
+    color: #FA5456;
+  }
+
   #testimonies .testimony {
     background: #fff;
     padding: 5px;
+    margin: 10px 5px;
   }
     #testimonies .testimony .txt {
       position: relative;
@@ -18,6 +26,8 @@
         position: absolute;
         left: -20px;
         top: -7px;
+        color: #bbb;
+        font-weight: 400;
       }
       #testimonies .testimony .txt:after {
         content: '”';
@@ -25,8 +35,11 @@
         position: absolute;
         right: 0px;
         bottom: -40px;
+        color: #bbb;
+        font-weight: 400;
       }
       #testimonies .testimony .author {
         font-style: italic;
         text-align: left;
+        color: #666;
       }
