@@ -10,7 +10,7 @@ Template.Testimonies.onCreated(function TestimoniesOnCreated() {
 
 Template.Testimonies.helpers({
   testimonies() {
-    return Testimonies.find({}, { sort: { createdAt: -1 } });
+    return Testimonies.find({ isValid: true }, { sort: { createdAt: -1 } });
   },
 });
 
@@ -24,6 +24,8 @@ Template.Testimonies.events({
     const content = target.content.value;
 
     Meteor.call('testimony.insert', name, content);
+
+    FlashMessages.sendSuccess("Témoignage soumis");
 
     target.reset();
   },

@@ -10,7 +10,7 @@ Template.UsersTestimonies.onCreated(function UsersTestimoniesOnCreated() {
 
 Template.UsersTestimonies.helpers({
   testimonies() {
-    return Testimonies.find();
+    return Testimonies.find({ isValid: false });
   },
 });
 

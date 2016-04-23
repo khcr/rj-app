@@ -27,7 +27,7 @@ Router.route('/testimonies', function () {
 });
 
 Router.route('/signup', function () {
-  if (Meteor.userId() && Meteor.user().isAdmin) {
+  if (Meteor.userId()) {
     this.render('Signup');
   } else {
     this.render('Home')
@@ -42,10 +42,10 @@ Router.route('/profile', function () {
   }
 });
 
-Router.route('/users/testimonies', function () {
-  if (! Meteor.userId()) {
-    this.render('Login');
-  } else {
+Router.route('/validate-testimonies', function () {
+  if (Meteor.userId()) {
     this.render('UsersTestimonies');
+  } else {
+    this.render('Home')
   }
 });
