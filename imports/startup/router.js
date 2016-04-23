@@ -22,6 +22,10 @@ Router.route('/map', function () {
   this.render('Map');
 });
 
+Router.route('/testimonies', function () {
+  this.render('Testimonies');
+});
+
 Router.route('/signup', function () {
   if (Meteor.userId() && Meteor.user().isAdmin) {
     this.render('Signup');
