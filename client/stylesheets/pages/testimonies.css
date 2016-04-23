@@ -2,6 +2,10 @@
   padding: 0 5px;
 }
 
+  #testimonies .validate-testimony, #testimonies .delete-testimony {
+    cursor: pointer;
+  }
+
   #testimonies .form {
     /*background: #45b690;*/
     padding: 5px;

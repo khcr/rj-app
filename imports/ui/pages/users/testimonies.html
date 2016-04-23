@@ -3,8 +3,12 @@
   <div id="testimonies">
 
     {{#each testimonies}}
-      <div class="validate-testimony">Validate</div>
-      <div class="delete-testimony">Delete</div>
+      <div>
+        <p>
+          <span class="validate-testimony">Valider</span> |
+          <span class="delete-testimony">Supprimer</span>
+        </p>
+      </div>
       <div class="testimony">
         <p class="txt">{{ content }}</p>
         <p class="author">{{ name }}</p>
