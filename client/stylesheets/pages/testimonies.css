@@ -8,6 +8,9 @@
     margin: 5px 0;
     color: #FA5456;
   }
+    #testimonies .form .intro {
+      color: #999;
+    }
 
   #testimonies .testimony {
     background: #fff;
