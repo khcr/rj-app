@@ -5,8 +5,14 @@ header {
   text-align: center;
   width: 100%;
   max-width: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   box-sizing: border-box;
   overflow: scroll;
   z-index: 100;
