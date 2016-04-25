@@ -1,23 +1,35 @@
-#post {
+.post {
   background: #fff;
   padding: 5px;
+  margin: 35px 0;
 }
 
-  #post .userpost {
+  .post .userpost {
     text-align: center;
+    margin-top: -30px;
   }
-    #post .userpost img {
+    .post .userpost img {
       border-radius: 50%;
-      width: 64px;
+      width: 70px;
+      background: #fff;
+      padding: 5px;
     }
 
-  #post .message {
+  .post .message {
 
   }
-    #post .message .txt {
+    .post .message .txt {
       padding: 5px 0;
     }
-    #post .message img {
+    .post .message img {
       min-width: 100%;
       padding: 10px 0 0 0;
     }
+
+  .post p.delete {
+    text-align: right;
+  }
+
+  .post img {
+    max-width: 100%;
+  }

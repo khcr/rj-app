@@ -29,15 +29,3 @@
     width: 100%;
     padding: 10px;
   }
-
-  #feed .post {
-    padding: 5px 0;
-  }
-
-    #feed .post p.delete {
-      text-align: right;
-    }
-
-    #feed .post img {
-      max-width: 100%;
-    }
