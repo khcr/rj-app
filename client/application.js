@@ -10,9 +10,11 @@ import '../imports/ui/pages/feed.js';
 import '../imports/ui/pages/agenda.js';
 import '../imports/ui/pages/tips.js';
 import '../imports/ui/pages/map.js';
+import '../imports/ui/pages/testimonies.js';
 
 import '../imports/ui/pages/users/login.js';
 import '../imports/ui/pages/users/signup.js';
 import '../imports/ui/pages/users/profile.js';
+import '../imports/ui/pages/users/testimonies.js';
 
 import '../imports/api/users.js';

@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import '../imports/api/posts.js';
 import '../imports/api/images.js';
 import '../imports/api/users.js';
+import '../imports/api/testimonies.js';
 
 import '../imports/startup/authorization.js';
 

@@ -1,0 +1,12 @@
+.alert, .success {
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  z-index: 999;
+  position: relative;
+}
+  .alert button, .success button {
+    margin: 0 0 10px 0;
+  }
