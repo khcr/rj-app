@@ -3,35 +3,10 @@
 
   <div id="container">
     <header>
-      {{#if currentUser}}
-      <a href="/profile" {{attributes "/profile"}}>
-        <img src="images/user.png"><br>
-        {{currentUser.username}}
-      </a>{{/if}}
-      <a href="/" {{attributes "/"}}>
-        <img src="images/feed.png"><br>
-        Feed
-      </a>
-      <a href="/agenda" {{attributes "/agenda"}}>
-        <img src="images/agenda.png"><br>
-        Programme
-      </a>
-      <a href="/testimonies" {{attributes "/testimonies"}}>
-        <img src="images/testimonies.png"><br>
-        Share
-      </a>
-      <a href="/tips" {{attributes "/tips"}}>
-        <img src="images/tips.png"><br>
-        Tips
-      </a>
-      <a href="/map" {{attributes "/map"}}>
-        <img src="images/map.png"><br>
-        Map
-      </a>
       <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Mobile compatibility -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Mobile compatibility -->
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
 
     </header>
 
@@ -39,7 +14,7 @@
       {{> yield}}
       <footer class="shy">
         {{#unless currentUser}}<a href="/login">Login</a> | {{/unless}}
-        Application RJ 2016 - team communication
+        Application RJ 2017 - team communication
       </footer>
     </div>
   </div>

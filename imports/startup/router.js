@@ -6,31 +6,15 @@ Router.route('/', function () {
   this.render('Feed');
 });
 
-Router.route('/agenda', function () {
-  this.render('Agenda');
-});
-
 Router.route('/login', function () {
   this.render('Login');
-});
-
-Router.route('/tips', function () {
-  this.render('Tips');
-});
-
-Router.route('/map', function () {
-  this.render('Map');
-});
-
-Router.route('/testimonies', function () {
-  this.render('Testimonies');
 });
 
 Router.route('/signup', function () {
   if (Meteor.userId()) {
     this.render('Signup');
   } else {
-    this.render('Home')
+    this.render('Login')
   }
 });
 
@@ -39,13 +23,5 @@ Router.route('/profile', function () {
     this.render('Login');
   } else {
     this.render('Profile');
-  }
-});
-
-Router.route('/validate-testimonies', function () {
-  if (Meteor.userId()) {
-    this.render('UsersTestimonies');
-  } else {
-    this.render('Home')
   }
 });

@@ -1,6 +1,6 @@
 App.info({
   name: 'RJ',
-  description: "L'application officielle de la rencontre de jeunesse 2016 !",
+  description: "L'application officielle de la rencontre de jeunesse !",
   author: 'JS Tech',
   email: 'we@jstech.ch',
   website: 'http://rencontredejeunesse.ch',
@@ -46,4 +46,3 @@ App.launchScreens({
 });
 
 App.accessRule("blob:*");
-//App.accessRule("*");
