@@ -8,6 +8,7 @@ import { Images } from '../../api/images.js';
 import './feed.html';
 import '../components/post.js';
 import '../components/picture-upload.js';
+import '../components/countdown.js';
 
 Template.Feed.onCreated(function FeedOnCreated() {
   const template = this;
