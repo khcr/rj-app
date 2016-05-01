@@ -8,6 +8,20 @@
   position: relative;
   margin-top: 50px;
   margin-bottom: 70px;
+	z-index: 2;
+}
+
+.glow {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image:url(images/clock_bg_glow.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	z-index: 1;
 }
 
 .clock {
@@ -30,7 +44,7 @@
 .text p {
 	font-family: 'Libre Baskerville', serif;
 	color:#000;
-	font-size:24px;
+	font-size:1.5em;
 	line-height:30px;
 }
 
@@ -39,7 +53,7 @@
 	color:#999;
 	font-style:italic;
 	line-height:30px;
-	font-size:20px;
+	font-size:1.2em;
 }
 
 .timer {
@@ -48,7 +62,7 @@
 .timer p {
 	color:#616161;
 	font-family:Georgia, "Times New Roman", Times, serif;
-	font-size:17px;
+	font-size:1.1em;
 	text-align:center;
 	font-style:italic;
 }

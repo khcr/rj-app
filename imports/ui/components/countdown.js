@@ -8,7 +8,20 @@ Template.countdown.onRendered(function countdownOnRendered() {
     endDate     : 1494009000,
     now         : moment().unix()
   }, this);
+  animateBeat();
 });
+
+function animateBeat() {
+  $('.glow').delay(9000).animate({
+    opacity: '.5'
+  }, 250).animate({
+    opacity: '0'
+  }, 250).animate({
+    opacity: '.5'
+  }, 250).animate({
+    opacity: '0'
+  }, 250, animateBeat);
+}
 
 function JBCountDown(settings, template) {
   var glob = settings;
@@ -45,7 +58,7 @@ function JBCountDown(settings, template) {
 
         var degs = (360 / Math.floor(glob.endDate - glob.startDate)) * (Math.floor(glob.endDate - glob.startDate) - glob.secLeft)
         // void ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
-        ctx.arc(400/2,400/2,400/2-4, deg(0), deg(degs));
+        ctx.arc(400/2,400/2,390/2-3.5, deg(0), deg(degs));
         ctx.lineWidth = 7;
         ctx.stroke();
         template.$(".timer .secs").text(60 - glob.seconds);
