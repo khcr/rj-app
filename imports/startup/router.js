@@ -11,7 +11,7 @@ Router.route('/login', function () {
 });
 
 Router.route('/signup', function () {
-  if (Meteor.userId()) {
+  if (Meteor.user() && Meteor.user().isAdmin) {
     this.render('Signup');
   } else {
     this.render('Login')

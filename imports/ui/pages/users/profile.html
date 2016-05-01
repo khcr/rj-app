@@ -16,8 +16,11 @@
 
     <button class="log-out" type="button">Log out</button>
 
-    {{#if currentUser.isAdmin}}<a class="button" href="/signup">Ajouter des comptes</a>{{/if}}
-    {{#if currentUser.isAdmin}}<a class="button" href="/validate-testimonies">Valider témoignages</a>{{/if}}
+    <div class="functionalities">
+      {{#if currentUser.isAdmin}}<a class="button" href="/signup">Ajouter des comptes</a>{{/if}}
+      {{#if currentUser.isAdmin}}<a class="button" href="/validate-testimonies">Valider témoignages</a>{{/if}}
+      <a class="button" href="/">Feed</a>
+    </div>
 
   </div>
 </template>
