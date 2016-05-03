@@ -14,13 +14,13 @@ Template.countdown.onRendered(function countdownOnRendered() {
 function animateBeat() {
   $('.glow').delay(9000).animate({
     opacity: '.5'
-  }, 250).animate({
+  }, 700).animate({
     opacity: '0'
-  }, 250).animate({
+  }, 700).animate({
     opacity: '.5'
-  }, 250).animate({
+  }, 700).animate({
     opacity: '0'
-  }, 250, animateBeat);
+  }, 700, animateBeat);
 }
 
 function JBCountDown(settings, template) {
