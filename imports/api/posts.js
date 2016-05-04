@@ -59,6 +59,9 @@ Meteor.methods({
       title: 'RJ: Nouveau message !',
       text: notificationMessage,
       badge: 1,
+      gcm: {
+        image: 'https://storage.googleapis.com/rj-app-ch/images/logo100x100.png'
+      },
       query: {}
     });
   },
