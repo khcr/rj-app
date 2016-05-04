@@ -1,12 +1,20 @@
 import './countdown.html';
 
+var clockSize = 400;
+if(screen.width < 400)
+  clockSize = 300;
+
+console.log(screen.width);
 Template.countdown.onRendered(function countdownOnRendered() {
   JBCountDown({
     secondsColor : "#332DBD",
     secondsGlow  : "#fff",
     startDate   : 1461427200,
     endDate     : 1494009000,
-    now         : moment().unix()
+    now         : moment().unix(),
+    width       : clockSize,
+    height      : clockSize,
+    radius      : clockSize-10
   }, this);
   animateBeat();
 });
@@ -43,7 +51,7 @@ function JBCountDown(settings, template) {
 
   var clock = {
     set: {
-      seconds: function() {
+      seconds: function(width, height, radius) {
         glob.secLeft--;
         var cSec = template.$("#canvas").get(0);
         var ctx = cSec.getContext("2d");
@@ -58,7 +66,7 @@ function JBCountDown(settings, template) {
 
         var degs = (360 / Math.floor(glob.endDate - glob.startDate)) * (Math.floor(glob.endDate - glob.startDate) - glob.secLeft)
         // void ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
-        ctx.arc(400/2,400/2,390/2-3.5, deg(0), deg(degs));
+        ctx.arc(glob.width/2,glob.height/2,glob.radius/2-3.5, deg(0), deg(degs));
         ctx.lineWidth = 7;
         ctx.stroke();
         template.$(".timer .secs").text(60 - glob.seconds);

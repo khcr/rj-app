@@ -12,6 +12,20 @@
   position: relative;
 	z-index: 2;
 }
+	@media screen and (max-width: 400px) {
+		.countdown {
+			width: 300px !important;
+			height: 300px !important;
+			background-image:url(images/clock_bg_300.png) !important;
+		}
+		.clock-content {
+			top: 50px !important;
+			width: 200px !important;
+		}
+		.glow {
+			background-image:url(images/clock_bg_glow_300.png) !important;
+		}
+	}
 
 .glow {
 	opacity: 0;
