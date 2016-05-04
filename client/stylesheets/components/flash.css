@@ -1,8 +1,8 @@
 .alert, .success {
   font-weight: bold;
   text-align: center;
-  background: #fff;
-  color: #000;
+  background: #7593f4;
+  color: #fff;
   padding: 10px;
   z-index: 999;
   position: relative;

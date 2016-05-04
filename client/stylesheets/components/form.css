@@ -20,7 +20,7 @@ input[type=file] {
 }
 input[type=file] + label, button {
   color: #fff;
-  background-color: #9894f5;
+  background-color: #7593f4;
   display: inline-block;
   cursor: pointer;
   width: 100%;
