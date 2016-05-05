@@ -2,7 +2,7 @@ import './countdown.html';
 
 Template.countdown.onRendered(function countdownOnRendered() {
   var clockSize = 400;
-  if (screen.width < 400) {
+  if ($(window).width() < 400) {
     clockSize = 300;
   }
 
@@ -14,7 +14,7 @@ Template.countdown.onRendered(function countdownOnRendered() {
     now         : moment().unix(),
     width       : clockSize,
     height      : clockSize,
-    radius      : clockSize-10
+    radius      : clockSize - 10
   }, this);
   animateBeat();
 });

@@ -34,6 +34,6 @@ Template.Profile.events({
   },
   'click .log-out'() {
     Meteor.logout();
-    Router.go('/');
+    //Router.go("/");
   }
 });
