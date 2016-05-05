@@ -1,11 +1,11 @@
 import './countdown.html';
 
-var clockSize = 400;
-if(screen.width < 400)
-  clockSize = 300;
-
-console.log(screen.width);
 Template.countdown.onRendered(function countdownOnRendered() {
+  var clockSize = 400;
+  if (screen.width < 400) {
+    clockSize = 300;
+  }
+
   JBCountDown({
     secondsColor : "#332DBD",
     secondsGlow  : "#fff",
