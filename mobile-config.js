@@ -26,23 +26,23 @@ App.icons({
 });
 
 App.launchScreens({
-  'iphone_2x': 'resources/screens/640x960.png',
-  'iphone5': 'resources/screens/640x1136.png',
-  'iphone6': 'resources/screens/750x1334.png',
-  'iphone6p_portrait': 'resources/screens/1242x2208.png',
-  'iphone6p_landscape': 'resources/screens/2208x1242.png',
-  'ipad_portrait': 'resources/screens/768x1024.png',
-  'ipad_portrait_2x': 'resources/screens/1536x2048.png',
-  'ipad_landscape': 'resources/screens/1024x768.png',
-  'ipad_landscape_2x': 'resources/screens/2048x1536.png',
-  'android_mdpi_portrait': 'resources/screens/320x470.png',
-  'android_mdpi_landscape': 'resources/screens/470x320.png',
-  'android_hdpi_portrait': 'resources/screens/480x640.png',
-  'android_hdpi_landscape': 'resources/screens/640x480.png',
-  'android_xhdpi_portrait': 'resources/screens/720x960.png',
-  'android_xhdpi_landscape': 'resources/screens/960x720.png',
-  'android_xxhdpi_portrait': 'resources/screens/1080x1440.png',
-  'android_xxhdpi_landscape': 'resources/screens/1440x1080.png'
+  'iphone_2x': 'resources/screens/ios/640x960.png',
+  'iphone5': 'resources/screens/ios/640x1136.png',
+  'iphone6': 'resources/screens/ios/750x1334.png',
+  'iphone6p_portrait': 'resources/screens/ios/1242x2208.png',
+  'iphone6p_landscape': 'resources/screens/ios/2208x1242.png',
+  'ipad_portrait': 'resources/screens/ios/768x1024.png',
+  'ipad_portrait_2x': 'resources/screens/ios/1536x2048.png',
+  'ipad_landscape': 'resources/screens/ios/1024x768.png',
+  'ipad_landscape_2x': 'resources/screens/ios/2048x1536.png',
+  'android_mdpi_portrait': 'resources/screens/android/320x470.9.png',
+  'android_mdpi_landscape': 'resources/screens/android/470x320.9.png',
+  'android_hdpi_portrait': 'resources/screens/android/480x640.9.png',
+  'android_hdpi_landscape': 'resources/screens/android/640x480.9.png',
+  'android_xhdpi_portrait': 'resources/screens/android/720x960.9.png',
+  'android_xhdpi_landscape': 'resources/screens/android/960x720.9.png',
+  'android_xxhdpi_portrait': 'resources/screens/android/1080x1440.9.png',
+  'android_xxhdpi_landscape': 'resources/screens/android/1440x1080.9.png'
 });
 
 App.accessRule("blob:*");
