@@ -10,18 +10,17 @@
 
     </header>
 
-    <div id="content-container">
-      {{> yield}}
-      <footer class="shy">
-        <a href="/">Home</a> | 
-        {{#unless currentUser}}
-        <a href="/login">Login</a>
-        {{else}}
-        <a href="/profile">Profile</a>
-        {{/unless}}
-         | Application RJ 2017 - team communication
-      </footer>
-    </div>
+    {{> yield}}
+    
+    <footer class="shy">
+      <a href="/">Home</a> |
+      {{#unless currentUser}}
+      <a href="/login">Login</a>
+      {{else}}
+      <a href="/profile">Profile</a>
+      {{/unless}}
+       | Application RJ 2017 - team communication
+    </footer>
   </div>
 
 </template>
