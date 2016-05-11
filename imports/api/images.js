@@ -11,6 +11,7 @@ export const Images = new FS.Collection("images", {
     }}),
   ],
   filter: {
+    maxSize: 2097152,
     allow: {
       extensions: ['png', 'jpg', 'jpeg', 'bmp', 'gif', '']
     },
