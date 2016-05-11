@@ -32,76 +32,79 @@ function animateBeat() {
 }
 
 function JBCountDown(settings, template) {
-  var glob = settings;
+  var global = settings;
+  var canvas = template.$("#canvas")[0];
 
-  function deg(deg) {
-    return (Math.PI/180)*deg - (Math.PI/180)*90;
-  }
+  global.total   = Math.floor((global.endDate - global.startdate) / 86400);
+  global.days    = Math.floor((global.endDate - global.now) / 86400);
+  global.hours   = 24 - Math.floor((global.endDate - global.now) % 86400 / 3600);
+  global.minutes = 60 - Math.floor((global.endDate - global.now) % 86400 % 3600 / 60);
+  global.seconds = 60 - Math.floor((global.endDate - global.now) % 86400 % 3600 % 60);
+  global.secLeft = Math.floor(global.endDate - global.now);
 
-  glob.total   = Math.floor((glob.endDate - glob.startdate) / 86400);
-  glob.days    = Math.floor((glob.endDate - glob.now) / 86400);
-  glob.hours   = 24 - Math.floor((glob.endDate - glob.now) % 86400 / 3600);
-  glob.minutes = 60 - Math.floor((glob.endDate - glob.now) % 86400 % 3600 / 60);
-  glob.seconds = 60 - Math.floor((glob.endDate - glob.now) % 86400 % 3600 % 60);
-  glob.secLeft = Math.floor(glob.endDate - glob.now);
-
-  if (glob.now >= glob.endDate) {
+  if (global.now >= global.endDate) {
     return;
   }
 
   var clock = {
     set: {
       seconds: function(width, height, radius) {
-        glob.secLeft--;
-        var cSec = template.$("#canvas").get(0);
-        var ctx = cSec.getContext("2d");
-        ctx.clearRect(0, 0, cSec.width, cSec.height);
+        global.secLeft--;
+        var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
-        ctx.strokeStyle = glob.secondsColor;
+        ctx.strokeStyle = global.secondsColor;
 
         ctx.shadowBlur    = 10;
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
-        ctx.shadowColor = glob.secondsGlow;
+        ctx.shadowColor = global.secondsGlow;
 
-        var degs = (360 / Math.floor(glob.endDate - glob.startDate)) * (Math.floor(glob.endDate - glob.startDate) - glob.secLeft)
+        var degs = (360 / Math.floor(global.endDate - global.startDate)) * (Math.floor(global.endDate - global.startDate) - global.secLeft)
         // void ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
-        ctx.arc(glob.width/2,glob.height/2,glob.radius/2-3.5, deg(0), deg(degs));
+        ctx.arc(global.width/2, global.height/2, global.radius/2-3.5, deg(0), deg(degs));
         ctx.lineWidth = 7;
         ctx.stroke();
-        template.$(".timer .secs").text(60 - glob.seconds);
-        template.$(".timer .mins").text(60 - glob.minutes);
-        template.$(".timer .hrs").text(24 - glob.hours);
-        template.$(".timer .days").text(glob.days)
+
+        template.$(".timer .secs").text(60 - global.seconds);
+        template.$(".timer .mins").text(60 - global.minutes);
+        template.$(".timer .hrs").text(24 - global.hours);
+        template.$(".timer .days").text(global.days)
       }
     },
     start: function(){
       /* Seconds */
-      var cdown = setInterval(function(){
-        if ( glob.seconds > 59 ) {
-          if (60 - glob.minutes === 0 && 24 - glob.hours === 0 && glob.days === 0) {
+      var cdown = setInterval(function() {
+
+        if (canvas === 'undefined') {
+          clearInterval(cdown);
+          return;
+        }
+
+        if (global.seconds > 59) {
+          if (60 - global.minutes === 0 && 24 - global.hours === 0 && global.days === 0) {
             clearInterval(cdown);
             /* Countdown is complete */
             return;
           }
-          glob.seconds = 1;
+          global.seconds = 1;
 
-          if (glob.minutes > 59) {
-            glob.minutes = 1;
+          if (global.minutes > 59) {
+            global.minutes = 1;
 
-              if (glob.hours > 23) {
-                glob.hours = 1;
-                if (glob.days > 0) {
-                  glob.days--;
+              if (global.hours > 23) {
+                global.hours = 1;
+                if (global.days > 0) {
+                  global.days--;
                 }
               } else {
-                glob.hours++;
+                global.hours++;
               }
           } else {
-            glob.minutes++;
+            global.minutes++;
           }
         } else {
-          glob.seconds++;
+          global.seconds++;
         }
         clock.set.seconds();
       }, 1000);
@@ -109,4 +112,8 @@ function JBCountDown(settings, template) {
   };
   clock.set.seconds();
   clock.start();
+
+  function deg(deg) {
+    return (Math.PI/180) * deg - (Math.PI/180) * 90;
+  }
 }
