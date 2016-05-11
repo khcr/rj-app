@@ -4,7 +4,7 @@
     {
       "host": "139.59.143.40",
       "username": "deployer",
-      "pem": "~/.ssh/id_rsa"
+      "sshOptions": { "port" : 77 }
     }
   ],
 
