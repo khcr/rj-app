@@ -1,1 +1,21 @@
 @import 'nativescript-theme-core/css/core.light.css';
+
+Button.nav {
+  border-width: 1px;
+  border-color: #b2b2b2;
+  background-color: #c6c6c6;
+  color: #000;
+}
+
+TextView {
+    margin: 10;
+    padding: 10;
+    border-color: #b2b2b2;
+    border-width: 1px;
+}
+Button.submit {
+    margin: 10;
+    padding: 10;
+    border-color: #b2b2b2;
+    border-width: 1px;
+}

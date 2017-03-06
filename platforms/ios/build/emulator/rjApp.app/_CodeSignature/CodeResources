@@ -86,7 +86,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		9ijXgxyZt60c0TMxegETyQYDf3s=
+		0JiuEWy39Coorj/UHMPd4XJ34Jc=
 		</data>
 		<key>Frameworks/NativeScript.framework/Info.plist</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		WamQU6ANe6Ru9FNkhRWsiBSQcv0=
+		6Bp3WfuqGhC3ZZ3i/GUCrMpYpXI=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -202,7 +202,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		B93clDodPHU7aJ7wPo61UYWASlw=
+		J3tSWT44+KBIaLR7b7sOcAmZS74=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -210,15 +210,19 @@
 		</data>
 		<key>app/app.css</key>
 		<data>
-		ZvXjmw2B7H0Op9rY7Leb0SFQwyk=
+		fqER2uTa6dlQ9bFCd0sJtxTfg10=
 		</data>
 		<key>app/app.js</key>
 		<data>
 		53SC5xCqiaPaKCRkznmbKTPndpQ=
 		</data>
+		<key>app/config.js</key>
+		<data>
+		ixduhw6Hs+aUWDsyiI6OF7UKVpg=
+		</data>
 		<key>app/models/post.js</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		lf1aVRQttA0F8zgwmlgLM6epseI=
 		</data>
 		<key>app/models/testimony.js</key>
 		<data>
@@ -226,7 +230,7 @@
 		</data>
 		<key>app/package.json</key>
 		<data>
-		oPXooRVtkhP617lK7C45HzLlp+w=
+		1ZpBFI6sUL39ZQ+XhPkzt5CnMu8=
 		</data>
 		<key>app/tns_modules/nativescript-theme-core/css/aqua.css</key>
 		<data>
@@ -1626,7 +1630,7 @@
 		</data>
 		<key>app/views/agenda/agenda.xml</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 		</data>
 		<key>app/views/components/navbar/navbar.css</key>
 		<data>
@@ -1638,7 +1642,7 @@
 		</data>
 		<key>app/views/components/navbar/navbar.xml</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 		</data>
 		<key>app/views/feed/feed.css</key>
 		<data>
@@ -1646,11 +1650,23 @@
 		</data>
 		<key>app/views/feed/feed.js</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		x5X0PZLg+67raiLkHFhq/SRTcBU=
 		</data>
 		<key>app/views/feed/feed.xml</key>
 		<data>
+		AS5mdvT5+0iJCpWqxbVD1gw3uGU=
+		</data>
+		<key>app/views/feed/new/new.css</key>
+		<data>
 		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>app/views/feed/new/new.js</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>app/views/feed/new/new.xml</key>
+		<data>
+		C7cLa9NI4BJDKgIypTFlabPr00I=
 		</data>
 		<key>app/views/plus/plus.css</key>
 		<data>
@@ -1662,7 +1678,7 @@
 		</data>
 		<key>app/views/plus/plus.xml</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 		</data>
 		<key>app/views/testimonies/testimonies.css</key>
 		<data>
@@ -1674,7 +1690,7 @@
 		</data>
 		<key>app/views/testimonies/testimonies.xml</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 		</data>
 		<key>app/views/user/account/account.css</key>
 		<data>
@@ -1686,7 +1702,7 @@
 		</data>
 		<key>app/views/user/account/acoount.xml</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 		</data>
 		<key>app/views/user/signin/signin.css</key>
 		<data>
@@ -1698,7 +1714,7 @@
 		</data>
 		<key>app/views/user/signin/signin.xml</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 		</data>
 		<key>app/views/user/signup/signup.css</key>
 		<data>
@@ -1710,7 +1726,7 @@
 		</data>
 		<key>app/views/user/signup/signup.xml</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 		</data>
 		<key>build.xcconfig</key>
 		<data>
@@ -1952,11 +1968,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9ijXgxyZt60c0TMxegETyQYDf3s=
+			0JiuEWy39Coorj/UHMPd4XJ34Jc=
 			</data>
 			<key>hash2</key>
 			<data>
-			O36V6gSDha+aLDEQRKF03TIwsohm+mQxtD2TJq9oYOU=
+			mYybycqFHtQ1l4/n1OJMJNN4/XXSHhOGRw5oBS7VUds=
 			</data>
 		</dict>
 		<key>Frameworks/NativeScript.framework/Info.plist</key>
@@ -2238,11 +2254,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WamQU6ANe6Ru9FNkhRWsiBSQcv0=
+			6Bp3WfuqGhC3ZZ3i/GUCrMpYpXI=
 			</data>
 			<key>hash2</key>
 			<data>
-			0mPYijZ8pFXzbd4QqJObThnk6orNn2UZTdAMyMCVQHw=
+			lJJC3Aiq9v9VD6qYNKujNKf/Y1wgYGF7V6TqeP6acDY=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -2260,22 +2276,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B93clDodPHU7aJ7wPo61UYWASlw=
+			J3tSWT44+KBIaLR7b7sOcAmZS74=
 			</data>
 			<key>hash2</key>
 			<data>
-			lzvR+h49EfLumtX0LR9/QX7dSb/hhiwRE3Btd117iLw=
+			1zRMdzUXjbP9lRmE7xLWyklqeF93C9SnpH/OolSAh44=
 			</data>
 		</dict>
 		<key>app/app.css</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZvXjmw2B7H0Op9rY7Leb0SFQwyk=
+			fqER2uTa6dlQ9bFCd0sJtxTfg10=
 			</data>
 			<key>hash2</key>
 			<data>
-			nGe89a1jRsmXvvuU2dHTwVEHQjHm1IAj7m3kr54eqjg=
+			3ArkoUiRG0uLGLurpt2gOQnIv3H2ncVmlLEL92sPr1w=
 			</data>
 		</dict>
 		<key>app/app.js</key>
@@ -2289,15 +2305,26 @@
 			vg685QiK7DQvLw3HTNYMHMNoyAkc1uq3Uqj8C9xplHk=
 			</data>
 		</dict>
+		<key>app/config.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ixduhw6Hs+aUWDsyiI6OF7UKVpg=
+			</data>
+			<key>hash2</key>
+			<data>
+			zZGDNBKkGv9+Q7t2JgwtPd/AX0OMsJGYhpfwF+4eE/A=
+			</data>
+		</dict>
 		<key>app/models/post.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			lf1aVRQttA0F8zgwmlgLM6epseI=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			JSeC+Fet/6/FcLH6h3iu7341V16G/o+lFkD/UIJzLB4=
 			</data>
 		</dict>
 		<key>app/models/testimony.js</key>
@@ -2315,11 +2342,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oPXooRVtkhP617lK7C45HzLlp+w=
+			1ZpBFI6sUL39ZQ+XhPkzt5CnMu8=
 			</data>
 			<key>hash2</key>
 			<data>
-			N90hQMgQaP7wAh6wmJ7MLtHFiTmWoljSQDBAPeQwGKY=
+			uyL1EkHmYUnXm54toCjjxLoxHTHB1KVeNC4a+WhARzU=
 			</data>
 		</dict>
 		<key>app/tns_modules/nativescript-theme-core/css/aqua.css</key>
@@ -6165,11 +6192,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			zjNPEShLQT1OpExcLRqs+d5CZrmw1F30p1w7NCYm2kY=
 			</data>
 		</dict>
 		<key>app/views/components/navbar/navbar.css</key>
@@ -6198,11 +6225,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			zjNPEShLQT1OpExcLRqs+d5CZrmw1F30p1w7NCYm2kY=
 			</data>
 		</dict>
 		<key>app/views/feed/feed.css</key>
@@ -6220,14 +6247,25 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			x5X0PZLg+67raiLkHFhq/SRTcBU=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			IJ/TfuHj4cKuIGEwpbENP8YzRE571Xdy/7Jw3nHrr9k=
 			</data>
 		</dict>
 		<key>app/views/feed/feed.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AS5mdvT5+0iJCpWqxbVD1gw3uGU=
+			</data>
+			<key>hash2</key>
+			<data>
+			79koxLExB92WdZrP8H35tVG12iol12cA2MyG3IJEbzk=
+			</data>
+		</dict>
+		<key>app/views/feed/new/new.css</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -6236,6 +6274,28 @@
 			<key>hash2</key>
 			<data>
 			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
+		</dict>
+		<key>app/views/feed/new/new.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
+		</dict>
+		<key>app/views/feed/new/new.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			C7cLa9NI4BJDKgIypTFlabPr00I=
+			</data>
+			<key>hash2</key>
+			<data>
+			t8EWavhyXI10Lo3jj79bljVLwoUUpfG6Lk+u8x05Y4w=
 			</data>
 		</dict>
 		<key>app/views/plus/plus.css</key>
@@ -6264,11 +6324,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			zjNPEShLQT1OpExcLRqs+d5CZrmw1F30p1w7NCYm2kY=
 			</data>
 		</dict>
 		<key>app/views/testimonies/testimonies.css</key>
@@ -6297,11 +6357,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			zjNPEShLQT1OpExcLRqs+d5CZrmw1F30p1w7NCYm2kY=
 			</data>
 		</dict>
 		<key>app/views/user/account/account.css</key>
@@ -6330,11 +6390,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			zjNPEShLQT1OpExcLRqs+d5CZrmw1F30p1w7NCYm2kY=
 			</data>
 		</dict>
 		<key>app/views/user/signin/signin.css</key>
@@ -6363,11 +6423,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			zjNPEShLQT1OpExcLRqs+d5CZrmw1F30p1w7NCYm2kY=
 			</data>
 		</dict>
 		<key>app/views/user/signup/signup.css</key>
@@ -6396,11 +6456,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			xHd6rU4mw7nWuUNqB2TS0PGR6/E=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			zjNPEShLQT1OpExcLRqs+d5CZrmw1F30p1w7NCYm2kY=
 			</data>
 		</dict>
 		<key>build.xcconfig</key>

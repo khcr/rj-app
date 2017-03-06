@@ -3,6 +3,6 @@
     "v8Flags": "--expose_gc"
   },
   "main": "app.js",
-  "name": "rjApp",
+  "name": "RJ",
   "version": "0.0.1"
 }

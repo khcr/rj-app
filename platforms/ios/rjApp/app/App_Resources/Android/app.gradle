@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "__PACKAGE__" 
+    applicationId = "org.jstech.rjApp" 
     
     //override supported platforms
     // ndk {
