@@ -1,0 +1,9 @@
+#links Button {
+  background-color: #c6c6c6;
+  height: 40px;
+  border-width: 1px;
+  border-color: #b2b2b2;
+  color: #000;
+  padding: 0 0 0 10px;
+  text-align: left;
+}

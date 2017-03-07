@@ -1,6 +1,7 @@
 var observableModule = require("data/observable");
 var frameModule = require("ui/frame");
 
+var BackButton = require("../../helpers/back_button");
 var Post = require("../../models/post");
 
 var PostList = new Post.List()
@@ -14,9 +15,12 @@ var pageData = new observableModule.fromObject({
 exports.loaded = function(args) {
   page = args.object;
   page.bindingContext = pageData;
+  page.bindingContext.set("isAdmin", Session.getKey("isAdmin"));
 
   PostList.empty();
   PostList.all();
+
+  new BackButton(page).hide();
 };
 
 exports.newPost = function() {

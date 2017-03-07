@@ -1,3 +1,10 @@
-<Page>
+<Page loaded="loaded" xmlns:navbar="views/components/navbar">
+  <Page.actionBar>
+      <ActionBar title="Testimonies">
+      </ActionBar>
+  </Page.actionBar>
+  <GridLayout columns="*" rows="*, 60">
 
+      <navbar:navbar row="1"/>
+  </GridLayout>
 </Page>

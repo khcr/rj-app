@@ -1,3 +1,14 @@
-<Page>
-
+<Page loaded="loaded" xmlns:navbar="views/components/navbar">
+  <Page.actionBar>
+      <ActionBar title="Plus">
+      </ActionBar>
+  </Page.actionBar>
+  <GridLayout columns="*" rows="*, 60">
+      <StackLayout id="links" orientation="vertical" verticalAlignment="top">
+        <Button text="{{ isSignedIn ? 'Account' : 'Login' }}" tap="toAccount"/>
+        <Button text="Tips"/>
+        <Button text="About"/>
+      </StackLayout>
+      <navbar:navbar row="1"/>
+  </GridLayout>
 </Page>

@@ -5,14 +5,11 @@ var Observable = require("data/observable").Observable;
 var Post = require("../../../models/post");
 
 var page;
-
-var pageData = new Observable({
-  message: ""
-});
+var post = new Post();
 
 exports.loaded = function(args) {
   page = args.object;
-  page.bindingContext = pageData;
+  page.bindingContext = post;
 };
 
 exports.newPost = function() {
@@ -26,7 +23,7 @@ exports.newPost = function() {
     return;
   }
 
-  new Post({message: message}).save();
+  post.save();
   page.bindingContext.set("message", "");
 
   var topmost = frameModule.topmost();

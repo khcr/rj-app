@@ -13,7 +13,7 @@ function Post(params) {
     });
 
     viewModel.save = function() {
-      http.request({
+      return http.request({
         url: config.apiUrl + "posts",
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -34,7 +34,7 @@ Post.List = function() {
   var viewModel =  new ObservableArray();
 
   viewModel.all = function() {
-    http.getJSON(config.apiUrl + "posts.json").then(function(res) {
+    return http.getJSON(config.apiUrl + "posts.json").then(function(res) {
       res.forEach(function(post) {
         viewModel.push(post);
       })

@@ -1,3 +1,6 @@
-<Page>
-
-</Page>
+<StackLayout id="navbar" loaded="loaded" orientation="horizontal">
+  <Button class="nav" text="Feed" tap="toFeed"/>
+  <Button class="nav" text="Programme" tap="toAgenda"/>
+  <Button class="nav" text="Témoignage" tap="toTestimonies"/>
+  <Button class="nav" text="Plus" tap="toPlus"/>
+</StackLayout>

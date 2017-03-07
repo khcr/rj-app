@@ -1,4 +1,10 @@
 var application = require("application");
+var frameModule = require("ui/frame");
+var Session = require("./helpers/session");
+
+frameModule.Frame.defaultAnimatedNavigation = false;
+
+global.Session = Session;
 
 application.start({ moduleName: "views/feed/feed" });
 

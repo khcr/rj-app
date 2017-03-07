@@ -1,10 +1,10 @@
-<Page loaded="loaded">
+<Page loaded="loaded" xmlns:navbar="views/components/navbar">
   <Page.actionBar>
       <ActionBar title="Feed">
-        <ActionItem tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
+        <ActionItem visibility="{{ isAdmin ? 'visible' : 'collapse' }}" tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
       </ActionBar>
   </Page.actionBar>
-  <GridLayout columns="*, *, *, *" rows="*, 60">
+  <GridLayout columns="*" rows="*, 60">
       <Repeater items="{{ posts }}" colSpan="4">
           <Repeater.itemTemplate>
             <GridLayout columns="*" rows="auto, auto">
@@ -13,9 +13,6 @@
             </GridLayout>
           </Repeater.itemTemplate>
       </Repeater>
-      <Button class="nav" text="Feed" col="0" row="1"/>
-      <Button class="nav" text="Programme" col="1" row="1"/>
-      <Button class="nav" text="Témoignage" col="2" row="1"/>
-      <Button class="nav" text="Plus" col="3" row="1"/>
+      <navbar:navbar row="1"/>
   </GridLayout>
 </Page>
