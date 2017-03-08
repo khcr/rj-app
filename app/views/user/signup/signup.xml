@@ -1,3 +1,15 @@
-<Page>
+<Page loaded="loaded">
+  <Page.actionBar>
+      <ActionBar title="Sign Up" />
+  </Page.actionBar>
+  <StackLayout orientation="vertical" verticalAlignment="center">
+    <ListPicker id="gender" items="{{ genders }}" />
+    <TextField text="{{ firstname }}" hint="Firstname" autocorrect="false" />
+    <TextField text="{{ lastname }}" hint="Lastname" autocorrect="false" />
+    <TextField text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+    <TextField hint="Password" text="{{ password }}" secure="true" />
+    <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
 
+    <Button text="Sign up" class="submit" tap="signUp" />
+  </StackLayout>
 </Page>

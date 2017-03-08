@@ -12,16 +12,11 @@ exports.loaded = function(args) {
   new BackButton(page).hide();
 };
 
-exports.toLogin = function() {
-  var topmost = frameModule.topmost();
-  topmost.navigate("views/user/signin/signin");
-};
-
 exports.toAccount = function() {
   var topmost = frameModule.topmost();
   if(Session.getKey("isSignedIn")) {
-    topmost.navigate("views/user/account/account");
+    topmost.navigate({ moduleName: "views/user/account/account", animated: true });
   } else {
-    topmost.navigate("views/user/signin/signin");
+    topmost.navigate({ moduleName: "views/user/signin/signin", animated: true });
   }
 }

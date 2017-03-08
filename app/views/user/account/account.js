@@ -6,7 +6,8 @@ var User = require("../../../models/user");
 var page;
 
 var pageData = new Observable({
-  name: Session.getKey("name"),
+  firstname: Session.getKey("firstname"),
+  lastname: Session.getKey("lastname"),
   email: Session.getKey("email")
 });
 

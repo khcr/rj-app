@@ -1,14 +1,10 @@
-<Page loaded="loaded" xmlns:navbar="views/components/navbar">
+<Page loaded="loaded">
   <Page.actionBar>
-      <ActionBar title="My Account">
-      </ActionBar>
+      <ActionBar title="My Account" />
   </Page.actionBar>
-  <GridLayout columns="*" rows="*, 60">
-      <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
-        <Label text="{{ name }}" />
-        <Label text="{{ email }}" />
-        <Button text="Sign Out" tap="signOut" class="submit" />
-      </StackLayout>
-      <navbar:navbar row="1"/>
-  </GridLayout>
+  <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
+    <Label text="{{ firstname + ' ' + lastname }}" />
+    <Label text="{{ email }}" />
+    <Button text="Sign Out" tap="signOut" class="submit" />
+  </StackLayout>
 </Page>

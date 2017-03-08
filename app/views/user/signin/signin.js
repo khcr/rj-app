@@ -26,5 +26,5 @@ exports.signIn = function() {
 
 exports.toSignUp = function() {
   var topmost = frameModule.topmost();
-  topmost.navigate("views/user/signup/signup");
+  topmost.navigate({ moduleName: "views/user/signup/signup", animated: true });
 }

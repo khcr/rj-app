@@ -8,28 +8,49 @@ function User(params) {
     params = params || {};
 
     var viewModel = new Observable({
-        name: params.name || "",
+        _genders: ["male", "female"],
+        genders: ["Homme", "Femme"],
+        gender: params.gender || "",
+        firstname: params.firstname || "",
+        lastname: params.firstname || "",
         email: params.email || "",
-        password: params.password || ""
+        password: params.password || "",
+        password_confirmation: params.passwordConfirmation || "",
+        isSignedIn: params.isSignedIn || false,
+        isAdmin: params.isAdmin || false,
     });
+
+    viewModel.setGender = function(index) {
+      this.gender = this._genders[index];
+    }
 
     viewModel.signIn = function() {
       return http.request({
         url: config.apiUrl + "users/signin",
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        content: JSON.stringify({user: { email: this.email, password: this.password }})
+        content: JSON.stringify({ user: { email: this.email, password: this.password }})
       }).then(function(res) {
+        if(res.statusCode !== 200) { throw Error() };
         var result = res.content.toJSON();
         Session.set(result);
-      }, function (e) {
+      }, function(e) {
         console.log(e);
-        throw Error();
       });
     }
 
     viewModel.signUp = function() {
-
+      return http.request({
+        url: config.apiUrl + "users",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        content: JSON.stringify({ user: this })
+      }).then(function(res) {
+        var result = res.content.toJSON();
+        if(res.statusCode !== 200) { throw result.errors; }
+      }, function(e) {
+        console.log(e);
+      });
     }
 
     return viewModel;

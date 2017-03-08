@@ -1,20 +1,25 @@
 @import 'nativescript-theme-core/css/core.light.css';
 
 TextView {
-    margin: 10;
-    padding: 10;
-    border-color: #b2b2b2;
-    border-width: 1px;
+  margin: 10;
+  padding: 10;
+  border-color: #b2b2b2;
+  border-width: 1px;
 }
 TextField {
-    margin: 10;
-    padding: 10;
-    border-color: #b2b2b2;
-    border-width: 1px;
+  margin: 10;
+  padding: 10;
+  border-color: #b2b2b2;
+  border-width: 1px;
+}
+ListPicker {
+  height: 130px;
+  padding: 0;
+  margin: 0;
 }
 Button.submit {
-    margin: 10;
-    padding: 10;
-    border-color: #b2b2b2;
-    border-width: 1px;
+  margin: 10;
+  padding: 10;
+  border-color: #b2b2b2;
+  border-width: 1px;
 }

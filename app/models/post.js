@@ -17,10 +17,12 @@ function Post(params) {
         url: config.apiUrl + "posts",
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        content: JSON.stringify({post: { message: this.message }})
+        content: JSON.stringify({
+          post: { message: this.message },
+          remember_token: Session.getKey("rememberToken")
+        })
       }).then(function(res) {}, function (e) {
         console.log(e);
-        throw Error();
       });
     }
 
@@ -40,7 +42,6 @@ Post.List = function() {
       })
     }, function(e) {
       console.log(e);
-      throw Error();
     });
   };
 

@@ -1,8 +1,6 @@
 <Page loaded="loaded">
   <Page.actionBar>
-    <ActionBar title="New post">
-      <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
-    </ActionBar>
+    <ActionBar title="New post"/>
   </Page.actionBar>
   <StackLayout orientation="vertical" verticalAlignment="center">
     <TextView text="{{ message }}" height="200"/>
