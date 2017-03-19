@@ -1,7 +1,7 @@
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
-var Observable = require("data/observable").Observable;
 
+var Imagepicker = require("../../../helpers/imagepicker");
 var Post = require("../../../models/post");
 
 var page;
@@ -13,7 +13,7 @@ exports.loaded = function(args) {
 };
 
 exports.newPost = function() {
-  var message = page.bindingContext.get("message");
+  var message = post.get("message");
 
   if(message.trim() === "") {
     dialogsModule.alert({
@@ -23,9 +23,28 @@ exports.newPost = function() {
     return;
   }
 
-  post.save();
-  page.bindingContext.set("message", "");
+  post.save().then(function() {
+    post.set("message", "");
+    var topmost = frameModule.topmost();
+    topmost.navigate("views/feed/feed");
+  });
 
-  var topmost = frameModule.topmost();
-  topmost.navigate("views/feed/feed");
+}
+
+exports.selectImage = function() {
+  Imagepicker.select().then(function(res) {
+    var imageTag = page.getViewById("preview");
+    imageTag.imageSource = res.source;
+    post.set("imageField", res.path);
+  });
+
+}
+
+exports.takeImage = function() {
+  Imagepicker.take().then(function(res) {
+    var imageTag = page.getViewById("preview");
+    imageTag.imageSource = res.source;
+    post.set("imageField", res.path);
+  });
+
 }

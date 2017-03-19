@@ -5,14 +5,16 @@
       </ActionBar>
   </Page.actionBar>
   <GridLayout columns="*" rows="*, 60">
-      <Repeater items="{{ posts }}" colSpan="4">
-          <Repeater.itemTemplate>
-            <GridLayout columns="*" rows="auto, auto">
-              <Label text="{{ author }}" row="0"/>
-              <TextView text="{{ message }}" row="1"/>
-            </GridLayout>
-          </Repeater.itemTemplate>
-      </Repeater>
+      <ScrollView>
+        <Repeater items="{{ posts }}" colSpan="4">
+            <Repeater.itemTemplate>
+              <GridLayout columns="*" rows="auto, auto">
+                <Label text="{{ author }}" row="0"/>
+                <TextView text="{{ message }}" row="1"/>
+              </GridLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+      </ScrollView>
       <navbar:navbar row="1"/>
   </GridLayout>
 </Page>

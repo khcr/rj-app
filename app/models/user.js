@@ -26,7 +26,7 @@ function User(params) {
 
     viewModel.signIn = function() {
       return http.request({
-        url: config.apiUrl + "users/signin",
+        url: config.apiUrl + "users/signin.json",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({ user: { email: this.email, password: this.password }})
@@ -41,7 +41,7 @@ function User(params) {
 
     viewModel.signUp = function() {
       return http.request({
-        url: config.apiUrl + "users",
+        url: config.apiUrl + "users.json",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({ user: this })
@@ -63,7 +63,6 @@ User.find = function(token) {
     return new User(res);
   }, function (e) {
     console.log(e);
-    throw Error();
   });
 }
 

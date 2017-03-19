@@ -12,6 +12,10 @@
     }
   },
   "dependencies": {
+    "nativescript-background-http": "^2.5.1",
+    "nativescript-camera": "0.0.8",
+    "nativescript-imagepicker": "^2.5.1",
+    "nativescript-permissions": "^1.2.3",
     "nativescript-theme-core": "~1.0.2",
     "tns-core-modules": "2.5.1"
   },

@@ -2,9 +2,14 @@
   <Page.actionBar>
     <ActionBar title="New post"/>
   </Page.actionBar>
-  <StackLayout orientation="vertical" verticalAlignment="center">
-    <TextView text="{{ message }}" height="200"/>
+  <ScrollView>
+    <StackLayout orientation="vertical" verticalAlignment="center">
+        <TextView text="{{ message }}" height="200"/>
+        <Button text="Choose a photo" tap="selectImage" />
+        <Button text="Take a photo" tap="takeImage" />
+        <Image id="preview" />
 
-    <Button text="Post" tap="newPost" class="submit" />
-  </StackLayout>
+        <Button text="Post" tap="newPost" class="submit" />
+    </StackLayout>
+  </ScrollView>
 </Page>
