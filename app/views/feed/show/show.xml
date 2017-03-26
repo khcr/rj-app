@@ -1,0 +1,24 @@
+<Page loaded="loaded">
+  <Page.actionBar>
+  </Page.actionBar>
+    <StackLayout orientation="vertical">
+      <Label text="{{ post.author }}" />
+      <TextView text="{{ post.message }}" />
+
+      <GridLayout columns="3*, *" rows="auto" visibility="{{ isSignedIn ? 'visible' : 'collapsed'}}">
+        <TextView text="{{ comment.message }}" height="60" col="0" row="0"/>
+        <Button text="Send" tap="newComment" class="submit" col="1" row="0"/>
+      </GridLayout>
+
+      <ScrollView>
+        <Repeater items="{{ comments }}">
+            <Repeater.itemTemplate>
+              <StackLayout orientation="vertical">
+                <Label text="{{ author }}" row="0"/>
+                <TextView text="{{ message }}" row="1"/>
+              </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+      </ScrollView>
+    </StackLayout>
+</Page>

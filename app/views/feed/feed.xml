@@ -6,14 +6,20 @@
   </Page.actionBar>
   <GridLayout columns="*" rows="*, 60">
       <ScrollView>
-        <Repeater items="{{ posts }}" colSpan="4">
+        <Repeater items="{{ posts }}">
             <Repeater.itemTemplate>
-              <GridLayout columns="*" rows="auto, auto">
-                <Label text="{{ author }}" row="0"/>
-                <TextView text="{{ message }}" row="1"/>
-              </GridLayout>
+              <StackLayout orientation="vertical">
+                <Label text="{{ author }}" />
+                <TextView text="{{ message }}" />
+                <Label text="Comments" postId="{{ id }}" tap="toPost" />
+                <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical">
+                  <TextView text="{{ lastComment.author }}" />
+                  <TextView text="{{ lastComment.message }}" />
+                </StackLayout>
+              </StackLayout>
             </Repeater.itemTemplate>
         </Repeater>
+        <ActivityIndicator busy="{{ isLoading }}" />
       </ScrollView>
       <navbar:navbar row="1"/>
   </GridLayout>

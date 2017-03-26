@@ -27,3 +27,9 @@ exports.newPost = function() {
   var topmost = frameModule.topmost();
   topmost.navigate("views/feed/new/new");
 }
+
+exports.toPost = function(e) {
+  var postId = e.object.postId;
+  var topmost = frameModule.topmost();
+  topmost.navigate({moduleName: "views/feed/show/show", context: { postId: postId }});
+}

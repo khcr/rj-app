@@ -46,7 +46,6 @@ var Imagepicker = {
     }).then(function(selection) {
 
       return selection[0].getImage().then(function(imageSource) {
-
         return Imagepicker.saveTempfile(imageSource);
       });
     }).catch(function (e) {
@@ -59,7 +58,6 @@ var Imagepicker = {
     var filename = "img_" + new Date().getTime() + ".jpg";
     var path = fs.path.join(folder.path, filename);
     var saved = imageSource.saveToFile(path, "jpg");
-
     if(saved) {
       return { path: path, source: imageSource };
     }

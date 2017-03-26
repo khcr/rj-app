@@ -11,9 +11,12 @@ function Post(params) {
     params = params || {};
 
     var viewModel = new Observable({
+        id: params.id || null,
         message: params.message || "",
         author: params.author || "",
-        imageId: params.imageId || null
+        imageId: params.imageId || null,
+        lastComment: params.lastComment || "",
+        comments: params.comments || []
     });
 
     viewModel.save = function() {
@@ -75,6 +78,14 @@ Post.List = function() {
 
   return viewModel;
 
+}
+
+Post.find = function(id) {
+  return http.getJSON(config.apiUrl + "posts/" + id + ".json").then(function(res) {
+    return new Post(res);
+  }, function (e) {
+    console.log(e);
+  });
 }
 /* */
 
