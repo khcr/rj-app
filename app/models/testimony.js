@@ -10,8 +10,8 @@ function Testimony(params) {
 
     var viewModel = new Observable({
       id: params.id || null,
-      message: this.message || "",
-      author: this.author || ""
+      message: params.message || "",
+      author: params.author || ""
     });
 
     viewModel.save = function() {

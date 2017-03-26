@@ -11,13 +11,13 @@ var Imagepicker = {
     if (platformModule.device.os === "Android" && platformModule.device.sdkVersion >= 23) {
       return permissions.requestPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE, "I need these permissions to read from storage")
       .then(function() {
-        return Imagepicker.start();
+        return Imagepicker._start();
       })
       .catch(function() {
         console.log("Unauthorized to access external storage")
       });
     } else {
-      return Imagepicker.start();
+      return Imagepicker._start();
     }
   },
 
@@ -27,7 +27,7 @@ var Imagepicker = {
     return camera.takePicture().then(function(imageAsset) {
       return imageSource.fromAsset(imageAsset).then(function(imageSource) {
 
-        return Imagepicker.saveTempfile(imageSource);
+        return Imagepicker._saveTempfile(imageSource);
 
       });
     }).catch(function(e) {
@@ -35,7 +35,7 @@ var Imagepicker = {
     });
   },
 
-  start: function() {
+  _start: function() {
 
     var context = imagepickerModule.create({
       mode: "single"
@@ -46,14 +46,14 @@ var Imagepicker = {
     }).then(function(selection) {
 
       return selection[0].getImage().then(function(imageSource) {
-        return Imagepicker.saveTempfile(imageSource);
+        return Imagepicker._saveTempfile(imageSource);
       });
     }).catch(function (e) {
         console.log(e);
     });
   },
 
-  saveTempfile: function(imageSource) {
+  _saveTempfile: function(imageSource) {
     var folder = fs.knownFolders.documents();
     var filename = "img_" + new Date().getTime() + ".jpg";
     var path = fs.path.join(folder.path, filename);

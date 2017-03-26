@@ -19,7 +19,6 @@
               </StackLayout>
             </Repeater.itemTemplate>
         </Repeater>
-        <ActivityIndicator busy="{{ isLoading }}" />
       </ScrollView>
       <navbar:navbar row="1"/>
   </GridLayout>

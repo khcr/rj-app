@@ -22,34 +22,60 @@ function Post(params) {
     viewModel.save = function() {
       var post = this;
 
-      upload = new Upload(post.imageField);
-      task = upload.save();
+      if (post.imageField === undefined) {
 
-      var promise = new Promise(function(resolve, reject) {
-
-        task.on("error", function(e) {
-          // TODO: dialogs
+        return http.request({
+          url: config.apiUrl + "posts.json",
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          content: JSON.stringify({
+            post: { message: post.message },
+            remember_token: Session.getKey("rememberToken")
+          })
+        }).then(function(res) {
+          var result = res.content.toJSON();
+          if(res.statusCode !== 200) { throw result.errors; }
+          return result;
+        }, function (e) {
+          console.log(e);
         });
-        task.on("responded", function(e) {
 
-          var response = JSON.parse(e.data);
-          http.request({
-            url: config.apiUrl + "posts.json",
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            content: JSON.stringify({
-              post: { message: post.message, image_id: response.id },
-              remember_token: Session.getKey("rememberToken")
-            })
-          }).then(function(res) { resolve(res); }, function (e) {
-            reject(e);
+      } else {
+
+        upload = new Upload(post.imageField);
+        task = upload.save();
+
+        var promise = new Promise(function(resolve, reject) {
+
+          task.on("error", function(e) {
+            // TODO: dialogs
+          });
+          task.on("responded", function(e) {
+
+            var response = JSON.parse(e.data);
+
+            http.request({
+              url: config.apiUrl + "posts.json",
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              content: JSON.stringify({
+                post: { message: post.message, image_id: response.id },
+                remember_token: Session.getKey("rememberToken")
+              })
+            }).then(function(res) {
+              var result = res.content.toJSON();
+              if(res.statusCode !== 200) { throw result.errors; }
+              resolve(result);
+            }, function (e) {
+              reject(e);
+            });
           });
         });
-      });
 
-      return promise;
+        return promise;
+      }
 
-    }
+    };
 
     return viewModel;
 }
