@@ -42,8 +42,8 @@ function Post(params) {
 
       } else {
 
-        upload = new Upload(post.imageField);
-        task = upload.save();
+        var upload = new Upload(post.imageField);
+        var task = upload.save();
 
         var promise = new Promise(function(resolve, reject) {
 
@@ -86,8 +86,11 @@ Post.List = function() {
 
   var viewModel =  new ObservableArray();
 
-  viewModel.all = function() {
-    return http.getJSON(config.apiUrl + "posts.json").then(function(res) {
+  viewModel.pageNumber = 1;
+
+  viewModel.load = function() {
+    return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber).then(function(res) {
+      viewModel.pageNumber++;
       res.forEach(function(post) {
         viewModel.push(post);
       });
@@ -97,8 +100,9 @@ Post.List = function() {
   };
 
   viewModel.empty = function() {
-    while (viewModel.length) {
-      viewModel.pop();
+    this.pageNumber = 1;
+    while (this.length) {
+      this.pop();
     }
   };
 

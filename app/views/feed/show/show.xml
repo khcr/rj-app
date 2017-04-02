@@ -14,8 +14,11 @@
         <Repeater items="{{ comments }}">
             <Repeater.itemTemplate>
               <StackLayout orientation="vertical">
-                <Label text="{{ author }}" row="0"/>
-                <TextView text="{{ message }}" row="1"/>
+                <Label text="{{ author }}"/>
+                <StackLayout orientation="vertical">
+                  <TextView id="comment" commentId="{{ id }}" text="{{ message }}" />
+                  <Button text="Edit" tap="editComment"/>
+                </StackLayout>
               </StackLayout>
             </Repeater.itemTemplate>
         </Repeater>

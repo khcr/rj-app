@@ -42,4 +42,24 @@ exports.newComment = function() {
     comments.unshift(res);
     comment.set("message", "");
   });
-}
+};
+
+exports.editComment = function(e) {
+  var commentTag = e.object.parent.getViewById("comment");
+  var text = commentTag.text;
+  var id = commentTag.commentId;
+  dialogsModule.prompt({
+    title: "Edit",
+    okButtonText: "Save",
+    cancelButtonText: "Cancel",
+    defaultText: text,
+    inputType: dialogsModule.inputType.text
+  }).then(function(r) {
+      if(r.result) {
+        var comment = new Comment({ message: r.text, id: id });
+        comment.update().then(function(res) {
+          commentTag.text = r.text;
+        });
+      }
+  });
+};
