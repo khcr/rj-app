@@ -1,11 +1,12 @@
 <Page loaded="loaded" xmlns:navbar="views/components/navbar">
   <Page.actionBar>
       <ActionBar title="Feed">
+        <ActionItem tap="refresh" ios.systemIcon="13" ios.position="left" android.systemIcon="ic_menu_refresh" android.position="actionBar"/>
         <ActionItem visibility="{{ isAdmin ? 'visible' : 'collapse' }}" tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
       </ActionBar>
   </Page.actionBar>
   <GridLayout columns="*" rows="*, 60">
-      <ScrollView>
+      <ScrollView id="posts">
         <Repeater items="{{ posts }}">
             <Repeater.itemTemplate>
               <StackLayout orientation="vertical">

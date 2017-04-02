@@ -1,12 +1,13 @@
 var observableModule = require("data/observable");
 var frameModule = require("ui/frame");
+var scrollEvent = require("ui/scroll-view").ScrollView.scrollEvent;
 
 var BackButton = require("../../helpers/back_button");
 var Post = require("../../models/post");
 
 var PostList = new Post.List()
 
-var page;
+var page, postsView;
 
 var pageData = new observableModule.fromObject({
     posts: PostList
@@ -18,10 +19,19 @@ exports.loaded = function(args) {
   page.bindingContext.set("isAdmin", Session.getKey("isAdmin"));
 
   PostList.empty();
-  PostList.all();
+  PostList.load();
 
   new BackButton(page).hide();
+
+  postsView = page.getViewById("posts");
+  // postsView.addEventListener(scrollEvent, loadMore); TODO
 };
+
+exports.refresh = function() {
+  PostList.empty();
+  PostList.load();
+};
+
 
 exports.newPost = function() {
   var topmost = frameModule.topmost();
@@ -32,4 +42,13 @@ exports.toPost = function(e) {
   var postId = e.object.postId;
   var topmost = frameModule.topmost();
   topmost.navigate({moduleName: "views/feed/show/show", context: { postId: postId }});
+}
+
+var loadMore = function(e) {
+  if((e.object.scrollableHeight - 20) <= e.scrollY) {
+    postsView.removeEventListener(scrollEvent, loadMore);
+    PostList.load().then(function() {
+      postsView.addEventListener(scrollEvent, loadMore);
+    });
+  }
 }
