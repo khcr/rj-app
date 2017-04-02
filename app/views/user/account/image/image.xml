@@ -1,0 +1,15 @@
+<Page loaded="loaded">
+  <Page.actionBar>
+      <ActionBar title="Profile picture" />
+  </Page.actionBar>
+  <StackLayout orientation="vertical" verticalAlignment="center">
+
+    <Image id="profile" />
+
+    <Button text="Choose a photo" tap="selectImage" />
+    <Button text="Take a photo" tap="takeImage" />
+    <Image id="preview" />
+
+    <Button text="Send" class="submit" tap="updateImage" />
+  </StackLayout>
+</Page>
