@@ -77,6 +77,24 @@ function Post(params) {
 
     };
 
+    viewModel.update = function() {
+      return http.request({
+        url: config.apiUrl + "posts/" + this.get("id") + ".json",
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        content: JSON.stringify({
+          post: { message: this.get("message") },
+          remember_token: Session.getKey("rememberToken")
+        })
+      }).then(function(res) {
+        var result = res.content.toJSON();
+        if(res.statusCode !== 200) { throw result.errors; }
+        return result;
+      }, function(e) {
+        console.log(e);
+      });
+    };
+
     return viewModel;
 }
 
@@ -89,7 +107,8 @@ Post.List = function() {
   viewModel.pageNumber = 1;
 
   viewModel.load = function() {
-    return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber).then(function(res) {
+    var token = Session.getKey("rememberToken");
+    return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber + "&remember_token=" + token).then(function(res) {
       if(!res.length) {
         return false;
       }
@@ -122,6 +141,22 @@ Post.find = function(id) {
     console.log(e);
   });
 }
+
+Post.delete = function(id) {
+  var token = Session.getKey("rememberToken");
+  return http.request({
+    url: config.apiUrl + "posts/" + id + ".json?remember_token=" + token,
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" }
+  }).then(function(res) {
+    var result = res.content.toJSON();
+    if(res.statusCode !== 200) { throw result.errors; }
+    return result;
+  }, function (e) {
+    console.log(e);
+  });
+}
+
 /* */
 
 module.exports = Post;

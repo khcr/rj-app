@@ -13,8 +13,10 @@
           <lv:RadListView.itemTemplate>
             <StackLayout orientation="vertical">
               <Label text="{{ author }}" />
-              <TextView text="{{ message }}" />
+              <TextView id="post" postId="{{ id }}" text="{{ message }}" />
               <Label text="Comments" postId="{{ id }}" tap="toPost" />
+              <Button text="Edit" tap="editPost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+              <Button text="Delete" postId="{{ id }}" tap="deletePost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
               <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical">
                 <TextView text="{{ lastComment.author }}" />
                 <TextView text="{{ lastComment.message }}" />

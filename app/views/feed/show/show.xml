@@ -15,10 +15,8 @@
             <Repeater.itemTemplate>
               <StackLayout orientation="vertical">
                 <Label text="{{ author }}"/>
-                <StackLayout orientation="vertical">
-                  <TextView id="comment" commentId="{{ id }}" text="{{ message }}" />
-                  <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
-                </StackLayout>
+                <TextView id="comment" commentId="{{ id }}" text="{{ message }}" />
+                <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
               </StackLayout>
             </Repeater.itemTemplate>
         </Repeater>
