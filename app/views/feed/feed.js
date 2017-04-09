@@ -5,12 +5,13 @@ var scrollEvent = require("ui/scroll-view").ScrollView.scrollEvent;
 var BackButton = require("../../helpers/back_button");
 var Post = require("../../models/post");
 
-var PostList = new Post.List()
+var PostList = new Post.List();
 
 var page, postsView;
 
 var pageData = new observableModule.fromObject({
-    posts: PostList
+    posts: PostList,
+    state: Post.State
 });
 
 exports.loaded = function(args) {

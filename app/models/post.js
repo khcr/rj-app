@@ -80,6 +80,10 @@ function Post(params) {
     return viewModel;
 }
 
+Post.State = new Observable({
+  isLoading: true
+});
+
 /* List */
 
 Post.List = function() {
@@ -89,11 +93,13 @@ Post.List = function() {
   viewModel.pageNumber = 1;
 
   viewModel.load = function() {
+    Post.State.set("isLoading", true);
     return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber).then(function(res) {
       viewModel.pageNumber++;
       res.forEach(function(post) {
         viewModel.push(post);
       });
+      Post.State.set("isLoading", false);
     }, function(e) {
       console.log(e);
     });
