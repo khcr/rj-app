@@ -7,7 +7,7 @@ var Session = {
   },
 
   getKey: function(key) {
-    return this.get()[key];
+    return this.get()[key] || "";
   },
 
   set: function(params) {

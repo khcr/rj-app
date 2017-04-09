@@ -1,26 +1,28 @@
-<Page loaded="loaded" xmlns:navbar="views/components/navbar">
+<Page loaded="loaded" xmlns:navbar="views/components/navbar" xmlns:lv="nativescript-telerik-ui/listview">
   <Page.actionBar>
       <ActionBar title="Feed">
-        <ActionItem tap="refresh" ios.systemIcon="13" ios.position="left" android.systemIcon="ic_menu_refresh" android.position="actionBar"/>
         <ActionItem visibility="{{ isAdmin ? 'visible' : 'collapse' }}" tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
       </ActionBar>
   </Page.actionBar>
   <GridLayout columns="*" rows="*, 60">
-      <ScrollView id="posts">
-        <Repeater items="{{ posts }}">
-            <Repeater.itemTemplate>
-              <StackLayout orientation="vertical">
-                <Label text="{{ author }}" />
-                <TextView text="{{ message }}" />
-                <Label text="Comments" postId="{{ id }}" tap="toPost" />
-                <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical">
-                  <TextView text="{{ lastComment.author }}" />
-                  <TextView text="{{ lastComment.message }}" />
-                </StackLayout>
+      <GridLayout rows="auto, *">
+        <lv:RadListView items="{{ posts }}" pullToRefresh="true" row="1" pullToRefreshInitiated="refresh" loadOnDemandMode="Auto" loadMoreDataRequested="loadMore">
+          <lv:RadListView.listViewLayout>
+            <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+          </lv:RadListView.listViewLayout>
+          <lv:RadListView.itemTemplate>
+            <StackLayout orientation="vertical">
+              <Label text="{{ author }}" />
+              <TextView text="{{ message }}" />
+              <Label text="Comments" postId="{{ id }}" tap="toPost" />
+              <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical">
+                <TextView text="{{ lastComment.author }}" />
+                <TextView text="{{ lastComment.message }}" />
               </StackLayout>
-            </Repeater.itemTemplate>
-        </Repeater>
-      </ScrollView>
+            </StackLayout>
+          </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+      </GridLayout>
       <navbar:navbar row="1"/>
   </GridLayout>
 </Page>

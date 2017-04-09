@@ -20,7 +20,7 @@ function Testimony(params) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({
-          testimony: { message: this.message },
+          testimony: { message: this.get("message") },
           remember_token: Session.getKey("rememberToken")
         })
       }).then(function(res) {
@@ -30,7 +30,25 @@ function Testimony(params) {
       }, function(e) {
         console.log(e);
       });
-    }
+    };
+
+    viewModel.update = function() {
+      return http.request({
+        url: config.apiUrl + "testimonies/" + this.get("id") + ".json",
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        content: JSON.stringify({
+          testimony: { message: this.get("message") },
+          remember_token: Session.getKey("rememberToken")
+        })
+      }).then(function(res) {
+        var result = res.content.toJSON();
+        if(res.statusCode !== 200) { throw result.errors; }
+        return result;
+      }, function(e) {
+        console.log(e);
+      });
+    };
 
     return viewModel;
 }

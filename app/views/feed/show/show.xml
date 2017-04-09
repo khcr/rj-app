@@ -17,7 +17,7 @@
                 <Label text="{{ author }}"/>
                 <StackLayout orientation="vertical">
                   <TextView id="comment" commentId="{{ id }}" text="{{ message }}" />
-                  <Button text="Edit" tap="editComment"/>
+                  <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
                 </StackLayout>
               </StackLayout>
             </Repeater.itemTemplate>
