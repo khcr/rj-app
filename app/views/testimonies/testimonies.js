@@ -69,3 +69,16 @@ exports.editTestimony = function(e) {
       }
   });
 };
+
+exports.deleteTestimony = function(e) {
+  var testimonyTag = e.object;
+  var id = testimonyTag.testimonyId;
+  dialogsModule.confirm("Do you really want to delete this testimony ?").then(function(result) {
+    if(result) {
+      Testimony.delete(id).then(function() {
+        testimonyTag.parent.parent.parent.visibility = "collapse";
+      });
+    }
+  });
+
+};

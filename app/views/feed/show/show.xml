@@ -3,7 +3,7 @@
   </Page.actionBar>
   <ScrollView>
     <StackLayout orientation="vertical" class="main">
-          
+
       <Label text="{{ 'Commenter le post de ' + post.author }}" class="title" />
       
       <GridLayout rows="auto, auto, auto" cols="auto" class="post">
@@ -22,19 +22,20 @@
       </GridLayout>
       <label text="Connectez-vous pour commenter" visibility="{{ isSignedIn ? 'collapsed' : 'visible'}}" class="connect"/>
 
-      <Repeater items="{{ comments }}">
-          <Repeater.itemTemplate>
+        <Repeater items="{{ comments }}">
+            <Repeater.itemTemplate>
 
-            <StackLayout orientation="vertical" class="comment">
-              <GridLayout rows="auto" columns="*, auto" class="infos-comment">
-                <label text="{{ author }}" row="0" col="0" class="author-comment"></label>
-                <label text="&#xE0B9;" row="0" col="1" class="material-font info-icon-comment"/>
-              </GridLayout>
-              <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
-              <StackLayout orientation="vertical">
-                <TextView id="comment" editable="false" commentId="{{ id }}" text="{{ message }}" class="comment-message" />
-                <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
-              </StackLayout>
+              <StackLayout orientation="vertical" class="comment">
+                <GridLayout rows="auto" columns="*, auto" class="infos-comment">
+                  <label text="{{ author }}" row="0" col="0" class="author-comment"></label>
+                  <label text="&#xE0B9;" row="0" col="1" class="material-font info-icon-comment"/>
+                </GridLayout>
+                <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+                <StackLayout orientation="vertical">
+                  <TextView id="comment" editable="false" commentId="{{ id }}" text="{{ message }}" class="comment-message" />
+                  <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+                  <Button text="Delete" commentId="{{ id }}" tap="deleteComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+                </StackLayout>
 
             </StackLayout>
           </Repeater.itemTemplate>

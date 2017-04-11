@@ -32,7 +32,7 @@ StackLayout.testimony {
   margin: 0 0 20px 0;
 }
 
-GridLayout.testimony-message {
+TextView.testimony-message {
   padding: 10px 10px 20px 10px;
 }
 

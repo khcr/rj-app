@@ -60,7 +60,8 @@ Testimony.List = function() {
   var viewModel =  new ObservableArray();
 
   viewModel.all = function() {
-    return http.getJSON(config.apiUrl + "testimonies.json").then(function(res) {
+    var token = Session.getKey("rememberToken");
+    return http.getJSON(config.apiUrl + "testimonies.json?remember_token=" + token).then(function(res) {
       res.forEach(function(testimony) {
         viewModel.push(testimony);
       });
@@ -78,6 +79,22 @@ Testimony.List = function() {
   return viewModel;
 
 }
+
+Testimony.delete = function(id) {
+  var token = Session.getKey("rememberToken");
+  return http.request({
+    url: config.apiUrl + "testimony/" + id + ".json?remember_token=" + token,
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" }
+  }).then(function(res) {
+    var result = res.content.toJSON();
+    if(res.statusCode !== 200) { throw result.errors; }
+    return result;
+  }, function (e) {
+    console.log(e);
+  });
+}
+
 /* */
 
 module.exports = Testimony;

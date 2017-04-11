@@ -4,6 +4,7 @@
         <Image src="res://logorj" width="40px"/>
       </ActionBar>
   </Page.actionBar>
+
   <GridLayout columns="*" rows="*, 60">
     <ScrollView row="0">
       <GridLayout rows="auto, *" cols="*" class="main">
@@ -20,10 +21,11 @@
                 <label text="{{ author }}" row="0" col="1" class="author"></label>
               </GridLayout>
               <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
-              <GridLayout columns="*, auto" rows="*" class="testimony-message">
-                <TextView editable="false" id="testimony" testimonyId="{{ id }}" text="{{ message }}" col="0"/>
-                <Button text="Edit" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" col="1"/>
-              </GridLayout>
+              <StackLayout orientation="vertical">
+                <TextView editable="false" id="testimony" testimonyId="{{ id }}" text="{{ message }}" class="testimony-message" col="0" row="0"/>
+                <Button text="Edit" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" col="0" row="1"/>
+                <Button text="Delete" testimonyId="{{ id }}" tap="deleteTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" row="2" col="0"/>
+              </StackLayout> 
             </StackLayout>
           </Repeater.itemTemplate>
         </Repeater>
