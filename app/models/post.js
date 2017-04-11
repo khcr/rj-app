@@ -22,14 +22,14 @@ function Post(params) {
     viewModel.save = function() {
       var post = this;
 
-      if (post.imageField === undefined) {
+      if (post.get("imageField") === undefined) {
 
         return http.request({
           url: config.apiUrl + "posts.json",
           method: "POST",
           headers: { "Content-Type": "application/json" },
           content: JSON.stringify({
-            post: { message: post.message },
+            post: { message: post.get("message") },
             remember_token: Session.getKey("rememberToken")
           })
         }).then(function(res) {
@@ -42,7 +42,7 @@ function Post(params) {
 
       } else {
 
-        var upload = new Upload(post.imageField);
+        var upload = new Upload(post.get("imageField"));
         var task = upload.save();
 
         var promise = new Promise(function(resolve, reject) {
@@ -59,7 +59,7 @@ function Post(params) {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               content: JSON.stringify({
-                post: { message: post.message, image_id: response.id },
+                post: { message: post.get("message"), image_id: response.id },
                 remember_token: Session.getKey("rememberToken")
               })
             }).then(function(res) {
@@ -95,11 +95,15 @@ Post.List = function() {
   viewModel.load = function() {
     Post.State.set("isLoading", true);
     return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber).then(function(res) {
+      if(!res.length) {
+        return false;
+      }
       viewModel.pageNumber++;
       res.forEach(function(post) {
         viewModel.push(post);
       });
       Post.State.set("isLoading", false);
+      return viewModel;
     }, function(e) {
       console.log(e);
     });
@@ -117,8 +121,9 @@ Post.List = function() {
 }
 
 Post.find = function(id) {
-  return http.getJSON(config.apiUrl + "posts/" + id + ".json").then(function(res) {
-    return new Post(res);
+  var token = Session.getKey("rememberToken");
+  return http.getJSON(config.apiUrl + "posts/" + id + ".json?remember_token=" + token).then(function(res) {
+    return new Observable(res);
   }, function (e) {
     console.log(e);
   });

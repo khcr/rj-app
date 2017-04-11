@@ -20,7 +20,7 @@ function Comment(params) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       content: JSON.stringify({
-        comment: { message: this.message, post_id: this.postId },
+        comment: { message: this.get("message"), post_id: this.get("postId") },
         remember_token: Session.getKey("rememberToken")
       })
     }).then(function(res) {
@@ -34,11 +34,11 @@ function Comment(params) {
 
   viewModel.update = function() {
     return http.request({
-      url: config.apiUrl + "comments/" + this.id + ".json",
+      url: config.apiUrl + "comments/" + this.get("id") + ".json",
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       content: JSON.stringify({
-        comment: { message: this.message },
+        comment: { message: this.get("message") },
         remember_token: Session.getKey("rememberToken")
       })
     }).then(function(res) {

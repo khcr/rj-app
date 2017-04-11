@@ -13,7 +13,10 @@
             <Repeater.itemTemplate>
               <GridLayout columns="*" rows="auto, auto">
                 <Label text="{{ author }}" row="0"/>
-                <TextView text="{{ message }}" row="1"/>
+                <GridLayout columns="*, auto" rows="*">
+                  <TextView id="testimony" testimonyId="{{ id }}" text="{{ message }}" col="0"/>
+                  <Button text="Edit" tap="editTestimony" visibility="{{ true ? 'visible' : 'collapse' }}" col="1"/>
+                </GridLayout>
               </GridLayout>
             </Repeater.itemTemplate>
         </Repeater>

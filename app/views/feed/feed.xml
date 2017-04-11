@@ -1,27 +1,38 @@
-<Page loaded="loaded" xmlns:navbar="views/components/navbar">
+<Page loaded="loaded" 
+  xmlns:navbar="views/components/navbar" 
+  xmlns:lv="nativescript-telerik-ui/listview"
+  xmlns:post="views/components/post">
   <Page.actionBar>
       <ActionBar title="Feed">
-        <ActionItem tap="refresh" ios.systemIcon="13" ios.position="left" android.systemIcon="ic_menu_refresh" android.position="actionBar"/>
         <ActionItem visibility="{{ isAdmin ? 'visible' : 'collapse' }}" tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
       </ActionBar>
   </Page.actionBar>
-  <GridLayout columns="*" rows="*, 60">
-      <ScrollView id="posts">
-        <Repeater items="{{ posts }}">
-            <Repeater.itemTemplate>
-              <StackLayout orientation="vertical">
-                <Label text="{{ author }}" />
-                <TextView text="{{ message }}" />
-                <Label text="Comments" postId="{{ id }}" tap="toPost" />
-                <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical">
-                  <TextView text="{{ lastComment.author }}" />
-                  <TextView text="{{ lastComment.message }}" />
-                </StackLayout>
+  <GridLayout columns="*" rows="*, 60" class="main">
+      <GridLayout rows="auto, *" class="list">
+        <lv:RadListView items="{{ posts }}" pullToRefresh="true" row="1" pullToRefreshInitiated="refresh" loadOnDemandMode="Auto" loadMoreDataRequested="loadMore">
+          <lv:RadListView.listViewLayout>
+            <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+          </lv:RadListView.listViewLayout>
+          <lv:RadListView.itemTemplate>
+            <StackLayout orientation="vertical" class="news">
+              <GridLayout rows="auto, *" columns="auto, *" class="infos">
+                <label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
+                <label text="{{ author }}" row="0" col="1" class="author"></label>
+              </GridLayout>
+              <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+              <TextView text="{{ message }}" editable="false" class="message" loaded="updateMessage" />
+              <Image src="{{ imageUrl }}" />
+              <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical" class="last-comment">
+                <label text="Dernier commentaire" class="last-comment"/>
+                <label text="{{ lastComment.author }}" editable="false" class="last-comment-author" />
+                <TextView text="{{ lastComment.message }}" editable="false" class="last-comment-message" />
               </StackLayout>
-            </Repeater.itemTemplate>
-        </Repeater>
-      </ScrollView>
+              <Label text="&#xE0B9;" postId="{{ id }}" tap="toPost" class="comments material-font" />
+            </StackLayout>
+          </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+      </GridLayout>
       <navbar:navbar row="1"/>
-      <ActivityIndicator busy="{{ state.isLoading }}" rowSpan="2" colSpan="2" />
+      <ActivityIndicator busy="{{ isLoading }}" rowSpan="2" colSpan="2" />
   </GridLayout>
 </Page>

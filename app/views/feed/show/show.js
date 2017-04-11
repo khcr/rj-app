@@ -55,11 +55,16 @@ exports.editComment = function(e) {
     defaultText: text,
     inputType: dialogsModule.inputType.text
   }).then(function(r) {
-      if(r.result) {
-        var comment = new Comment({ message: r.text, id: id });
-        comment.update().then(function(res) {
-          commentTag.text = r.text;
-        });
-      }
+    if(r.text.trim() === "") {
+      dialogsModule.alert({
+        message: "Enter a message",
+        okButtonText: "OK"
+      });
+    } else if(r.result) {
+      var comment = new Comment({ message: r.text, id: id });
+      comment.update().then(function(res) {
+        commentTag.text = r.text;
+      });
+    }
   });
 };

@@ -20,7 +20,7 @@ function Upload(imageUrl) {
           },
       };
 
-      return session.uploadFile(this.imageUrl, request);
+      return session.uploadFile(this.get("imageUrl"), request);
 
     }
 

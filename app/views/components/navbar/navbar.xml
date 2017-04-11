@@ -1,6 +1,43 @@
 <StackLayout id="navbar" loaded="loaded" orientation="horizontal">
-  <Button class="nav" text="Feed" tap="toFeed"/>
-  <Button class="nav" text="Programme" tap="toAgenda"/>
-  <Button class="nav" text="Témoignage" tap="toTestimonies"/>
-  <Button class="nav" text="Plus" tap="toPlus"/>
+
+  <button class="nav current" tap="toFeed">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE0E5;&#x000a;" fontFamily="MaterialIcons-Regular" fontSize="35" />
+              <span text="À la une" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
+  <button class="nav" tap="toAgenda">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE192;&#x000a;" fontFamily="MaterialIcons-Regular" fontSize="35" />
+              <span text="Programme" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
+  <button class="nav" tap="toTestimonies">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE87D;&#x000a;" fontFamily="MaterialIcons-Regular" fontSize="35" />
+              <span text="Témoignage" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
+  <button class="nav" tap="toPlus">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE8EE;&#x000a;" fontFamily="MaterialIcons-Regular" fontSize="35" />
+              <span text="Plus" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
 </StackLayout>

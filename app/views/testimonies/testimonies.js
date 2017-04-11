@@ -38,3 +38,28 @@ exports.newTestimony = function() {
   });
 
 }
+
+exports.editTestimony = function(e) {
+  var testimonyTag = e.object.parent.getViewById("testimony");
+  var text = testimonyTag.text;
+  var id = testimonyTag.testimonyId;
+  dialogsModule.prompt({
+    title: "Edit",
+    okButtonText: "Save",
+    cancelButtonText: "Cancel",
+    defaultText: text,
+    inputType: dialogsModule.inputType.text
+  }).then(function(r) {
+      if(r.text.trim() === "") {
+        dialogsModule.alert({
+          message: "Enter a message",
+          okButtonText: "OK"
+        });
+      } else if(r.result) {
+        var comment = new Testimony({ message: r.text, id: id });
+        comment.update().then(function(res) {
+          testimonyTag.text = r.text;
+        });
+      }
+  });
+};

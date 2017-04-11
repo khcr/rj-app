@@ -3,8 +3,36 @@
       <ActionBar title="Programme">
       </ActionBar>
   </Page.actionBar>
-  <GridLayout columns="*" rows="*, 60">
-
-      <navbar:navbar row="1"/>
+  <GridLayout columns="*" rows="*, 60" class="main">
+     <ScrollView>
+        <StackLayout orientation="vertical" class="main">
+            <label text="Vendredi" class="day"/>
+            <GridLayout columns="auto, *" rows="auto, *" class="small">
+                <TextView text="18h00" col="0" row="0" editable="false" class="time"/>
+                <TextView text="Accueil à l'intérieur" col="1" row="0" editable="false" class="element"/>
+            </GridLayout>
+            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://agenda1')">
+                <TextView text="18h15" col="0" row="0" editable="false" class="big-time"/>
+                <TextView text="Ouverture du village et du Fun Park" col="1" row="0" editable="false" class="big-element"/>
+            </GridLayout>
+            <GridLayout columns="auto, *" rows="auto, *" class="small">
+                <TextView text="18h45" col="0" row="0" editable="false" class="time"/>
+                <TextView text="Ouverture des portes" col="1" row="0" editable="false" class="element"/>
+            </GridLayout>
+            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://agenda1')">
+                <TextView text="20h15" col="0" row="0" editable="false" class="big-time"/>
+                <TextView text="Plénière" col="1" row="0" editable="false" class="big-element"/>
+            </GridLayout>
+            <GridLayout columns="auto, *" rows="auto, *" class="small">
+                <TextView text="22h30" col="0" row="0" editable="false" class="time"/>
+                <TextView text="Fin de la plénière" col="1" row="0" editable="false" class="element"/>
+            </GridLayout>
+            <GridLayout columns="auto, *" rows="auto, *" class="small">
+                <TextView text="00h30" col="0" row="0" editable="false" class="time"/>
+                <TextView text="Fermeture du village et du Fun Park" col="1" row="0" editable="false" class="element"/>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+    <navbar:navbar row="1"/>
   </GridLayout>
 </Page>

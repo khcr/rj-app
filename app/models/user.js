@@ -40,7 +40,7 @@ function User(params) {
         url: config.apiUrl + "users/signin.json",
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        content: JSON.stringify({ user: { email: this.email, password: this.password }})
+        content: JSON.stringify({ user: { email: this.get("email"), password: this.get("password") }})
       }).then(function(res) {
         if(res.statusCode !== 200) { throw Error() };
         var result = res.content.toJSON();
@@ -86,7 +86,7 @@ function User(params) {
     viewModel.saveImage = function() {
       var user = this;
 
-      var upload = new Upload(user.imageField);
+      var upload = new Upload(user.get("imageField"));
       var task = upload.save();
 
       var promise = new Promise(function(resolve, reject) {
