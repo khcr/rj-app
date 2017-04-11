@@ -80,8 +80,7 @@ exports.editPost = function(e) {
 exports.deletePost = function(e) {
   var postTag = e.object;
   var id = postTag.postId;
-  var dialogs = require("ui/dialogs");
-  dialogs.confirm("Do you really want to delete this post ?").then(function(result) {
+  dialogsModule.confirm("Do you really want to delete this post ?").then(function(result) {
     if(result) {
       Post.delete(id).then(function() {
         postTag.parent.parent.visibility = "collapse";
@@ -89,4 +88,4 @@ exports.deletePost = function(e) {
     }
   });
 
-}
+};

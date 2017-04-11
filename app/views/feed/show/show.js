@@ -68,3 +68,16 @@ exports.editComment = function(e) {
     }
   });
 };
+
+exports.deleteComment = function(e) {
+  var commentTag = e.object;
+  var id = commentTag.commentId;
+  dialogsModule.confirm("Do you really want to delete this comment ?").then(function(result) {
+    if(result) {
+      Comment.delete(id).then(function() {
+        commentTag.parent.parent.visibility = "collapse";
+      });
+    }
+  });
+
+};

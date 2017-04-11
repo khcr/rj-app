@@ -54,4 +54,25 @@ function Comment(params) {
 
 }
 
+
+/* List */
+
+Comment.delete = function(id) {
+  var token = Session.getKey("rememberToken");
+  return http.request({
+    url: config.apiUrl + "comments/" + id + ".json?remember_token=" + token,
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" }
+  }).then(function(res) {
+    var result = res.content.toJSON();
+    if(res.statusCode !== 200) { throw result.errors; }
+    return result;
+  }, function (e) {
+    console.log(e);
+  });
+}
+
+
+/* /*/
+
 module.exports = Comment;

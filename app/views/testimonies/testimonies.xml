@@ -16,6 +16,7 @@
                 <GridLayout columns="*, auto" rows="*">
                   <TextView id="testimony" testimonyId="{{ id }}" text="{{ message }}" col="0"/>
                   <Button text="Edit" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" col="1"/>
+                  <Button text="Delete" testimonyId="{{ id }}" tap="deleteTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
                 </GridLayout>
               </GridLayout>
             </Repeater.itemTemplate>
