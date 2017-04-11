@@ -1,4 +1,5 @@
 var BackButton = require("../../helpers/back_button");
+var Observable = require("data/observable").Observable;
 
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
@@ -14,11 +15,16 @@ exports.loaded = function(args) {
   page.bindingContext = testimony;
   page.bindingContext.set("testimonies", TestimonyList);
   page.bindingContext.set("isSignedIn", Session.getKey("isSignedIn"));
+  
+  var isLoading = new Observable(true);
+  page.bindingContext.set("isLoading", isLoading);
 
   new BackButton(page).hide();
 
   TestimonyList.empty();
-  TestimonyList.all();
+  TestimonyList.all().then(function() {
+    page.bindingContext.set("isLoading", false);
+  });
 };
 
 exports.newTestimony = function() {

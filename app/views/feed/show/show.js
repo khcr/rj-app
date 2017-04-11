@@ -15,7 +15,8 @@ exports.loaded = function(args) {
 
   page.bindingContext = new Observable({
     comment: comment,
-    isSignedIn: Session.getKey("isSignedIn")
+    isSignedIn: Session.getKey("isSignedIn"),
+    isLoading: true
   });
 
   Post.find(postId).then(function(res) {
@@ -23,6 +24,7 @@ exports.loaded = function(args) {
     comments = new ObservableArray(post.comments)
     page.bindingContext.set("post", res);
     page.bindingContext.set("comments", comments);
+    page.bindingContext.set("isLoading", false);
   });
 };
 

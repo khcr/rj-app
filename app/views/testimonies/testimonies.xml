@@ -1,26 +1,35 @@
 <Page loaded="loaded" xmlns:navbar="views/components/navbar">
   <Page.actionBar>
       <ActionBar title="Testimonies">
+        <Image src="res://logorj" width="40px"/>
       </ActionBar>
   </Page.actionBar>
-  <GridLayout columns="*" rows="auto, *, 60">
-      <GridLayout columns="3*, *" rows="auto" row="0" visibility="{{ isSignedIn ? 'visible' : 'collapsed'}}">
-        <TextView text="{{ message }}" height="100" col="0" />
-        <Button text="Send" tap="newTestimony" class="submit" col="1" />
-      </GridLayout>
-      <ScrollView row="1">
-        <Repeater items="{{ testimonies }}">
-            <Repeater.itemTemplate>
-              <GridLayout columns="*" rows="auto, auto">
-                <Label text="{{ author }}" row="0"/>
-                <GridLayout columns="*, auto" rows="*">
-                  <TextView id="testimony" testimonyId="{{ id }}" text="{{ message }}" col="0"/>
-                  <Button text="Edit" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" col="1"/>
-                </GridLayout>
+  <GridLayout columns="*" rows="*, 60">
+    <ScrollView row="0">
+      <GridLayout rows="auto, *" cols="*" class="main">
+        <GridLayout columns="3*, *" rows="auto" row="0" visibility="{{ isSignedIn ? 'visible' : 'collapsed'}}">
+          <TextView text="{{ message }}" height="90" col="0" hint="Laissez votre témoignage" class="new-testimony" />
+          <Button text="&#xE163;" tap="newTestimony" class="submit" col="1" class="submit material-font" />
+        </GridLayout>
+        
+        <Repeater row="1" items="{{ testimonies }}">
+          <Repeater.itemTemplate>
+            <StackLayout orientation="vertical" class="testimony">
+              <GridLayout rows="auto" columns="auto, *" class="infos">
+                <label text="&#xE029;" row="0" col="0" class="material-font info-icon"/>
+                <label text="{{ author }}" row="0" col="1" class="author"></label>
               </GridLayout>
-            </Repeater.itemTemplate>
+              <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+              <GridLayout columns="*, auto" rows="*" class="testimony-message">
+                <TextView editable="false" id="testimony" testimonyId="{{ id }}" text="{{ message }}" col="0"/>
+                <Button text="Edit" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" col="1"/>
+              </GridLayout>
+            </StackLayout>
+          </Repeater.itemTemplate>
         </Repeater>
-      </ScrollView>
+        <ActivityIndicator busy="{{ isLoading }}" row="1" />
+      </GridLayout>
+    </ScrollView>
     <navbar:navbar row="2"/>
   </GridLayout>
 </Page>

@@ -4,6 +4,7 @@
   xmlns:post="views/components/post">
   <Page.actionBar>
       <ActionBar title="Feed">
+        <Image src="res://logorj" width="40px"/>
         <ActionItem visibility="{{ isAdmin ? 'visible' : 'collapse' }}" tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
       </ActionBar>
   </Page.actionBar>
@@ -37,6 +38,6 @@
         </lv:RadListView>
       </GridLayout>
       <navbar:navbar row="1"/>
-      <ActivityIndicator busy="{{ isLoading }}" rowSpan="2" colSpan="2" />
+      <ActivityIndicator busy="{{ isLoading }}" row="0" width="50" />
   </GridLayout>
 </Page>
