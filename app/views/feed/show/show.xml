@@ -1,26 +1,46 @@
 <Page loaded="loaded">
   <Page.actionBar>
   </Page.actionBar>
-    <StackLayout orientation="vertical">
-      <Label text="{{ post.author }}" />
-      <TextView text="{{ post.message }}" />
+  <ScrollView>
+    <StackLayout orientation="vertical" class="main">
+
+      <Label text="{{ 'Commenter le post de ' + post.author }}" class="title" />
+
+      <StackLayout orientation="vertical" class="news" class="post">
+        <GridLayout rows="auto" columns="auto, *" class="infos">
+          <label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
+          <label text="{{ post.author }}" row="0" col="1" class="author"></label>
+        </GridLayout>
+        <label text="{{'Posté le ' + post.createdAtDate + ' à ' + post.createdAtTime }}" row="1" col="1" class="date"></label>
+        <TextView editable="false" text="{{ post.message }}" editable="false" class="message" loaded="updateMessage" />
+        <!--<Image src="{{ post.imageUrl }}" />-->
+      </StackLayout>
 
       <GridLayout columns="3*, *" rows="auto" visibility="{{ isSignedIn ? 'visible' : 'collapsed'}}">
-        <TextView text="{{ comment.message }}" height="60" col="0" row="0"/>
-        <Button text="Send" tap="newComment" class="submit" col="1" row="0"/>
+        <TextView text="{{ comment.message }}" height="90" col="0" row="0" class="new-comment" hint="Votre commentaire"/>
+        <Button text="&#xE163;" tap="newComment" class="submit material-font" col="1" row="0"/>
       </GridLayout>
+      <label text="Connectez-vous pour commenter" visibility="{{ isSignedIn ? 'collapsed' : 'visible'}}" class="connect"/>
 
-      <ScrollView>
         <Repeater items="{{ comments }}">
             <Repeater.itemTemplate>
-              <StackLayout orientation="vertical">
-                <Label text="{{ author }}"/>
-                <TextView id="comment" commentId="{{ id }}" text="{{ message }}" />
-                <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
-                <Button text="Delete" commentId="{{ id }}" tap="deleteComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+
+              <StackLayout orientation="vertical" class="comment">
+                <GridLayout rows="auto" columns="*, auto" class="infos-comment">
+                  <label text="{{ author }}" row="0" col="0" class="author-comment"></label>
+                  <label text="&#xE0B9;" row="0" col="1" class="material-font info-icon-comment"/>
+                </GridLayout>
+                <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+                <StackLayout orientation="vertical">
+                  <TextView id="comment" editable="false" commentId="{{ id }}" text="{{ message }}" class="comment-message" />
+                  <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+                  <Button text="Delete" commentId="{{ id }}" tap="deleteComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+                </StackLayout>
+
               </StackLayout>
             </Repeater.itemTemplate>
         </Repeater>
-      </ScrollView>
+
     </StackLayout>
+    </ScrollView>
 </Page>

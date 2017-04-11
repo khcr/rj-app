@@ -23,3 +23,7 @@ Button.submit {
   border-color: #b2b2b2;
   border-width: 1px;
 }
+
+.material-font {
+  font-family: 'MaterialIcons-Regular';
+}

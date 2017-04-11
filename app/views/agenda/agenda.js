@@ -1,3 +1,5 @@
+var scrollViewModule = require("ui/scroll-view");
+
 var BackButton = require("../../helpers/back_button");
 
 var page;

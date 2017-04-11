@@ -1,5 +1,6 @@
 var application = require("application");
 var frameModule = require("ui/frame");
+var ImageModule = require("ui/image");
 var Session = require("./helpers/session");
 
 frameModule.Frame.defaultAnimatedNavigation = false;

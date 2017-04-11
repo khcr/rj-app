@@ -98,6 +98,10 @@ function Post(params) {
     return viewModel;
 }
 
+Post.State = new Observable({
+  isLoading: true
+});
+
 /* List */
 
 Post.List = function() {
@@ -107,6 +111,7 @@ Post.List = function() {
   viewModel.pageNumber = 1;
 
   viewModel.load = function() {
+    Post.State.set("isLoading", true);
     var token = Session.getKey("rememberToken");
     return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber + "&remember_token=" + token).then(function(res) {
       if(!res.length) {
@@ -116,6 +121,7 @@ Post.List = function() {
       res.forEach(function(post) {
         viewModel.push(post);
       });
+      Post.State.set("isLoading", false);
       return viewModel;
     }, function(e) {
       console.log(e);
@@ -136,7 +142,7 @@ Post.List = function() {
 Post.find = function(id) {
   var token = Session.getKey("rememberToken");
   return http.getJSON(config.apiUrl + "posts/" + id + ".json?remember_token=" + token).then(function(res) {
-    return new Post(res);
+    return new Observable(res);
   }, function (e) {
     console.log(e);
   });

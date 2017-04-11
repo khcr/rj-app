@@ -5,12 +5,13 @@ var dialogsModule = require("ui/dialogs");
 var BackButton = require("../../helpers/back_button");
 var Post = require("../../models/post");
 
-var PostList = new Post.List()
+var PostList = new Post.List();
 
 var page, postsView;
 
 var pageData = new observableModule.fromObject({
-    posts: PostList
+    posts: PostList,
+    isLoading: true
 });
 
 exports.loaded = function(args) {
@@ -18,8 +19,11 @@ exports.loaded = function(args) {
   page.bindingContext = pageData;
   page.bindingContext.set("isAdmin", Session.getKey("isAdmin"));
 
+  pageData.set("isLoading", true);
   PostList.empty();
-  PostList.load();
+  PostList.load().then(function() {
+    pageData.set("isLoading", false);
+  });
 
   new BackButton(page).hide();
 };
@@ -51,6 +55,37 @@ exports.loadMore = function(args) {
     }
   });
 };
+
+exports.updateMessage = function(args) {
+  labelLineHeight(args.object);
+}
+
+function labelLineHeight(nsLabel) {
+
+  if (page.ios) {
+    var label = nsLabel.ios;
+
+    var attributedString;
+    if (label.atributedText) {
+      attributedString = label.atributedText;
+    } else {
+      attributedString = NSMutableAttributedString.alloc().initWithString(label.text);
+    }
+
+    var paragraphStyle = NSMutableParagraphStyle.alloc().init();
+    paragraphStyle.lineSpacing = 55;
+    var range = { location: 0, length: label.text.length };
+    attributedString.addAttributeValueRange(NSParagraphStyleAttributeName, paragraphStyle, range);
+    label.attributedText = attributedString;
+  }
+  if (page.android) {
+    var label = nsLabel.android;
+
+    //Default spacing is 20% of text size
+    //setLineSpacing(add,multiplyby);
+    label.setLineSpacing(14, 1);
+  }
+}
 
 exports.editPost = function(e) {
   var postTag = e.object.parent.getViewById("post");

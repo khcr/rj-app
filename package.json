@@ -4,10 +4,10 @@
   "repository": "https://github.com/khcr/rj-app",
   "nativescript": {
     "id": "org.jstech.rjApp",
-    "tns-android": {
+    "tns-ios": {
       "version": "2.5.0"
     },
-    "tns-ios": {
+    "tns-android": {
       "version": "2.5.0"
     }
   },

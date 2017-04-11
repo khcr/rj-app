@@ -75,7 +75,7 @@ exports.deleteComment = function(e) {
   dialogsModule.confirm("Do you really want to delete this comment ?").then(function(result) {
     if(result) {
       Comment.delete(id).then(function() {
-        commentTag.parent.parent.visibility = "collapse";
+        commentTag.parent.parent.parent.visibility = "collapse";
       });
     }
   });
