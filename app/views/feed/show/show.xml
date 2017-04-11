@@ -24,6 +24,7 @@
 
         <Repeater items="{{ comments }}">
             <Repeater.itemTemplate>
+
               <StackLayout orientation="vertical" class="comment">
                 <GridLayout rows="auto" columns="*, auto" class="infos-comment">
                   <label text="{{ author }}" row="0" col="0" class="author-comment"></label>
@@ -34,6 +35,7 @@
                   <TextView id="comment" editable="false" commentId="{{ id }}" text="{{ message }}" class="comment-message" />
                   <Button text="Edit" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
                 </StackLayout>
+
               </StackLayout>
             </Repeater.itemTemplate>
         </Repeater>

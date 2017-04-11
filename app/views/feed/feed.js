@@ -1,6 +1,6 @@
 var observableModule = require("data/observable");
 var frameModule = require("ui/frame");
-var scrollEvent = require("ui/scroll-view").ScrollView.scrollEvent;
+var dialogsModule = require("ui/dialogs");
 
 var BackButton = require("../../helpers/back_button");
 var Post = require("../../models/post");
@@ -85,4 +85,43 @@ function labelLineHeight(nsLabel) {
     //setLineSpacing(add,multiplyby);
     label.setLineSpacing(14, 1);
   }
+}
+
+exports.editPost = function(e) {
+  var postTag = e.object.parent.getViewById("post");
+  var text = postTag.text;
+  var id = postTag.postId;
+  dialogsModule.prompt({
+    title: "Edit",
+    okButtonText: "Save",
+    cancelButtonText: "Cancel",
+    defaultText: text,
+    inputType: dialogsModule.inputType.text
+  }).then(function(r) {
+    if(r.text.trim() === "") {
+      dialogsModule.alert({
+        message: "Enter a message",
+        okButtonText: "OK"
+      });
+    } else if(r.result) {
+      var post = new Post({ message: r.text, id: id });
+      post.update().then(function(res) {
+        postTag.text = r.text;
+      });
+    }
+  });
+};
+
+exports.deletePost = function(e) {
+  var postTag = e.object;
+  var id = postTag.postId;
+  var dialogs = require("ui/dialogs");
+  dialogs.confirm("Do you really want to delete this post ?").then(function(result) {
+    if(result) {
+      Post.delete(id).then(function() {
+        postTag.parent.parent.visibility = "collapse";
+      });
+    }
+  });
+
 }

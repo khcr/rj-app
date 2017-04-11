@@ -14,18 +14,22 @@
             <lv:ListViewLinearLayout scrollDirection="Vertical"/>
           </lv:RadListView.listViewLayout>
           <lv:RadListView.itemTemplate>
+
             <StackLayout orientation="vertical" class="news">
               <GridLayout rows="auto, *" columns="auto, *" class="infos">
                 <label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
                 <label text="{{ author }}" row="0" col="1" class="author"></label>
               </GridLayout>
               <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+              <Button text="Edit" tap="editPost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+              <Button text="Delete" postId="{{ id }}" tap="deletePost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
               <TextView text="{{ message }}" editable="false" class="message" loaded="updateMessage" />
               <Image src="{{ imageUrl }}" />
               <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical" class="last-comment">
                 <label text="Dernier commentaire" class="last-comment"/>
                 <label text="{{ lastComment.author }}" editable="false" class="last-comment-author" />
                 <TextView text="{{ lastComment.message }}" editable="false" class="last-comment-message" />
+
               </StackLayout>
               <Label text="&#xE0B9;" postId="{{ id }}" tap="toPost" class="comments material-font" />
             </StackLayout>
