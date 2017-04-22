@@ -1,15 +1,24 @@
 <Page loaded="loaded">
   <Page.actionBar>
-      <ActionBar title="Sign Up" />
+      <ActionBar title="Sign Up">
+        <Image src="res://logorj" width="40px"/>
+      </ActionBar>
   </Page.actionBar>
+  <ScrollView>
   <StackLayout orientation="vertical" verticalAlignment="center">
-    <ListPicker id="gender" items="{{ genders }}" />
-    <TextField text="{{ firstname }}" hint="Firstname" autocorrect="false" />
-    <TextField text="{{ lastname }}" hint="Lastname" autocorrect="false" />
-    <TextField text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-    <TextField hint="Password" text="{{ password }}" secure="true" />
-    <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
+
+      <Label text="&#xE24E;" class="material-font icon"/>
+
+      <ListPicker id="gender" items="{{ genders }}" />
+      <TextField text="{{ firstname }}" hint="Firstname" autocorrect="false" />
+      <TextField text="{{ lastname }}" hint="Lastname" autocorrect="false" />
+      <TextField text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+      <TextField hint="Password" text="{{ password }}" secure="true" />
+      <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
+    
 
     <Button text="Sign up" class="submit" tap="signUp" />
+    
   </StackLayout>
+  </ScrollView>
 </Page>
