@@ -1,6 +1,6 @@
 <StackLayout id="navbar" loaded="loaded" orientation="horizontal">
 
-  <button class="nav current" tap="toFeed">
+  <button id="feed" class="nav" tap="toFeed">
     <button.formattedText>
         <formattedString>
           <formattedString.spans>
@@ -10,7 +10,7 @@
         </formattedString>
     </button.formattedText>
   </button>
-  <button class="nav" tap="toAgenda">
+  <button id="agenda" class="nav" tap="toAgenda">
     <button.formattedText>
         <formattedString>
           <formattedString.spans>
@@ -20,7 +20,7 @@
         </formattedString>
     </button.formattedText>
   </button>
-  <button class="nav" tap="toTestimonies">
+  <button id="testimonies" class="nav" tap="toTestimonies">
     <button.formattedText>
         <formattedString>
           <formattedString.spans>
@@ -30,7 +30,7 @@
         </formattedString>
     </button.formattedText>
   </button>
-  <button class="nav" tap="toPlus">
+  <button id="plus" class="nav" tap="toPlus">
     <button.formattedText>
         <formattedString>
           <formattedString.spans>

@@ -8,6 +8,10 @@ exports.loaded = function(args) {
   // Set layout position in GridLayout
   stackLayout = container.getViewById("navbar");
   stackLayout.row = container.row;
+
+  var className = container.pageName;
+  var button = container.getViewById(className);
+  button.className = button.className + " current";
 }
 
 exports.toAgenda = function() {

@@ -12,7 +12,7 @@
           <TextView text="{{ message }}" height="90" col="0" hint="Laissez votre témoignage" class="new-testimony" />
           <Button text="&#xE163;" tap="newTestimony" class="submit" col="1" class="submit material-font" />
         </GridLayout>
-        
+
         <Repeater row="1" items="{{ testimonies }}">
           <Repeater.itemTemplate>
             <StackLayout orientation="vertical" class="testimony">
@@ -25,13 +25,13 @@
                 <TextView editable="false" id="testimony" testimonyId="{{ id }}" text="{{ message }}" class="testimony-message" col="0" row="0"/>
                 <Button text="Edit" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" col="0" row="1"/>
                 <Button text="Delete" testimonyId="{{ id }}" tap="deleteTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" row="2" col="0"/>
-              </StackLayout> 
+              </StackLayout>
             </StackLayout>
           </Repeater.itemTemplate>
         </Repeater>
-        <ActivityIndicator busy="{{ isLoading }}" row="1" />
+        <ActivityIndicator busy="{{ isLoading }}" row="1"/>
       </GridLayout>
     </ScrollView>
-    <navbar:navbar row="2"/>
+    <navbar:navbar row="2" pageName="testimonies"/>
   </GridLayout>
 </Page>

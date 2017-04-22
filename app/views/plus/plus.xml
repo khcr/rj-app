@@ -15,7 +15,7 @@
                 </formattedString.spans>
               </formattedString>
           </button.formattedText>
-        </button>   
+        </button>
         <button>
           <button.formattedText>
               <formattedString>
@@ -37,6 +37,6 @@
           </button.formattedText>
         </button>
       </StackLayout>
-      <navbar:navbar row="1"/>
+      <navbar:navbar row="1" pageName="plus"/>
   </GridLayout>
 </Page>

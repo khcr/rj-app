@@ -1,5 +1,5 @@
-<Page loaded="loaded" 
-  xmlns:navbar="views/components/navbar" 
+<Page loaded="loaded"
+  xmlns:navbar="views/components/navbar"
   xmlns:lv="nativescript-telerik-ui/listview"
   xmlns:post="views/components/post">
   <Page.actionBar>
@@ -37,7 +37,7 @@
           </lv:RadListView.itemTemplate>
         </lv:RadListView>
       </GridLayout>
-      <navbar:navbar row="1"/>
+      <navbar:navbar row="1" pageName="feed"/>
       <ActivityIndicator busy="{{ isLoading }}" row="0" width="50" />
   </GridLayout>
 </Page>

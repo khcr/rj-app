@@ -34,6 +34,6 @@
             </GridLayout>
         </StackLayout>
     </ScrollView>
-    <navbar:navbar row="1"/>
+    <navbar:navbar row="1" pageName="agenda"/>
   </GridLayout>
 </Page>
