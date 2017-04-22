@@ -1,13 +1,16 @@
 <Page loaded="loaded">
   <Page.actionBar>
       <ActionBar title="Sign In">
+        <Image src="res://logorj" width="40px"/>
       </ActionBar>
   </Page.actionBar>
   <StackLayout orientation="vertical" verticalAlignment="center">
+    <Label text="&#xE0DA;" class="material-font icon"/>
     <TextField text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
     <TextField hint="Password" text="{{ password }}" secure="true" />
 
-    <Button text="Sign in" class="submit" tap="signIn" />
+    <Button text="Sign in" class="submit" tap="signIn" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+    <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading ? 'visible' : 'collapse' }}" row="0" width="50" />
     <Button text="Sign up" class="link" tap="toSignUp" />
   </StackLayout>
 </Page>

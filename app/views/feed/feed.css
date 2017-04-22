@@ -60,6 +60,16 @@ Image {
   border-radius: 3px;
 }
 
+Button.action {
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  font-size: 18px;
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 1;
+}
+
 /* Comments */
 
 Label.comments {
