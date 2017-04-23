@@ -118,7 +118,7 @@ exports.deletePost = function(e) {
   dialogsModule.confirm("Do you really want to delete this post ?").then(function(result) {
     if(result) {
       Post.delete(id).then(function() {
-        postTag.parent.parent.visibility = "collapse";
+        postTag.parent.parent.parent.visibility = "collapse";
       });
     }
   });

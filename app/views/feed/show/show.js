@@ -47,7 +47,7 @@ exports.newComment = function() {
 };
 
 exports.editComment = function(e) {
-  var commentTag = e.object.parent.getViewById("comment");
+  var commentTag = e.object.parent.parent.getViewById("comment");
   var text = commentTag.text;
   var id = commentTag.commentId;
   dialogsModule.prompt({

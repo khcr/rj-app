@@ -1,0 +1,7 @@
+<Page loaded="loaded">
+  <Page.actionBar>
+      <ActionBar title="About">
+        <Image src="res://logorj" width="40px"/>
+      </ActionBar>
+  </Page.actionBar>
+</Page>

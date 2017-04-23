@@ -15,7 +15,7 @@ exports.loaded = function(args) {
   page.bindingContext = testimony;
   page.bindingContext.set("testimonies", TestimonyList);
   page.bindingContext.set("isSignedIn", Session.getKey("isSignedIn"));
-  
+
   var isLoading = new Observable(true);
   page.bindingContext.set("isLoading", isLoading);
 
@@ -46,7 +46,7 @@ exports.newTestimony = function() {
 }
 
 exports.editTestimony = function(e) {
-  var testimonyTag = e.object.parent.getViewById("testimony");
+  var testimonyTag = e.object.parent.parent.getViewById("testimony");
   var text = testimonyTag.text;
   var id = testimonyTag.testimonyId;
   dialogsModule.prompt({
