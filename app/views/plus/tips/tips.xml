@@ -4,4 +4,10 @@
         <Image src="res://logorjpr" width="40px"/>
       </ActionBar>
   </Page.actionBar>
+  <StackLayout orientation="vertical" class="content">
+    <ScrollView>
+      <HtmlView id="htmlview"/>
+    </ScrollView>
+  </StackLayout>
+
 </Page>
