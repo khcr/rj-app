@@ -16,7 +16,7 @@
               </formattedString>
           </button.formattedText>
         </button>
-        <button>
+        <button tap="toTips">
           <button.formattedText>
               <formattedString>
                 <formattedString.spans>
@@ -26,7 +26,7 @@
               </formattedString>
           </button.formattedText>
         </button>
-        <button>
+        <button tap="toAbout">
           <button.formattedText>
               <formattedString>
                 <formattedString.spans>

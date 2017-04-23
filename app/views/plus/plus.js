@@ -19,4 +19,14 @@ exports.toAccount = function() {
   } else {
     topmost.navigate({ moduleName: "views/user/signin/signin", animated: true });
   }
-}
+};
+
+exports.toTips = function() {
+  var topmost = frameModule.topmost();
+  topmost.navigate({ moduleName: "views/plus/tips/tips", animated: true });
+};
+
+exports.toAbout = function() {
+  var topmost = frameModule.topmost();
+  topmost.navigate({ moduleName: "views/plus/about/about", animated: true });
+};
