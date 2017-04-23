@@ -1,7 +1,7 @@
 <Page loaded="loaded" xmlns:navbar="views/components/navbar">
   <Page.actionBar>
       <ActionBar title="Testimonies">
-        <Image src="res://logorj" width="40px"/>
+        <Image src="res://logorjpr" width="40px"/>
       </ActionBar>
   </Page.actionBar>
 

@@ -4,7 +4,7 @@
   xmlns:post="views/components/post">
   <Page.actionBar>
       <ActionBar title="Feed">
-        <Image src="res://logorj" width="40px"/>
+        <Image src="res://logorjpr" width="40px"/>
         <ActionItem visibility="{{ isAdmin ? 'visible' : 'collapse' }}" tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
       </ActionBar>
   </Page.actionBar>
@@ -18,13 +18,13 @@
 
             <StackLayout orientation="vertical" class="news">
               <GridLayout rows="auto, *" columns="auto, *, auto, auto" class="infos">
-                <label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
-                <label text="{{ author }}" row="0" col="1" class="author"></label>
+                <Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
+                <Label text="{{ author }}" row="0" col="1" class="author"/>
                 <Button text="&#xE150;" class="material-font action" row="0" col="2" tap="editPost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
                 <Button text="&#xE15C;" class="material-font action" row="0" col="3" postId="{{ id }}" tap="deletePost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
               </GridLayout>
               <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
-              <TextView text="{{ message }}" editable="false" class="message" loaded="updateMessage" />
+              <TextView text="{{ message }}" editable="false" class="message" />
               <Image src="{{ imageUrl }}" />
               <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical" class="last-comment">
                 <label text="Dernier commentaire" class="last-comment"/>

@@ -4,7 +4,7 @@ StackLayout.main {
   padding: 10px;
 }
 
-GridLayout.post {
+StackLayout.post {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 1px 1px 1px #000;
@@ -108,13 +108,13 @@ GridLayout.infos {
 Label.info-icon {
   font-size: 40px;
   vertical-align: middle;
-  text-align: center;
+  text-align: left;
 }
 
 Label.author {
   font-size: 16px;
-  padding: 0 0 5px 20px;
   vertical-align: middle;
+  margin-bottom: 5px;
 }
 
 Label.date {

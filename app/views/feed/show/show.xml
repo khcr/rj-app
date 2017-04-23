@@ -1,20 +1,21 @@
 <Page loaded="loaded">
   <Page.actionBar>
+    <Image src="res://logorjpr" width="40px"/>
   </Page.actionBar>
   <ScrollView>
     <StackLayout orientation="vertical" class="main">
 
       <Label text="{{ 'Commenter le post de ' + post.author }}" class="title" />
       
-      <GridLayout rows="auto, auto, auto" cols="auto" class="post">
-        <GridLayout row="0" rows="auto" columns="auto, *" class="infos">
-          <label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
-          <label text="{{ post.author }}" row="0" col="1" class="author"></label>
+      <StackLayout orientation="vertical" class="post">
+        <GridLayout rows="auto, *" columns="60, *" class="infos">
+          <Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
+          <Label text="{{ post.author }}" row="0" col="1" class="author"/>
         </GridLayout>
-        <label row="1" text="{{'Posté le ' + post.createdAtDate + ' à ' + post.createdAtTime }}" row="1" col="1" class="date"></label>
-        <TextView row="2" editable="false" text="{{ post.message }}" editable="false" class="message" loaded="updateMessage" />
-        <ActivityIndicator row="2" rowspan="2"  busy="{{ isLoading }}" />
-      </GridLayout>
+        <label text="{{'Posté le ' + post.createdAtDate + ' à ' + post.createdAtTime }}" class="date"></label>
+        <TextView editable="false" text="{{ post.message }}" editable="false" class="message" loaded="updateMessage" />
+        <ActivityIndicator busy="{{ isLoading }}" />
+      </StackLayout>
 
       <GridLayout columns="3*, *" rows="auto" visibility="{{ isSignedIn ? 'visible' : 'collapsed'}}">
         <TextView text="{{ comment.message }}" height="90" col="0" row="0" class="new-comment" hint="Votre commentaire"/>

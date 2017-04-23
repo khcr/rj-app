@@ -1,7 +1,7 @@
 <Page loaded="loaded" xmlns:navbar="views/components/navbar">
   <Page.actionBar>
       <ActionBar title="Plus">
-        <Image src="res://logorj" width="40px"/>
+        <Image src="res://logorjpr" width="40px"/>
       </ActionBar>
   </Page.actionBar>
   <GridLayout columns="*" rows="*, 60">

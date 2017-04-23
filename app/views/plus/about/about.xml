@@ -1,7 +1,14 @@
 <Page loaded="loaded">
   <Page.actionBar>
       <ActionBar title="About">
-        <Image src="res://logorj" width="40px"/>
+        <Image src="res://logorjpr" width="40px"/>
       </ActionBar>
+      <StackLayout orientation="vertical">
+        <Label text="RJ-App" />
+        <Label text="Pre-release 'Beta' version 1.0" class="version" />
+        <Label text="Développé par JS-Tech" />
+        <Image src="res://jstech" width="90px"/>
+        <Label text="we@jstech.ch" />
+      </StackLayout>
   </Page.actionBar>
 </Page>

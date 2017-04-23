@@ -5,6 +5,7 @@ TextView {
   padding: 10;
   border-color: #b2b2b2;
   border-width: 1px;
+  font-size: 15px;
 }
 TextField {
   margin: 10;

@@ -1,0 +1,13 @@
+Page {
+  color: #777;
+  font-size: 15px;
+}
+
+Label.version {
+  padding: 0 0 20px 0;
+}
+
+StackLayout {
+  text-align: center;
+  padding: 30px;
+}
