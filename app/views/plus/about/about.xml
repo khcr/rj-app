@@ -4,8 +4,8 @@
         <Image src="res://logorjpr" width="40px"/>
       </ActionBar>
       <StackLayout orientation="vertical">
-        <Label text="RJ-App" />
-        <Label text="Pre-release 'Beta' version 1.0" class="version" />
+        <Label text="RJ-App (2017)" />
+        <Label text="Pre-release 'Coquelicot' version 2.0" class="version" />
         <Label text="Développé par JS-Tech" />
         <Image src="res://jstech" width="90px"/>
         <Label text="we@jstech.ch" />

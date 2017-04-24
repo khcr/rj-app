@@ -5,6 +5,7 @@
       </ActionBar>
   </Page.actionBar>
   <StackLayout orientation="vertical" class="content">
+    
     <ScrollView>
       <HtmlView id="htmlview"/>
     </ScrollView>

@@ -1,13 +1,33 @@
 @import url('~/post');
 
+/* Global */
+
 GridLayout.main {
   background-color: #e5e6e7;
   font-family: "OpenSans-Light";
 }
 
+TextView {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
 GridLayout.list {
   padding: 10px 10px 0 10px;
 }
+
+/* Post */
+
+StackLayout.news {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000;
+  margin: 0 0 50px 0;
+}
+
+/* Infos */
 
 GridLayout.infos {
   padding: 10px 10px 0px 10px;
@@ -36,30 +56,6 @@ Label.date {
   padding: 0 5px 0 0;
 }
 
-TextView {
-  background-color: transparent;
-  border-color: transparent;
-  padding: 0;
-  margin: 0;
-}
-
-TextView.message {
-  padding: 15px 10px 20px 10px;
-  line-height: 200px;
-  color: #555;
-}
-
-StackLayout.news {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px #000;
-  margin: 0 0 50px 0;
-}
-
-Image {
-  border-radius: 3px;
-}
-
 Button.action {
   padding: 0;
   margin: 0;
@@ -68,6 +64,18 @@ Button.action {
   background-color: transparent;
   border-color: transparent;
   border-width: 1;
+}
+
+/* Post content */
+
+TextView.message {
+  padding: 15px 10px 20px 10px;
+  line-height: 200px;
+  color: #555;
+}
+
+Image {
+  border-radius: 3px;
 }
 
 /* Comments */
