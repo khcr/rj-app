@@ -1,6 +1,7 @@
 var observableModule = require("data/observable");
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
+var colorModule = require("color");
 
 var BackButton = require("../../helpers/back_button");
 var Post = require("../../models/post");
@@ -91,5 +92,11 @@ exports.deletePost = function(e) {
       });
     }
   });
+};
 
+exports.onItemLoading = function (args) {
+  if (page.ios) {
+    // http://stackoverflow.com/questions/37212069/set-radlistview-itemtemplate-to-transparant-on-ios
+    // args.ios.backgroundView.backgroundColor = new colorModule.Color(20, 255, 0, 0);
+  }
 };

@@ -12,13 +12,13 @@
 
   <GridLayout columns="*" rows="*, 60" class="main">
       <GridLayout rows="auto, *" class="list">
-        <lv:RadListView items="{{ posts }}" pullToRefresh="true" row="1" pullToRefreshInitiated="refresh" loadOnDemandMode="Auto" loadMoreDataRequested="loadMore">
-          <lv:RadListView.listViewLayout>
+        <lv:RadListView itemLoading="onItemLoading" backgroundColor="transparent" items="{{ posts }}" pullToRefresh="true" row="1" pullToRefreshInitiated="refresh" loadOnDemandMode="Auto" loadMoreDataRequested="loadMore">
+          <lv:RadListView.listViewLayout backgroundColor="transparent">
             <lv:ListViewLinearLayout scrollDirection="Vertical"/>
           </lv:RadListView.listViewLayout>
 
           <!-- ##### Post ##### -->
-          <lv:RadListView.itemTemplate>
+          <lv:RadListView.itemTemplate backgroundColor="transparent">
             <StackLayout orientation="vertical" class="news">
 
               <!-- ##### Infos ##### -->
