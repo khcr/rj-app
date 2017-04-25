@@ -17,8 +17,8 @@ exports.newPost = function() {
 
   if(message.trim() === "") {
     dialogsModule.alert({
-      message: "Enter a message",
-      okButtonText: "OK"
+      message: "Entrez un message",
+      okButtonText: "Compris"
     });
     return;
   }

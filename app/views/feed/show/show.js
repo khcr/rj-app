@@ -34,8 +34,8 @@ exports.newComment = function() {
 
   if(message.trim() === "") {
     dialogsModule.alert({
-      message: "Enter a message",
-      okButtonText: "OK"
+      message: "Entrez un message",
+      okButtonText: "Compris"
     });
     return;
   }
@@ -51,16 +51,16 @@ exports.editComment = function(e) {
   var text = commentTag.text;
   var id = commentTag.commentId;
   dialogsModule.prompt({
-    title: "Edit",
-    okButtonText: "Save",
-    cancelButtonText: "Cancel",
+    title: "Modifier",
+    okButtonText: "Enregistrer",
+    cancelButtonText: "Annuler",
     defaultText: text,
     inputType: dialogsModule.inputType.text
   }).then(function(r) {
     if(r.text.trim() === "") {
       dialogsModule.alert({
-        message: "Enter a message",
-        okButtonText: "OK"
+        message: "Entrez un message",
+        okButtonText: "Compris"
       });
     } else if(r.result) {
       var comment = new Comment({ message: r.text, id: id });
@@ -74,7 +74,12 @@ exports.editComment = function(e) {
 exports.deleteComment = function(e) {
   var commentTag = e.object;
   var id = commentTag.commentId;
-  dialogsModule.confirm("Do you really want to delete this comment ?").then(function(result) {
+  dialogsModule.confirm({
+    title: "Confirmation",
+    message: "Supprimer ce commentaire ?",
+    cancelButtonText: "Annuler",
+    okButtonText: "Confirmer"
+  }).then(function(result) {
     if(result) {
       Comment.delete(id).then(function() {
         commentTag.parent.parent.parent.visibility = "collapse";

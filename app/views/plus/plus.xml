@@ -11,7 +11,7 @@
               <formattedString>
                 <formattedString.spans>
                     <span text="&#xE87C;   " fontFamily="MaterialIcons-Regular" />
-                    <span text="{{ isSignedIn ? 'Account' : 'Login' }}" />
+                    <span text="{{ isSignedIn ? 'Mon compte' : 'Se connecter' }}" />
                 </formattedString.spans>
               </formattedString>
           </button.formattedText>

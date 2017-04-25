@@ -1,13 +1,13 @@
 <Page loaded="loaded">
   <Page.actionBar>
-      <ActionBar title="Profile picture" />
+      <ActionBar title="Photo de profil" />
   </Page.actionBar>
   <StackLayout orientation="vertical" verticalAlignment="center">
 
     <Image id="profile" />
 
-    <Button text="Choose a photo" tap="selectImage" />
-    <Button text="Take a photo" tap="takeImage" />
+    <Button text="Choisir une photo" tap="selectImage" />
+    <Button text="Prendre une photo" tap="takeImage" />
     <Image id="preview" />
 
     <Button text="Send" class="submit" tap="updateImage" />

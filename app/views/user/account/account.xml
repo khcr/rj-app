@@ -1,12 +1,12 @@
 <Page loaded="loaded">
   <Page.actionBar>
-      <ActionBar title="My Account" />
+      <ActionBar title="Mon compte" />
   </Page.actionBar>
   <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
     <Label text="{{ firstname + ' ' + lastname }}" />
     <Label text="{{ email }}" />
-    <Button text="Edit" tap="toEdit" class="submit" />
-    <Button text="Profile picture" tap="toImage" class="submit" />
-    <Button text="Sign Out" tap="signOut" class="submit" />
+    <Button text="Modifer" tap="toEdit" class="submit" />
+    <Button text="Photo de profil" tap="toImage" class="submit" />
+    <Button text="Se déconnecter" tap="signOut" class="submit" />
   </StackLayout>
 </Page>

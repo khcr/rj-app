@@ -1,16 +1,16 @@
 <Page loaded="loaded">
   <Page.actionBar>
-      <ActionBar title="Edit my account" />
+      <ActionBar title="Modifier mon compte" />
   </Page.actionBar>
   <StackLayout orientation="vertical" verticalAlignment="center">
 
     <ListPicker id="gender" items="{{ genders }}" />
-    <TextField text="{{ firstname }}" hint="Firstname" autocorrect="false" />
-    <TextField text="{{ lastname }}" hint="Lastname" autocorrect="false" />
-    <TextField text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-    <TextField hint="Password" text="{{ password }}" secure="true" />
+    <TextField text="{{ firstname }}" hint="Prénom" autocorrect="false" />
+    <TextField text="{{ lastname }}" hint="Nom" autocorrect="false" />
+    <TextField text="{{ email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+    <TextField hint="Mot de passe" text="{{ password }}" secure="true" />
     <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
 
-    <Button text="Edit" class="submit" tap="updateAccount" />
+    <Button text="Enregistrer" class="submit" tap="updateAccount" />
   </StackLayout>
 </Page>

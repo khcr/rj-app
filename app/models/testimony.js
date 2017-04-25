@@ -83,7 +83,7 @@ Testimony.List = function() {
 Testimony.delete = function(id) {
   var token = Session.getKey("rememberToken");
   return http.request({
-    url: config.apiUrl + "testimony/" + id + ".json?remember_token=" + token,
+    url: config.apiUrl + "testimonies/" + id + ".json?remember_token=" + token,
     method: "DELETE",
     headers: { "Content-Type": "application/json" }
   }).then(function(res) {

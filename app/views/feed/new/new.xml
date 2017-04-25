@@ -1,15 +1,15 @@
 <Page loaded="loaded">
   <Page.actionBar>
-    <ActionBar title="New post"/>
+    <ActionBar title="Poster"/>
   </Page.actionBar>
   <ScrollView>
     <StackLayout orientation="vertical" verticalAlignment="center">
         <TextView text="{{ message }}" height="200"/>
-        <Button text="Choose a photo" tap="selectImage" />
-        <Button text="Take a photo" tap="takeImage" />
+        <Button text="Choisir une photo" tap="selectImage" />
+        <Button text="Prendre une photo" tap="takeImage" />
         <Image id="preview" />
 
-        <Button text="Post" tap="newPost" class="submit" />
+        <Button text="Poster" tap="newPost" class="submit" />
     </StackLayout>
   </ScrollView>
 </Page>

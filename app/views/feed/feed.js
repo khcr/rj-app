@@ -58,20 +58,20 @@ exports.loadMore = function(args) {
 };
 
 exports.editPost = function(e) {
-  var postTag = e.object.parent.getViewById("post");
+  var postTag = e.object.parent.parent.getViewById("post");
   var text = postTag.text;
   var id = postTag.postId;
   dialogsModule.prompt({
-    title: "Edit",
-    okButtonText: "Save",
-    cancelButtonText: "Cancel",
+    title: "Modifier",
+    okButtonText: "Enregistrer",
+    cancelButtonText: "Annuler",
     defaultText: text,
     inputType: dialogsModule.inputType.text
   }).then(function(r) {
     if(r.text.trim() === "") {
       dialogsModule.alert({
-        message: "Enter a message",
-        okButtonText: "OK"
+        message: "Entrez un message",
+        okButtonText: "Compris"
       });
     } else if(r.result) {
       var post = new Post({ message: r.text, id: id });
@@ -85,7 +85,12 @@ exports.editPost = function(e) {
 exports.deletePost = function(e) {
   var postTag = e.object;
   var id = postTag.postId;
-  dialogsModule.confirm("Do you really want to delete this post ?").then(function(result) {
+  dialogsModule.confirm({
+    title: "Confirmation",
+    message: "Supprimer ce post ?",
+    cancelButtonText: "Annuler",
+    okButtonText: "Confirmer"
+  }).then(function(result) {
     if(result) {
       Post.delete(id).then(function() {
         postTag.parent.parent.parent.visibility = "collapse";

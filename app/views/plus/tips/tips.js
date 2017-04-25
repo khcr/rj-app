@@ -1,18 +1,18 @@
 var htmlViewModule = require("ui/html-view");
 
-var content = 
+var content =
     `<section>
       <h2>Où manger?</h2>
       <p>
        Tu as plusieurs lieux possibles pour manger durant le weekend de la RJ.<br>
-       Sur place, à Espace Gruyère, tu peux trouver dans le village différents endroits qui vendent des snacks tels que des sandwichs, des hot-dogs, hamburgers, etc.<br>
+       Sur place, à l'Espace Gruyère, tu peux trouver dans le village différents endroits qui vendent des snacks tels que des sandwichs, des hot-dogs, hamburgers, etc.<br>
        Dans la ville de Bulle, tu as beaucoup de choix pour te restaurer tout en restant à proximité de la RJ. Retrouve ces différentes adresses comprenant des kebabs, pizzas ou supermarchés dans l'onglet "Map".<br>
       </p>
     </section>
 
     <section>
       <h2>Espace écoute et prière</h2>
-      <p>Ouvert entre les plénières et pendant les ateliers le samedi, cet espace se trouve au 1er étage en face des caisses. Besoin d’encouragement, de passer un temps au calme et de recevoir la prière? C’est « the place to be »!</p>
+      <p>Ouvert entre les plénières et pendant les ateliers le samedi, cet espace se trouve au 1er étage en face des caisses. Besoin d’encouragement, de passer un temps au calme et de recevoir la prière? Des équipiers de prière seront là pour toi. C’est « the place to be »!</p>
     </section>
 
     <section>

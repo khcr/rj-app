@@ -31,7 +31,7 @@
               <!-- ##### ##### -->
 
               <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
-              <TextView text="{{ message }}" editable="false" class="message" />
+              <TextView id="post" postId="{{ id }}" text="{{ message }}" editable="false" class="message" />
               <Image src="{{ imageUrl }}" />
 
               <!-- ##### Comment ##### -->
@@ -42,7 +42,7 @@
               </StackLayout>
               <Label text="&#xE0B9;" postId="{{ id }}" tap="toPost" class="comments material-font" />
               <!-- ##### ##### -->
-              
+
             </StackLayout>
           </lv:RadListView.itemTemplate>
           <!-- ##### ##### -->

@@ -32,8 +32,8 @@ exports.newTestimony = function() {
 
   if(message.trim() === "") {
     dialogsModule.alert({
-      message: "Enter a message",
-      okButtonText: "OK"
+      message: "Entrez un message",
+      okButtonText: "Compris"
     });
     return;
   }
@@ -50,16 +50,16 @@ exports.editTestimony = function(e) {
   var text = testimonyTag.text;
   var id = testimonyTag.testimonyId;
   dialogsModule.prompt({
-    title: "Edit",
-    okButtonText: "Save",
-    cancelButtonText: "Cancel",
+    title: "Modifier",
+    okButtonText: "Enregistrer",
+    cancelButtonText: "Annuler",
     defaultText: text,
     inputType: dialogsModule.inputType.text
   }).then(function(r) {
       if(r.text.trim() === "") {
         dialogsModule.alert({
-          message: "Enter a message",
-          okButtonText: "OK"
+          message: "Entrez un message",
+          okButtonText: "Compris"
         });
       } else if(r.result) {
         var comment = new Testimony({ message: r.text, id: id });
@@ -73,7 +73,12 @@ exports.editTestimony = function(e) {
 exports.deleteTestimony = function(e) {
   var testimonyTag = e.object;
   var id = testimonyTag.testimonyId;
-  dialogsModule.confirm("Do you really want to delete this testimony ?").then(function(result) {
+  dialogsModule.confirm({
+    title: "Confirmation",
+    message: "Supprimer ce témoignage ?",
+    cancelButtonText: "Annuler",
+    okButtonText: "Confirmer"
+  }).then(function(result) {
     if(result) {
       Testimony.delete(id).then(function() {
         testimonyTag.parent.parent.parent.visibility = "collapse";

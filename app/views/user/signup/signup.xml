@@ -1,6 +1,6 @@
 <Page loaded="loaded">
   <Page.actionBar>
-      <ActionBar title="Sign Up">
+      <ActionBar title="Créer un compte">
         <Image src="res://logorjpr" width="40px"/>
       </ActionBar>
   </Page.actionBar>
@@ -10,15 +10,15 @@
       <Label text="&#xE24E;" class="material-font icon"/>
 
       <ListPicker id="gender" items="{{ genders }}" />
-      <TextField text="{{ firstname }}" hint="Firstname" autocorrect="false" />
-      <TextField text="{{ lastname }}" hint="Lastname" autocorrect="false" />
-      <TextField text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-      <TextField hint="Password" text="{{ password }}" secure="true" />
+      <TextField text="{{ firstname }}" hint="Prénom" autocorrect="false" />
+      <TextField text="{{ lastname }}" hint="Nom" autocorrect="false" />
+      <TextField text="{{ email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+      <TextField hint="Mot de passe" text="{{ password }}" secure="true" />
       <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
-    
 
-    <Button text="Sign up" class="submit" tap="signUp" />
-    
+
+    <Button text="S'inscrire" class="submit" tap="signUp" />
+
   </StackLayout>
   </ScrollView>
 </Page>
