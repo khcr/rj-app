@@ -10,6 +10,6 @@
     <Button text="Prendre une photo" tap="takeImage" />
     <Image id="preview" />
 
-    <Button text="Send" class="submit" tap="updateImage" />
+    <Button text="Enregistrer" class="submit" tap="updateImage" />
   </StackLayout>
 </Page>

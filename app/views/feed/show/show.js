@@ -14,6 +14,7 @@ exports.loaded = function(args) {
   comment = new Comment({ postId: postId });
 
   page.bindingContext = new Observable({
+    post: new Post(),
     comment: comment,
     isSignedIn: Session.getKey("isSignedIn"),
     isLoading: true

@@ -11,12 +11,14 @@ function Post(params) {
     params = params || {};
 
     var viewModel = new Observable({
-        id: params.id || null,
-        message: params.message || "",
-        author: params.author || "",
-        imageId: params.imageId || null,
-        lastComment: params.lastComment || "",
-        comments: params.comments || []
+      id: params.id || null,
+      message: params.message || "",
+      author: params.author || "",
+      imageId: params.imageId || null,
+      createdAtDate: params.createdAtDate || "",
+      createdAtTime: params.createdAtTime || "",
+      lastComment: params.lastComment || "",
+      comments: params.comments || []
     });
 
     viewModel.save = function() {
@@ -111,7 +113,6 @@ Post.List = function() {
   viewModel.pageNumber = 1;
 
   viewModel.load = function() {
-    Post.State.set("isLoading", true);
     var token = Session.getKey("rememberToken");
     return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber + "&remember_token=" + token).then(function(res) {
       if(!res.length) {

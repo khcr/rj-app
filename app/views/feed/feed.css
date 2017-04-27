@@ -14,14 +14,14 @@ TextView {
   margin: 0;
 }
 
-GridLayout.list {
+StackLayout.list {
   padding: 10px 10px 0 10px;
 }
 
 /* Post */
 
 StackLayout.news {
-  background-color: red;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 1px 1px 1px #000;
   margin: 0 0 50px 0;
@@ -84,6 +84,11 @@ Label.comments {
   text-align: center;
   font-size: 25px;
   padding: 10px;
+}
+
+Label.comments.text {
+  font-size: 13px;
+  padding: 13px 0 0 0;
 }
 
 StackLayout.last-comment {

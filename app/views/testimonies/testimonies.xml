@@ -32,6 +32,6 @@
         <ActivityIndicator busy="{{ isLoading }}" row="1"/>
       </GridLayout>
     </ScrollView>
-    <navbar:navbar row="2" pageName="testimonies"/>
+    <navbar:navbar row="1" pageName="testimonies"/>
   </GridLayout>
 </Page>

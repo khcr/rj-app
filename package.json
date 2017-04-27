@@ -3,7 +3,7 @@
   "readme": "Application officielle pour la Rencontre de Jeunesse en Suisse.",
   "repository": "https://github.com/khcr/rj-app",
   "nativescript": {
-    "id": "org.jstech.rjApp",
+    "id": "com.id1lnx0as1aunq3r129xr5d",
     "tns-android": {
       "version": "2.5.0"
     },
@@ -18,7 +18,8 @@
     "nativescript-permissions": "^1.2.3",
     "nativescript-telerik-ui": "^1.6.2",
     "nativescript-theme-core": "~1.0.2",
-    "tns-core-modules": "^2.5.2"
+    "tns-core-modules": "^2.5.2",
+    "tns-core-modules-snapshot": "2.5.2-5.5.372.32"
   },
   "devDependencies": {
     "babel-traverse": "6.23.1",

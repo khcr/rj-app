@@ -5,14 +5,15 @@
 
   <Page.actionBar>
       <ActionBar title="Feed">
+        <ActionItem tap="refresh" ios.systemIcon="13" ios.position="left" android.systemIcon="ic_menu_refresh" android.position="actionBar"/>
         <Image src="res://logorjpr" width="40px"/>
         <ActionItem visibility="{{ isAdmin ? 'visible' : 'collapse' }}" tap="newPost" ios.systemIcon="7" ios.position="right" android.systemIcon="ic_menu_add" android.position="actionBar"/>
       </ActionBar>
   </Page.actionBar>
 
   <GridLayout columns="*" rows="*, 60" class="main">
-      <GridLayout rows="auto, *" class="list">
-        <lv:RadListView itemLoading="onItemLoading" backgroundColor="transparent" items="{{ posts }}" pullToRefresh="true" row="1" pullToRefreshInitiated="refresh" loadOnDemandMode="Auto" loadMoreDataRequested="loadMore">
+      <StackLayout class="list">
+        <lv:RadListView itemLoading="onItemLoading" backgroundColor="transparent" items="{{ posts }}" loadOnDemandMode="Auto" loadMoreDataRequested="loadMore">
           <lv:RadListView.listViewLayout backgroundColor="transparent">
             <lv:ListViewLinearLayout scrollDirection="Vertical"/>
           </lv:RadListView.listViewLayout>
@@ -40,7 +41,10 @@
                 <label text="{{ lastComment.author }}" editable="false" class="last-comment-author" />
                 <TextView text="{{ lastComment.message }}" editable="false" class="last-comment-message" />
               </StackLayout>
-              <Label text="&#xE0B9;" postId="{{ id }}" tap="toPost" class="comments material-font" />
+              <StackLayout orientation="horizontal" horizontalAlignment="center">
+                <Label text="Commentaires" postId="{{ id }}" tap="toPost" class="comments text" />
+                <Label text="&#xE0B9;" postId="{{ id }}" tap="toPost" class="comments material-font" />
+              </StackLayout>
               <!-- ##### ##### -->
 
             </StackLayout>
@@ -48,7 +52,7 @@
           <!-- ##### ##### -->
 
         </lv:RadListView>
-      </GridLayout>
+      </StackLayout>
       <navbar:navbar row="1" pageName="feed"/>
       <ActivityIndicator busy="{{ isLoading }}" row="0" width="50" />
   </GridLayout>

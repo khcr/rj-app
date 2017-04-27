@@ -1,4 +1,5 @@
 var observableModule = require("data/observable");
+var ObservableArray = require("data/observable-array").ObservableArray;
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
 var colorModule = require("color");
@@ -8,11 +9,11 @@ var Post = require("../../models/post");
 
 var PostList = new Post.List();
 
-var page, postsView;
+var page;
 
 var pageData = new observableModule.fromObject({
-    posts: PostList,
-    isLoading: true
+  posts: PostList,
+  isLoading: true
 });
 
 exports.loaded = function(args) {
@@ -30,10 +31,8 @@ exports.loaded = function(args) {
 };
 
 exports.refresh = function(args) {
-  PostList.empty();
-  PostList.load().then(function() {
-    args.object.notifyPullToRefreshFinished();
-  });
+  var topmost = frameModule.topmost();
+  topmost.navigate("views/feed/feed");
 };
 
 
