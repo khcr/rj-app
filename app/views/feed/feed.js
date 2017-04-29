@@ -20,17 +20,13 @@ exports.loaded = function(args) {
 
   pageData.set("isAdmin", Session.getKey("isAdmin"));
 
-  pageData.set("isLoading", true);
-  PostList.load().then(function() {
-    pageData.set("isLoading", false);
-  });
+  loadPosts();
 
   new BackButton(page).hide();
 };
 
 exports.refresh = function(args) {
-  var topmost = frameModule.topmost();
-  topmost.navigate("views/feed/feed");
+  loadPosts();
 };
 
 
@@ -95,3 +91,11 @@ exports.deletePost = function(e) {
     }
   });
 };
+
+function loadPosts() {
+  PostList.empty();
+  pageData.set("isLoading", true);
+  PostList.load().then(function() {
+    pageData.set("isLoading", false);
+  });
+}
