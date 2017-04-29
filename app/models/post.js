@@ -108,36 +108,35 @@ Post.State = new Observable({
 
 Post.List = function() {
 
-  var viewModel =  new ObservableArray();
+  this._items = new ObservableArray();
 
-  viewModel.pageNumber = 1;
+  this.items = function() {
+    return this._items;
+  };
 
-  viewModel.load = function() {
+  this.pageNumber = 1;
+
+  this.load = function() {
+    var list = this;
     var token = Session.getKey("rememberToken");
-    return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber + "&remember_token=" + token).then(function(res) {
+    return http.getJSON(config.apiUrl + "posts.json?page=" + list.pageNumber + "&remember_token=" + token).then(function(res) {
       if(!res.length) {
         return false;
       }
-      viewModel.pageNumber++;
+      list.pageNumber++;
       res.forEach(function(post) {
-        viewModel.push(post);
+        list._items.push(post);
       });
-      Post.State.set("isLoading", false);
-      return viewModel;
+      return list.items();
     }, function(e) {
       console.log(e);
     });
   };
 
-  viewModel.empty = function() {
+  this.empty = function() {
     this.pageNumber = 1;
-    while (this.length) {
-      this.pop();
-    }
+    this._items = new ObservableArray();
   };
-
-  return viewModel;
-
 }
 
 Post.find = function(id) {
