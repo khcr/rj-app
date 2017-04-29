@@ -12,14 +12,14 @@ var PostList = new Post.List();
 var page;
 
 var pageData = new observableModule.fromObject({
-  posts: PostList,
-  isLoading: true
+  posts: PostList.items(),
 });
 
 exports.loaded = function(args) {
   page = args.object;
   page.bindingContext = pageData;
-  page.bindingContext.set("isAdmin", Session.getKey("isAdmin"));
+
+  pageData.set("isAdmin", Session.getKey("isAdmin"));
 
   pageData.set("isLoading", true);
   PostList.empty();
@@ -96,11 +96,4 @@ exports.deletePost = function(e) {
       });
     }
   });
-};
-
-exports.onItemLoading = function (args) {
-  if (page.ios) {
-    // http://stackoverflow.com/questions/37212069/set-radlistview-itemtemplate-to-transparant-on-ios
-    // args.ios.backgroundView.backgroundColor = new colorModule.Color(20, 255, 0, 0);
-  }
 };

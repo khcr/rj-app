@@ -1,7 +1,6 @@
 <Page loaded="loaded"
   xmlns:navbar="views/components/navbar"
-  xmlns:lv="nativescript-telerik-ui/listview"
-  xmlns:post="views/components/post">
+  xmlns:lv="nativescript-telerik-ui/listview">
 
   <Page.actionBar>
       <ActionBar title="Feed">
@@ -13,7 +12,7 @@
 
   <GridLayout columns="*" rows="*, 60" class="main">
       <StackLayout class="list">
-        <lv:RadListView itemLoading="onItemLoading" backgroundColor="transparent" items="{{ posts }}" loadOnDemandMode="Auto" loadMoreDataRequested="loadMore">
+        <lv:RadListView backgroundColor="transparent" items="{{ posts }}">
           <lv:RadListView.listViewLayout backgroundColor="transparent">
             <lv:ListViewLinearLayout scrollDirection="Vertical"/>
           </lv:RadListView.listViewLayout>

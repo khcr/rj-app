@@ -104,35 +104,37 @@ function Post(params) {
 
 Post.List = function() {
 
-  var viewModel =  new ObservableArray();
+  this._items = new ObservableArray();
 
-  viewModel.pageNumber = 1;
+  this.items = function() {
+    return this._items;
+  };
 
-  viewModel.load = function() {
+  this.pageNumber = 1;
+
+  this.load = function() {
+    var list = this;
     var token = Session.getKey("rememberToken");
-    return http.getJSON(config.apiUrl + "posts.json?page=" + this.pageNumber + "&remember_token=" + token).then(function(res) {
+    return http.getJSON(config.apiUrl + "posts.json?page=" + list.pageNumber + "&remember_token=" + token).then(function(res) {
       if(!res.length) {
         return false;
       }
-      viewModel.pageNumber++;
+      list.pageNumber++;
       res.forEach(function(post) {
-        viewModel.push(post);
+        list._items.push(post);
       });
-      return viewModel;
+      return list._items;
     }, function(e) {
       console.log(e);
     });
   };
 
-  viewModel.empty = function() {
+  this.empty = function() {
     this.pageNumber = 1;
-    while (this.length) {
-      this.pop();
+    while (this._items.length) {
+      this._items.pop();
     }
   };
-
-  return viewModel;
-
 }
 
 Post.find = function(id) {
