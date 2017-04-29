@@ -1,5 +1,4 @@
 var observableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
 var colorModule = require("color");
@@ -22,7 +21,6 @@ exports.loaded = function(args) {
   pageData.set("isAdmin", Session.getKey("isAdmin"));
 
   pageData.set("isLoading", true);
-  PostList.empty();
   PostList.load().then(function() {
     pageData.set("isLoading", false);
   });

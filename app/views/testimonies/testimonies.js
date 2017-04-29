@@ -21,7 +21,6 @@ exports.loaded = function(args) {
 
   new BackButton(page).hide();
 
-  TestimonyList.empty();
   TestimonyList.all().then(function() {
     page.bindingContext.set("isLoading", false);
   });

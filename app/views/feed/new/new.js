@@ -13,6 +13,7 @@ exports.loaded = function(args) {
 };
 
 exports.newPost = function() {
+  console.log("TAP")
   var message = post.get("message");
 
   if(message.trim() === "") {
@@ -24,6 +25,7 @@ exports.newPost = function() {
   }
 
   post.save().then(function() {
+    console.log("SAVED")
     post.set("message", "");
     var topmost = frameModule.topmost();
     topmost.navigate("views/feed/feed");

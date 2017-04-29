@@ -131,9 +131,7 @@ Post.List = function() {
 
   this.empty = function() {
     this.pageNumber = 1;
-    while (this._items.length) {
-      this._items.pop();
-    }
+    this._items.splice(0);
   };
 }
 
