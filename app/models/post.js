@@ -100,10 +100,6 @@ function Post(params) {
     return viewModel;
 }
 
-Post.State = new Observable({
-  isLoading: true
-});
-
 /* List */
 
 Post.List = function() {
@@ -122,7 +118,6 @@ Post.List = function() {
       res.forEach(function(post) {
         viewModel.push(post);
       });
-      Post.State.set("isLoading", false);
       return viewModel;
     }, function(e) {
       console.log(e);
