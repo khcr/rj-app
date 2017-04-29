@@ -135,7 +135,9 @@ Post.List = function() {
 
   this.empty = function() {
     this.pageNumber = 1;
-    this._items = new ObservableArray();
+    while (this._items.length) {
+      this._items.pop();
+    }
   };
 }
 

@@ -8,6 +8,7 @@ var imageSource = require("image-source");
 var Imagepicker = {
 
   select: function() {
+    console.log("SELECT")
     if (platformModule.device.os === "Android" && platformModule.device.sdkVersion >= 23) {
       return permissions.requestPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE, "I need these permissions to read from storage")
       .then(function() {
@@ -17,6 +18,7 @@ var Imagepicker = {
         console.log("Unauthorized to access external storage")
       });
     } else {
+      console.log("SELECT FINISHED")
       return Imagepicker._start();
     }
   },
@@ -37,6 +39,8 @@ var Imagepicker = {
 
   _start: function() {
 
+    console.log("START")
+
     var context = imagepickerModule.create({
       mode: "single"
     });
@@ -45,7 +49,12 @@ var Imagepicker = {
       return context.present();
     }).then(function(selection) {
 
+      console.log("SELECTED")
+
       return selection[0].getImage().then(function(imageSource) {
+
+        console.dump(imageSource)
+
         return Imagepicker._saveTempfile(imageSource);
       });
     }).catch(function (e) {
@@ -54,10 +63,19 @@ var Imagepicker = {
   },
 
   _saveTempfile: function(imageSource) {
+
+    console.log("SAVE")
+    console.log(imageSource)
+
     var folder = fs.knownFolders.documents();
-    var filename = "img_" + new Date().getTime() + ".jpg";
+    console.log(folder)
+
+    var filename = "img_" + new Date().getTime() + ".jpeg";
+    console.log(filename)
     var path = fs.path.join(folder.path, filename);
-    var saved = imageSource.saveToFile(path, "jpg");
+    console.log(path)
+    var saved = imageSource.saveToFile(path, "jpeg");
+    console.log("saved: " + saved)
     if(saved) {
       return { path: path, source: imageSource };
     }
