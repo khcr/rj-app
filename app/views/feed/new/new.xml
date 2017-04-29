@@ -3,13 +3,13 @@
     <ActionBar title="Poster"/>
   </Page.actionBar>
   <ScrollView>
-    <StackLayout orientation="vertical" verticalAlignment="center">
-        <TextView text="{{ message }}" height="200"/>
-        <Button text="Choisir une photo" tap="selectImage" />
-        <Button text="Prendre une photo" tap="takeImage" />
-        <Image id="preview" />
+    <GridLayout cols="auto" rows="auto, auto, auto, auto, auto">
+        <TextView row="0" text="{{ message }}" height="200"/>
+        <Button row="1" text="Choisir une photo" tap="selectImage" />
+        <Button row="2" text="Prendre une photo" tap="takeImage" />
+        <Image row="3" id="preview" />
 
-        <Button text="Poster" tap="newPost" class="submit" />
-    </StackLayout>
+        <Button row="4" text="Poster" tap="newPost" class="submit" />
+    </GridLayout>
   </ScrollView>
 </Page>
