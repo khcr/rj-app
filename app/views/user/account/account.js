@@ -30,5 +30,5 @@ exports.toImage = function() {
 exports.signOut = function() {
   User.signOut();
   var topmost = frameModule.topmost();
-  topmost.navigate("views/feed/feed");
+  topmost.navigate({ moduleName: "views/feed/feed", clearHistory: true });
 };

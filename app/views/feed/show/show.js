@@ -41,6 +41,8 @@ exports.newComment = function() {
     return;
   }
 
+  page.getViewById("new-comment").dismissSoftInput();
+
   comment.save().then(function(res) {
     comments.unshift(res);
     comment.set("message", "");

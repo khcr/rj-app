@@ -6,14 +6,14 @@
     <StackLayout orientation="vertical" class="main">
 
       <Label text="{{ 'Commenter le post de ' + post.author }}" class="title" />
-      
+
       <StackLayout orientation="vertical" class="post">
         <GridLayout rows="auto, *" columns="60, *" class="infos">
           <Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
           <Label text="{{ post.author }}" row="0" col="1" class="author"/>
         </GridLayout>
         <label text="{{'Posté le ' + post.createdAtDate + ' à ' + post.createdAtTime }}" class="date"></label>
-        <TextView editable="false" text="{{ post.message }}" editable="false" class="message" loaded="updateMessage" />
+        <TextView id="new-comment" text="{{ post.message }}" editable="false" class="message" loaded="updateMessage" />
         <ActivityIndicator busy="{{ isLoading }}" />
       </StackLayout>
 
@@ -41,7 +41,7 @@
           </StackLayout>
         </Repeater.itemTemplate>
     </Repeater>
-              
+
     </StackLayout>
     </ScrollView>
 </Page>
