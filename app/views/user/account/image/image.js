@@ -9,11 +9,9 @@ var user = new User();
 
 exports.loaded = function(args) {
   page = args.object;
-  page.bindingContext = new Observable( {isLoading: false} );
-
-  User.find(Session.getKey("rememberToken")).then(function(user) {
-    console.log(user.imageUrl);
-    page.bindingContext.set("imageUrl", user.imageUrl);
+  page.bindingContext = new Observable({
+    isLoading: false,
+    imageUrl: Session.getKey("imageUrl")
   });
 };
 
@@ -53,7 +51,7 @@ exports.updateImage = function() {
       var imageTag = page.getViewById("preview");
       imageTag.imageSource = null;
       var imageTag = page.getViewById("profile");
-      imageTag.imageSource = res.source;
+      imageTag.src = res.imageUrl;
       page.bindingContext.set("isLoading", false);
     });
   }

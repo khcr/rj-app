@@ -104,7 +104,7 @@
             </GridLayout>
 
             <label text="Dimanche" class="day"/>
-            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://village02')">
+            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://village03')">
                 <TextView text="08h00" col="0" row="0" editable="false" class="big-time"/>
                 <TextView text="Ouverture du village et du Fun Park" col="1" row="0" editable="false" class="big-element"/>
             </GridLayout>
@@ -124,7 +124,7 @@
                 <TextView text="13h00" col="0" row="0" editable="false" class="time"/>
                 <TextView text="Ouverture des portes" col="1" row="0" editable="false" class="element"/>
             </GridLayout>
-            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere05')">
+            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere06')">
                 <TextView text="13h15" col="0" row="0" editable="false" class="big-time"/>
                 <TextView text="Plénière" col="1" row="0" editable="false" class="big-element"/>
             </GridLayout>
