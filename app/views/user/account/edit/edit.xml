@@ -2,15 +2,17 @@
   <Page.actionBar>
       <ActionBar title="Modifier mon compte" />
   </Page.actionBar>
-  <StackLayout orientation="vertical" verticalAlignment="center">
+  <ScrollView>
+    <StackLayout orientation="vertical" verticalAlignment="center">
 
-    <ListPicker id="gender" items="{{ genders }}" />
-    <TextField text="{{ firstname }}" hint="Prénom" autocorrect="false" />
-    <TextField text="{{ lastname }}" hint="Nom" autocorrect="false" />
-    <TextField text="{{ email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-    <TextField hint="Mot de passe" text="{{ password }}" secure="true" />
-    <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
+      <ListPicker id="gender" items="{{ genders }}" />
+      <TextField text="{{ firstname }}" hint="Prénom" autocorrect="false" />
+      <TextField text="{{ lastname }}" hint="Nom" autocorrect="false" />
+      <TextField text="{{ email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+      <TextField hint="Mot de passe" text="{{ password }}" secure="true" />
+      <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
 
-    <Button text="Enregistrer" class="submit" tap="updateAccount" />
-  </StackLayout>
+      <Button text="Enregistrer" class="submit" tap="updateAccount" />
+    </StackLayout>
+  </ScrollView>
 </Page>

@@ -18,6 +18,7 @@ function User(params) {
         password_confirmation: params.passwordConfirmation || "",
         isSignedIn: params.isSignedIn || false,
         isAdmin: params.isAdmin || false,
+        imageUrl: params.imageUrl || ""
     });
 
     viewModel._genders = ["male", "female"];

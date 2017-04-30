@@ -10,10 +10,11 @@ var post = new Post();
 exports.loaded = function(args) {
   page = args.object;
   page.bindingContext = post;
+  page.bindingContext.set("isLoading", false);
 };
 
 exports.newPost = function() {
-  console.log("TAP")
+  page.bindingContext.set("isLoading", true);
   var message = post.get("message");
 
   if(message.trim() === "") {
@@ -21,11 +22,12 @@ exports.newPost = function() {
       message: "Entrez un message",
       okButtonText: "Compris"
     });
+    page.bindingContext.set("isLoading", false);
     return;
   }
 
   post.save().then(function() {
-    console.log("SAVED")
+    page.bindingContext.set("isLoading", false);
     post.set("message", "");
     var topmost = frameModule.topmost();
     topmost.navigate("views/feed/feed");

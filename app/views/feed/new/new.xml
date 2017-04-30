@@ -9,7 +9,9 @@
         <Button row="2" text="Prendre une photo" tap="takeImage" />
         <Image row="3" id="preview" />
 
-        <Button row="4" text="Poster" tap="newPost" class="submit" />
+        <Button row="4" text="Poster" tap="newPost" class="submit" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+        <ActivityIndicator busy="{{ isLoading }}" row="4" width="50" />
     </GridLayout>
+
   </ScrollView>
 </Page>

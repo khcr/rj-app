@@ -1,0 +1,14 @@
+TextField {
+  border-color: transparent;
+  border-width: 0px;
+  background-color: transparent;
+  padding: 10px 15px;
+}
+
+Button.submit {
+  background-color: #329597;
+  border-color: #329597;
+  color: #fff;
+  padding: 20px;
+  margin: 10px;
+}

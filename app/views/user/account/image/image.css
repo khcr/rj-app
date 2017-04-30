@@ -1,0 +1,21 @@
+Button {
+  background-color: #329597;
+  border-width: 0;
+  border-color: transparent;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 16px;
+  /*text-transform: uppercase;*/
+}
+
+Button.submit {
+  background-color: #bd1347;
+}
+
+Image#profile {
+  border-radius: 50px;
+  width: 150px;
+}
