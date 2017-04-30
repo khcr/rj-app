@@ -1,5 +1,6 @@
 var BackButton = require("../../helpers/back_button");
 var Observable = require("data/observable").Observable;
+var connectivity = require("connectivity");
 
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
@@ -16,15 +17,21 @@ exports.loaded = function(args) {
   page.bindingContext.set("testimonies", TestimonyList);
   page.bindingContext.set("isSignedIn", Session.getKey("isSignedIn"));
 
-  var isLoading = new Observable(true);
-  page.bindingContext.set("isLoading", isLoading);
-
   new BackButton(page).hide();
 
-  TestimonyList.empty();
-  TestimonyList.all().then(function() {
-    page.bindingContext.set("isLoading", false);
-  });
+  var connectionType = connectivity.getConnectionType();
+  if (connectionType == connectivity.connectionType.none) {
+    dialogsModule.alert({
+        message: "Pas de connexion internet",
+        okButtonText: "Compris"
+      });
+  } else {
+    TestimonyList.empty();
+    page.bindingContext.set("isLoading", true);
+    TestimonyList.all().then(function() {
+      page.bindingContext.set("isLoading", false);
+    });
+  }
 };
 
 exports.newTestimony = function() {
@@ -37,6 +44,8 @@ exports.newTestimony = function() {
     });
     return;
   }
+
+  page.getViewById("new-testimony").dismissSoftInput();
 
   testimony.save().then(function(res) {
     TestimonyList.unshift(res);

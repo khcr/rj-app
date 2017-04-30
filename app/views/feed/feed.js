@@ -2,6 +2,7 @@ var observableModule = require("data/observable");
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
 var colorModule = require("color");
+var connectivity = require("connectivity");
 
 var BackButton = require("../../helpers/back_button");
 var Post = require("../../models/post");
@@ -20,9 +21,9 @@ exports.loaded = function(args) {
 
   pageData.set("isAdmin", Session.getKey("isAdmin"));
 
-  loadPosts();
-
   new BackButton(page).hide();
+
+  loadPosts();
 };
 
 exports.refresh = function(args) {
@@ -93,9 +94,17 @@ exports.deletePost = function(e) {
 };
 
 function loadPosts() {
-  PostList.empty();
-  pageData.set("isLoading", true);
-  PostList.load().then(function() {
-    pageData.set("isLoading", false);
-  });
+  var connectionType = connectivity.getConnectionType();
+  if (connectionType == connectivity.connectionType.none) {
+    dialogsModule.alert({
+      message: "Pas de connexion internet",
+      okButtonText: "Compris"
+    });
+  } else {
+    PostList.empty();
+    pageData.set("isLoading", true);
+    PostList.load().then(function() {
+      pageData.set("isLoading", false);
+    });
+  }
 }

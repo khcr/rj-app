@@ -9,7 +9,7 @@
     <ScrollView row="0">
       <GridLayout rows="auto, *" cols="*" class="main">
         <GridLayout columns="3*, *" rows="auto" row="0" visibility="{{ isSignedIn ? 'visible' : 'collapsed'}}">
-          <TextView text="{{ message }}" height="90" col="0" hint="Laissez votre témoignage" class="new-testimony" />
+          <TextView id="new-testimony" text="{{ message }}" height="90" col="0" hint="Laissez votre témoignage" class="new-testimony" />
           <Button text="&#xE163;" tap="newTestimony" class="submit" col="1" class="submit material-font" />
         </GridLayout>
 
