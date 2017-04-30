@@ -12,43 +12,47 @@
   <GridLayout columns="*" rows="*, 60" class="main">
       <StackLayout class="list">
         <ScrollView>
-          <Repeater items="{{ posts }}">
+          <StackLayout orientation="vertical">
+              <Repeater items="{{ posts }}">
 
-            <!-- ##### Post ##### -->
-            <Repeater.itemTemplate>
-              <StackLayout orientation="vertical" class="news">
+              <!-- ##### Post ##### -->
+              <Repeater.itemTemplate>
+                <StackLayout orientation="vertical" class="news">
 
-                <!-- ##### Infos ##### -->
-                <GridLayout rows="auto, *" columns="auto, *, auto, auto" class="infos">
-                  <Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
-                  <Label text="{{ author }}" row="0" col="1" class="author"/>
-                  <Button text="&#xE150;" class="material-font action" row="0" col="2" tap="editPost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
-                  <Button text="&#xE15C;" class="material-font action" row="0" col="3" postId="{{ id }}" tap="deletePost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
-                </GridLayout>
-                <!-- ##### ##### -->
+                  <!-- ##### Infos ##### -->
+                  <GridLayout rows="auto, *" columns="auto, *, auto, auto" class="infos">
+                    <Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
+                    <Label text="{{ author }}" row="0" col="1" class="author"/>
+                    <Button text="&#xE150;" class="material-font action" row="0" col="2" tap="editPost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+                    <Button text="&#xE15C;" class="material-font action" row="0" col="3" postId="{{ id }}" tap="deletePost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+                  </GridLayout>
+                  <!-- ##### ##### -->
 
-                <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
-                <TextView id="post" postId="{{ id }}" text="{{ message }}" editable="false" class="message" />
-                <Image src="{{ imageUrl }}" />
+                  <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+                  <TextView id="post" postId="{{ id }}" text="{{ message }}" editable="false" class="message" />
+                  <Image src="{{ imageUrl }}" />
 
-                <!-- ##### Comment ##### -->
-                <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical" class="last-comment">
-                  <label text="Dernier commentaire" class="last-comment"/>
-                  <label text="{{ lastComment.author }}" editable="false" class="last-comment-author" />
-                  <TextView text="{{ lastComment.message }}" editable="false" class="last-comment-message" />
+                  <!-- ##### Comment ##### -->
+                  <StackLayout visibility="{{ lastComment ? 'visible' : 'collapse' }}" orientation="vertical" class="last-comment">
+                    <label text="Dernier commentaire" class="last-comment"/>
+                    <label text="{{ lastComment.author }}" editable="false" class="last-comment-author" />
+                    <TextView text="{{ lastComment.message }}" editable="false" class="last-comment-message" />
+                  </StackLayout>
+                  <StackLayout orientation="horizontal" horizontalAlignment="center">
+                    <Label text="Commentaires" postId="{{ id }}" tap="toPost" class="comments text" />
+                    <Label text="&#xE0B9;" postId="{{ id }}" tap="toPost" class="comments material-font" />
+                  </StackLayout>
+                  <!-- ##### ##### -->
+
                 </StackLayout>
-                <StackLayout orientation="horizontal" horizontalAlignment="center">
-                  <Label text="Commentaires" postId="{{ id }}" tap="toPost" class="comments text" />
-                  <Label text="&#xE0B9;" postId="{{ id }}" tap="toPost" class="comments material-font" />
-                </StackLayout>
-                <!-- ##### ##### -->
+              </Repeater.itemTemplate>
+              <!-- ##### ##### -->
 
-              </StackLayout>
-            </Repeater.itemTemplate>
-            <!-- ##### ##### -->
-
-          </Repeater>
+            </Repeater>
+            <Button text="Voir plus" class="see-more" />
+          </StackLayout>
         </ScrollView>
+        
       </StackLayout>
       <navbar:navbar row="1" pageName="feed"/>
       <ActivityIndicator busy="{{ isLoading }}" row="0" width="50" />

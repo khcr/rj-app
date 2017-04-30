@@ -12,7 +12,8 @@
       <TextField hint="Mot de passe" text="{{ password }}" secure="true" />
       <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
 
-      <Button text="Enregistrer" class="submit" tap="updateAccount" />
+      <Button text="Enregistrer" class="submit" tap="updateAccount" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+      <ActivityIndicator busy="{{ isLoading }}" width="50" />
     </StackLayout>
   </ScrollView>
 </Page>

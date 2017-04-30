@@ -17,7 +17,8 @@
       <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
 
 
-    <Button text="S'inscrire" class="submit" tap="signUp" />
+    <Button text="S'inscrire" class="submit" tap="signUp" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+    <ActivityIndicator busy="{{ isLoading }}" width="50" />
 
   </StackLayout>
   </ScrollView>

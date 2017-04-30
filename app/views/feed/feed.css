@@ -107,3 +107,10 @@ Label.last-comment-author {
 TextView.last-comment-message {
   text-align: right;
 }
+
+Button.see-more {
+  margin: 0 0 20px 0;
+  background-color: #bd1347;
+  color: #fff;
+  border-color: transparent;
+}

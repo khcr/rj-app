@@ -1,5 +1,6 @@
 var Imagepicker = require("../../../../helpers/imagepicker");
 var Observable = require("data/observable").Observable;
+var dialogsModule = require("ui/dialogs");
 
 var User = require("../../../../models/user");
 
@@ -37,7 +38,18 @@ exports.takeImage = function() {
 exports.updateImage = function() {
   page.bindingContext.set("isLoading", true);
   if(user.get("imageField") !== undefined) {
-    user.saveImage().then(function(res) {
+    user.saveImage().catch(function (e) {
+      page.bindingContext.set("isLoading", false);
+      dialogsModule.alert({
+        message: e.join("\r\n"),
+        okButtonText: "OK"
+      });
+      return Promise.reject();
+    }).then(function(res) {
+      dialogsModule.alert({
+        message: "Image mise à jour.",
+        okButtonText: "OK"
+      });
       var imageTag = page.getViewById("preview");
       imageTag.imageSource = null;
       var imageTag = page.getViewById("profile");
