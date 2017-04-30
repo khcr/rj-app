@@ -9,6 +9,7 @@ Button {
   vertical-align: middle;
   font-size: 16px;
   /*text-transform: uppercase;*/
+  margin: 0 0 5px 0;
 }
 
 Button.submit {
