@@ -13,6 +13,8 @@
           <Button text="&#xE163;" tap="newTestimony" class="submit" col="1" class="submit material-font" />
         </GridLayout>
 
+        <label row="0" text="Connectez-vous pour commenter" visibility="{{ isSignedIn ? 'collapsed' : 'visible'}}" class="connect"/>
+
         <Repeater row="1" items="{{ testimonies }}">
           <Repeater.itemTemplate>
             <StackLayout orientation="vertical" class="testimony">
