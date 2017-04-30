@@ -7,6 +7,10 @@ var imageSource = require("image-source");
 
 var Imagepicker = {
 
+  permission: function() {
+    camera.requestPermissions();
+  },
+
   select: function() {
     if (platformModule.device.os === "Android" && platformModule.device.sdkVersion >= 23) {
       return permissions.requestPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE, "I need these permissions to read from storage")
@@ -22,8 +26,6 @@ var Imagepicker = {
   },
 
   take: function() {
-    camera.requestPermissions();
-
     return camera.takePicture().then(function(imageAsset) {
       return imageSource.fromAsset(imageAsset).then(function(imageSource) {
 

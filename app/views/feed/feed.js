@@ -43,11 +43,14 @@ exports.toPost = function(e) {
 };
 
 exports.loadMore = function(args) {
+  var seeMoreTag = page.getViewById("see-more");
+  seeMoreTag.visibility = "collapse"
+  pageData.set("loadingMore", true);
   PostList.load().then(function(res) {
-    args.object.notifyLoadOnDemandFinished()
-    if(!res) {
-      args.object.loadOnDemandMode = "None";
+    if(res) {
+      seeMoreTag,visibility = "visible";
     }
+    pageData.set("loadingMore", false);
   });
 };
 

@@ -49,10 +49,11 @@
               <!-- ##### ##### -->
 
             </Repeater>
-            <Button text="Voir plus" class="see-more" />
+            <ActivityIndicator busy="{{ loadingMore }}" row="0" width="50" />
+            <Button text="Voir plus" tap="loadMore" id="see-more" class="see-more" />
           </StackLayout>
         </ScrollView>
-        
+
       </StackLayout>
       <navbar:navbar row="1" pageName="feed"/>
       <ActivityIndicator busy="{{ isLoading }}" row="0" width="50" />

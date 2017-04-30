@@ -13,6 +13,7 @@ exports.loaded = function(args) {
     isLoading: false,
     imageUrl: Session.getKey("imageUrl")
   });
+  Imagepicker.permission();
 };
 
 exports.selectImage = function() {
@@ -34,8 +35,8 @@ exports.takeImage = function() {
 }
 
 exports.updateImage = function() {
-  page.bindingContext.set("isLoading", true);
   if(user.get("imageField") !== undefined) {
+    page.bindingContext.set("isLoading", true);
     user.saveImage().catch(function (e) {
       page.bindingContext.set("isLoading", false);
       dialogsModule.alert({
@@ -53,6 +54,11 @@ exports.updateImage = function() {
       var imageTag = page.getViewById("profile");
       imageTag.src = res.imageUrl;
       page.bindingContext.set("isLoading", false);
+    });
+  } else {
+    dialogsModule.alert({
+      message: "Veuillez prendre ou sélectionner une photo.",
+      okButtonText: "Compris"
     });
   }
 }

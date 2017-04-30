@@ -23,7 +23,6 @@ function Post(params) {
 
     viewModel.save = function() {
       var post = this;
-
       if (post.get("imageField") === undefined) {
 
         return http.request({

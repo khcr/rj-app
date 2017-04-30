@@ -11,6 +11,8 @@ exports.loaded = function(args) {
   page = args.object;
   page.bindingContext = post;
   page.bindingContext.set("isLoading", false);
+
+  Imagepicker.permission();
 };
 
 exports.newPost = function() {
