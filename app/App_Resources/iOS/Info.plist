@@ -39,5 +39,7 @@
 			<key>NSAllowsArbitraryLoads</key>
 			<true/>
 	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We need access to your calendar in order to add events related to the RJ so that you won't miss anything of our activities.</string>
 </dict>
 </plist>

@@ -9,7 +9,7 @@ var Post = require("../../models/post");
 
 var PostList = new Post.List();
 
-var page;
+var page, seeMoreTag;
 
 var pageData = new observableModule.fromObject({
   posts: PostList.items(),
@@ -18,6 +18,8 @@ var pageData = new observableModule.fromObject({
 exports.loaded = function(args) {
   page = args.object;
   page.bindingContext = pageData;
+
+  seeMoreTag = page.getViewById("see-more");
 
   pageData.set("isAdmin", Session.getKey("isAdmin"));
 
@@ -43,7 +45,6 @@ exports.toPost = function(e) {
 };
 
 exports.loadMore = function(args) {
-  var seeMoreTag = page.getViewById("see-more");
   seeMoreTag.visibility = "collapse"
   pageData.set("loadingMore", true);
   PostList.load().then(function(res) {
@@ -97,6 +98,7 @@ exports.deletePost = function(e) {
 };
 
 function loadPosts() {
+  seeMoreTag.visibility = "collapse"
   var connectionType = connectivity.getConnectionType();
   if (connectionType == connectivity.connectionType.none) {
     dialogsModule.alert({
@@ -108,6 +110,7 @@ function loadPosts() {
     pageData.set("isLoading", true);
     PostList.load().then(function() {
       pageData.set("isLoading", false);
+      seeMoreTag.visibility = "visible"
     });
   }
 }
