@@ -1,0 +1,17 @@
+<Page loaded="loaded" xmlns:maps="nativescript-google-maps-sdk">
+  <Page.actionBar>
+      <ActionBar title="Carte">
+        <Image src="res://logorjpr" width="40px"/>
+      </ActionBar>
+  </Page.actionBar>
+
+  <GridLayout>
+    <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}" 
+    								zoom="{{ zoom }}" bearing="{{ bearing }}" 
+    								tilt="{{ tilt }}" padding="{{ padding }}" mapReady="onMapReady"  
+   								markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging"
+   								markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
+   								cameraChanged="onCameraChanged" />
+  </GridLayout>
+
+</Page>

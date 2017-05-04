@@ -26,6 +26,16 @@
               </formattedString>
           </button.formattedText>
         </button>
+        <button tap="toMap">
+          <button.formattedText>
+              <formattedString>
+                <formattedString.spans>
+                    <span text="&#xE55B;   " fontFamily="MaterialIcons-Regular" />
+                    <span text="Carte" />
+                </formattedString.spans>
+              </formattedString>
+          </button.formattedText>
+        </button>
         <button tap="toAbout">
           <button.formattedText>
               <formattedString>

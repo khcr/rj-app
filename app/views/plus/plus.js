@@ -30,3 +30,8 @@ exports.toAbout = function() {
   var topmost = frameModule.topmost();
   topmost.navigate({ moduleName: "views/plus/about/about", animated: true });
 };
+
+exports.toMap = function () {
+  var topmost = frameModule.topmost();
+  topmost.navigate({ moduleName: "views/plus/map/map", animated: true });
+};
