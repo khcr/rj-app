@@ -62,11 +62,11 @@
                 <TextView text="14h15" col="0" row="0" editable="false" class="time"/>
                 <TextView text="Pause" col="1" row="0" editable="false" class="element"/>
             </GridLayout>
-            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier02_1')">
+            <GridLayout columns="auto, *" rows="auto, *" class="big long" style="background-image: url('res://atelier02_1')">
                 <TextView text="14h30" col="0" row="0" editable="false" class="big-time"/>
                 <TextView text="Atelier 2: Luc Dumont, Découvrir et développer mon appel, salle principale" col="1" row="0" editable="false" class="big-element"/>
             </GridLayout>
-            <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier02_2')">
+            <GridLayout columns="auto, *" rows="auto, *" class="big long" style="background-image: url('res://atelier02_2')">
                 <TextView text="14h30" col="0" row="0" editable="false" class="big-time"/>
                 <TextView text="Atelier 2: Alpha Jeune, Invite une génération à explorer la vie, la foi et Dieu, deuxième étage (salle de conférence)" col="1" row="0" editable="false" class="big-element"/>
             </GridLayout>

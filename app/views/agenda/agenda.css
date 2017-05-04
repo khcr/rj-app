@@ -45,6 +45,10 @@ GridLayout.big {
   padding: 20px 10px 10px 10px;
 }
 
+GridLayout.big.long {
+  height: initial;
+}
+
 TextView.big-time {
   font-size: 30px;
   padding: 0 15px 0 0;
