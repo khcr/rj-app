@@ -6,7 +6,7 @@
     </Page.actionBar>
     <StackLayout orientation="vertical">
       <Label text="RJ-App (2017)" />
-      <Label text="Pre-release 'Coquelicot' version 2.0" class="version" />
+      <Label text="Beta 1 'Pétunia' version 2.1" class="version" />
       <Label text="Développé par JS-Tech" />
       <Image src="res://jstech" width="90px"/>
       <Label text="we@jstech.ch" />
