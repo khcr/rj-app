@@ -21,7 +21,8 @@
 
                   <!-- ##### Infos ##### -->
                   <GridLayout rows="auto, *" columns="auto, *, auto, auto" class="infos">
-                    <Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
+                    <!--<Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>-->
+                    <Image src="{{ authorImageUrl }}" row="0" col="0" class="author-image"/>
                     <Label text="{{ author }}" row="0" col="1" class="author"/>
                     <Button text="&#xE150;" class="material-font action" row="0" col="2" tap="editPost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
                     <Button text="&#xE15C;" class="material-font action" row="0" col="3" postId="{{ id }}" tap="deletePost" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>

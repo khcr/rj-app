@@ -8,8 +8,9 @@
       <Label text="{{ 'Commenter le post de ' + post.author }}" class="title" />
 
       <StackLayout orientation="vertical" class="post">
-        <GridLayout rows="auto, *" columns="60, *" class="infos">
-          <Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>
+        <GridLayout rows="auto, *" columns="auto, *" class="infos">
+          <!--<Label text="&#xE0C9;" row="0" col="0" class="material-font info-icon"/>-->
+          <Image src="{{ post.authorImageUrl }}" row="0" col="0" class="author-image"/>
           <Label text="{{ post.author }}" row="0" col="1" class="author"/>
         </GridLayout>
         <label text="{{'Posté le ' + post.createdAtDate + ' à ' + post.createdAtTime }}" class="date"></label>
@@ -31,7 +32,8 @@
                 <Button text="&#xE150;" row="0" col="0" class="material-font action" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
                 <Button text="&#xE15C;" row="0" col="1" class="material-font action" commentId="{{ id }}" tap="deleteComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
                 <label text="{{ author }}" row="0" col="2" class="author-comment"></label>
-                <label text="&#xE0B9;" row="0" col="3" class="material-font info-icon-comment"/>
+                <!--<label text="&#xE0B9;" row="0" col="3" class="material-font info-icon-comment"/>-->
+                <Image src="{{ authorImageUrl }}" row="0" col="3" class="author-image-comment"/>
               </GridLayout>
               <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
               <StackLayout orientation="vertical">

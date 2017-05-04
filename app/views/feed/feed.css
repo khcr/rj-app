@@ -44,6 +44,13 @@ Label.info-icon {
   text-align: center;
 }
 
+Image.author-image {
+  vertical-align: middle;
+  text-align: center;
+  width: 60px;
+  border-radius: 30px;
+}
+
 Label.author {
   font-size: 18px;
   padding: 0 0 5px 20px;
