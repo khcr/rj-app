@@ -32,11 +32,11 @@ exports.updateAccount = function() {
     return Promise.reject();
   }).then(function(res) {
     page.bindingContext.set("isLoading", false);
+    var topmost = frameModule.topmost();
+    topmost.goBack();
     dialogsModule.alert({
       message: "Mise à jour effectuée.",
       okButtonText: "OK"
     });
-    var topmost = frameModule.topmost();
-    topmost.navigate("views/user/account/account");
   });
 };
