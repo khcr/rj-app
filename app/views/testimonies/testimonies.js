@@ -90,7 +90,7 @@ exports.deleteTestimony = function(e) {
   }).then(function(result) {
     if(result) {
       Testimony.delete(id).then(function() {
-        testimonyTag.parent.parent.parent.visibility = "collapse";
+        testimonyTag.parent.parent.visibility = "collapse";
       });
     }
   });

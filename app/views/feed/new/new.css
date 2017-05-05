@@ -1,0 +1,17 @@
+Button {
+  background-color: #329597;
+  border-width: 0;
+  border-color: transparent;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 16px;
+  /*text-transform: uppercase;*/
+  margin: 0 0 5px 0;
+}
+
+Button.submit {
+  background-color: #bd1347;
+}

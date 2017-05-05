@@ -6,7 +6,7 @@ var Marker = {
 
   all: function() {
     return http.getJSON(config.apiUrl + "markers.json").then(function(res) {
-      return res.markers;
+      return res;
     }, function(e) {
       console.log(e);
     });
@@ -16,4 +16,4 @@ var Marker = {
 
 /* /*/
 
-module.exports = Maker;
+module.exports = Marker;

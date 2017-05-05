@@ -91,7 +91,7 @@ exports.deletePost = function(e) {
   }).then(function(result) {
     if(result) {
       Post.delete(id).then(function() {
-        postTag.parent.parent.parent.visibility = "collapse";
+        postTag.parent.parent.visibility = "collapse";
       });
     }
   });

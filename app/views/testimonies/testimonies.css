@@ -64,6 +64,13 @@ Label.author {
   vertical-align: middle;
 }
 
+Image.author-image {
+  vertical-align: middle;
+  text-align: center;
+  width: 60px;
+  border-radius: 30px;
+}
+
 Label.date {
   font-size: 12px;
   text-align: right;

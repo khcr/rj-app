@@ -85,7 +85,6 @@ exports.deleteComment = function(e) {
   }).then(function(result) {
     if(result) {
       Comment.delete(id).then(function() {
-        commentTag.parent.parent.parent.visibility = "collapse";
       });
     }
   });
