@@ -46,8 +46,6 @@ var Imagepicker = {
     return context.authorize().then(function() {
       return context.present();
     }).then(function(selection) {
-
-
       return selection[0].getImage().then(function(imageSource) {
         return Imagepicker._saveTempfile(imageSource);
       });

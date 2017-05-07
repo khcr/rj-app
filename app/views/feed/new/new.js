@@ -31,6 +31,7 @@ exports.newPost = function() {
   post.save().then(function() {
     page.bindingContext.set("isLoading", false);
     post.set("message", "");
+    post.set("imageField", null)
     var topmost = frameModule.topmost();
     topmost.navigate("views/feed/feed");
   });
