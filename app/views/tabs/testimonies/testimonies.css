@@ -1,0 +1,97 @@
+GridLayout.wrapper {
+  background-color: #e5e6e7;
+  font-family: "OpenSans-Light";
+  padding: 10px;
+}
+
+/* Form new testimony */
+
+TextView.new-testimony {
+  background-color: #fff;
+  padding: 10px;
+  height: 100px;
+  margin: 10px 0 25px 0;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+Button.submit {
+  vertical-align: middle;
+  margin: 10px 0 25px 0;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 50px;
+  color: #329597;
+}
+
+Label.connect {
+  text-align: center;
+  padding: 0 10px 10px 10px;
+}
+
+/* Testimony */
+
+StackLayout.testimony {
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 0 0 20px 0;
+}
+
+TextView.testimony-message {
+  padding: 10px 10px 20px 10px;
+}
+
+/* Testimony infos */
+
+GridLayout.infos {
+  padding: 10px 10px 0px 10px;
+  background-color: #31afd9;
+  border-radius: 10px;
+  border-width: 0 0 10px 0;
+  border-color: #31afd9;
+  color: #fff;
+}
+
+Label.info-icon {
+  font-size: 40px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+Label.author {
+  font-size: 16px;
+  padding: 0 0 5px 20px;
+  vertical-align: middle;
+}
+
+Image.author-image {
+  vertical-align: middle;
+  text-align: center;
+  width: 60px;
+  border-radius: 30px;
+}
+
+Label.date {
+  font-size: 12px;
+  text-align: right;
+  padding: 0 5px 0 0;
+}
+
+Button.action {
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  font-size: 18px;
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 1;
+}
+
+/* Global */
+
+TextView {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  margin: 0;
+}

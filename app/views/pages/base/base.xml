@@ -1,0 +1,21 @@
+<Page loaded="loaded" xmlns:navbar="views/components/navbar">
+  <!-- ActionBar -->
+  <Page.actionBar>
+      <ActionBar>
+        <StackLayout orientation="horizontal" horizontalAlignment="center">
+          <Image src="res://logorjpr" width="40px"></Image>
+        </StackLayout>
+      </ActionBar>
+  </Page.actionBar>
+
+  <!-- Content -->
+
+  <ScrollView>
+    <StackLayout>
+      <ActivityIndicator busy="{{ isNavigating }}" />
+      <StackLayout id="container">
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+
+</Page>

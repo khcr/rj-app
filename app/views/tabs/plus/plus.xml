@@ -1,0 +1,42 @@
+<StackLayout start="start" id="plus" class="wrapper" visibility="collapse">
+  <button tap="toAccount">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE87C;   " fontFamily="MaterialIcons-Regular" />
+              <span text="{{ isSignedIn ? 'Mon compte' : 'Se connecter' }}" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
+  <button tap="toTips">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE42E;   " fontFamily="MaterialIcons-Regular" />
+              <span text="Tips" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
+  <button tap="toMap">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE55B;   " fontFamily="MaterialIcons-Regular" />
+              <span text="Carte" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
+  <button tap="toAbout">
+    <button.formattedText>
+        <formattedString>
+          <formattedString.spans>
+              <span text="&#xE88E;   " fontFamily="MaterialIcons-Regular" />
+              <span text="About" />
+          </formattedString.spans>
+        </formattedString>
+    </button.formattedText>
+  </button>
+</StackLayout>
