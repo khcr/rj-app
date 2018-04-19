@@ -1,18 +1,20 @@
 var builderModule = require('ui/builder');
 var StackLayout = require("ui/layouts/stack-layout").StackLayout;
+var application = require("application");
 
 var BackButton = require("../../../helpers/back_button");
 
-var page, container, isLoaded;
+var page, container;
 
 var containers = {};
-var isLoaded = false;
 var tabs = ["feed", "agenda", "testimonies", "plus"];
 var currentTab = "feed";
+var isLoaded = false;
 
 StackLayout.startEvent = "start";
 
 exports.loaded = function(args) {
+
   page = args.object;
   container = page.getViewById("container");
 
@@ -27,6 +29,10 @@ exports.loaded = function(args) {
   }
 
   new BackButton(page).hide();
+
+  application.on(application.exitEvent, function() {
+    isLoaded = false;
+  });
 
 }
 

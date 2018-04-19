@@ -4,22 +4,23 @@
   "repository": "https://github.com/khcr/rj-app",
   "nativescript": {
     "id": "com.id1lnx0as1aunq3r129xr5d",
-    "tns-ios": {
-      "version": "2.5.0"
-    },
     "tns-android": {
-      "version": "2.5.0"
+      "version": "4.0.0"
+    },
+    "tns-ios": {
+      "version": "4.0.0"
     }
   },
   "dependencies": {
     "nativescript-background-http": "^2.5.1",
     "nativescript-camera": "0.0.8",
-    "nativescript-google-maps-sdk": "^1.4.3",
+    "nativescript-google-maps-sdk": "^2.5.0",
     "nativescript-imagepicker": "^2.5.1",
     "nativescript-permissions": "^1.2.3",
     "nativescript-telerik-ui": "^1.6.2",
     "nativescript-theme-core": "~1.0.2",
-    "tns-core-modules": "^2.5.0",
+    "npm": "^5.8.0",
+    "tns-core-modules": "^3.4.1",
     "tns-core-modules-snapshot": "2.5.2-5.5.372.32"
   },
   "devDependencies": {

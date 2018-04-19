@@ -25,8 +25,7 @@ exports.signIn = function() {
     page.bindingContext.set("isLoading", false);
     return Promise.reject();
   }).then(function() {
-    var topmost = frameModule.topmost();
-    topmost.navigate({ moduleName: "views/feed/feed", clearHistory: true });
+    Router.navigateTo("account", "user/account", { clearHistory: true })
   });
 }
 

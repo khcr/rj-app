@@ -11,11 +11,13 @@ exports.loaded = function(args) {
 }
 
 exports.mapReady = function(args) {
+  var mapView = args.object;
+  mapView.zoom = 16;
+  mapView.latitude = 46.6179385;
+  mapView.longitude = 7.0574878;
+  
   Marker.all().then(function (res) {
     points = res;
-    console.dump(points);
-
-    var mapView = args.object;
 
     var polygon = new mapsModule.Polygon();
     polygon.addPoints([

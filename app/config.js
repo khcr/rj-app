@@ -1,3 +1,3 @@
 module.exports = {
-    apiUrl: "https://rencontredejeunesse.ch/api/"
+    apiUrl: "http://192.168.1.49:3000/api/"
 };

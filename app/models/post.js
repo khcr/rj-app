@@ -1,16 +1,14 @@
 var config = require("../config");
 
 var http = require("http");
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable");
 var ObservableArray = require("data/observable-array").ObservableArray;
 
 var Upload = require("./upload");
 
-function Post(params) {
+function Post(params = {}) {
 
-    params = params || {};
-
-    var viewModel = new Observable({
+    var viewModel = new observableModule.fromObject({
       id: params.id || null,
       message: params.message || "",
       author: params.author || "",
@@ -137,7 +135,7 @@ Post.List = function() {
 Post.find = function(id) {
   var token = Session.getKey("rememberToken");
   return http.getJSON(config.apiUrl + "posts/" + id + ".json?remember_token=" + token).then(function(res) {
-    return new Observable(res);
+    return new observableModule.fromObject(res);
   }, function (e) {
     console.log(e);
   });

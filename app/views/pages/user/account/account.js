@@ -7,14 +7,12 @@ var page;
 
 exports.loaded = function(args) {
 
-  var pageData = {
+  page = args.object;
+  page.bindingContext = {
     firstname: Session.getKey("firstname"),
     lastname: Session.getKey("lastname"),
     email: Session.getKey("email")
-  };
-
-  page = args.object;
-  page.bindingContext = pageData;
+  };;
 
   page.actionBar.title = "Compte";
 };
@@ -31,6 +29,5 @@ exports.toImage = function() {
 
 exports.signOut = function() {
   User.signOut();
-  var topmost = frameModule.topmost();
-  topmost.navigate({ moduleName: "views/feed/feed", clearHistory: true });
+  Router.navigateTo("signin", "user/signin", { clearHistory: true });
 };

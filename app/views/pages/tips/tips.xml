@@ -1,8 +1,8 @@
 
 <StackLayout loaded="loaded" orientation="vertical" class="content">
 
-  <ScrollView>
-    <HtmlView id="htmlview"/>
-  </ScrollView>
-  
+  <Page>
+    {%raw%}<WebView src="~/views/pages/tips/tips.html" />{%endraw%}
+  </Page>
+
 </StackLayout>

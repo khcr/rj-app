@@ -1,8 +1,7 @@
-var observableModule = require("data/observable");
+var Observable = require("data/observable");
 var frameModule = require("ui/frame");
 var dialogsModule = require("ui/dialogs");
 var connectivity = require("connectivity");
-var ActionItem = require("ui/action-bar").ActionItem;
 
 var Post = require("../../../models/post");
 
@@ -10,13 +9,12 @@ var PostList = new Post.List();
 
 var page, seeMoreTag;
 
-var pageData = new observableModule.fromObject({
-  posts: PostList.items(),
-});
-
 exports.start = function(args) {
   page = args.object;
-  page.bindingContext = pageData;
+  page.bindingContext = new Observable.fromObject({
+    posts: PostList.items(),
+    isAdmin: Session.getKey("isAdmin")
+  });
   seeMoreTag = page.getViewById("see-more");
 
   page.on("navigatedTo", function(){
@@ -25,21 +23,15 @@ exports.start = function(args) {
   });
 
   page.actionBar.title = "Feed";
-  var actionItem = new ActionItem();
-  actionItem.on("tap", newPost);
-  if(page.android) { actionItem.android.systemIcon = "ic_menu_add"; }
-  else if(page.ios) { actionItem.ios.systemIcon = "7"; }
-  page.actionBar.actionItems.addItem(actionItem)
 };
 
 exports.refresh = function(args) {
   loadPosts();
 };
 
-var newPost = function() {
+exports.newPost = function() {
   Router.navigateTo("new", "feed/new");
 };
-exports.newPost = newPost;
 
 exports.toPost = function(e) {
   var postId = e.object.postId;
@@ -49,12 +41,12 @@ exports.toPost = function(e) {
 
 exports.loadMore = function(args) {
   seeMoreTag.visibility = "collapse"
-  pageData.set("loadingMore", true);
+  page.bindingContext.set("loadingMore", true);
   PostList.load().then(function(res) {
     if(res) {
       seeMoreTag,visibility = "visible";
     }
-    pageData.set("loadingMore", false);
+    page.bindingContext.set("loadingMore", false);
   });
 };
 
@@ -110,9 +102,9 @@ function loadPosts() {
     });
   } else {
     PostList.empty();
-    pageData.set("isLoading", true);
+    page.bindingContext.set("isLoading", true);
     PostList.load().then(function() {
-      pageData.set("isLoading", false);
+      page.bindingContext.set("isLoading", false);
       seeMoreTag.visibility = "visible"
     });
   }

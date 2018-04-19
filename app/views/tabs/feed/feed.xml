@@ -1,4 +1,8 @@
-<StackLayout start="start" id="feed" class="wrapper">
+<StackLayout start="start" id="feed" class="wrapper" visibility="collapse">
+
+    <button tap="newPost" visibility="{{ isAdmin ? 'visible' : 'collapse' }}" text="Poster"/>
+    <button tap="refresh" text="Recharger"/>
+
     <StackLayout orientation="vertical" class="list">
         <Repeater items="{{ posts }}">
 

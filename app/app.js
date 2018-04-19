@@ -1,4 +1,5 @@
 var application = require("application");
+var frameModule = require("ui/frame");
 var Session = require("./helpers/session");
 var Router = require("./helpers/router");
 

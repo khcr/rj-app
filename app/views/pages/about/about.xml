@@ -1,5 +1,5 @@
 <StackLayout loaded="loaded" orientation="vertical">
-  <Label text="RJ-App (2017)" />
+  <Label text="RJ App (2018)" />
   <Label text="Beta 1 'Pétunia' version 2.1" class="version" />
   <Label text="Développé par JS-Tech" />
   <Image src="res://jstech" width="90px"/>

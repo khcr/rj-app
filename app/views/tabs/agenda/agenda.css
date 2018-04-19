@@ -46,7 +46,7 @@ GridLayout.big {
 }
 
 GridLayout.big.long {
-  height: initial;
+  /*height: initial;*/
 }
 
 TextView.big-time {
