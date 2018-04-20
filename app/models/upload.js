@@ -1,11 +1,11 @@
 var config = require("../config");
 
 var bghttp = require("nativescript-background-http");
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable");
 
 function Upload(imageUrl) {
 
-    var viewModel = new Observable({
+    var viewModel = new observableModule.fromObject({
       imageUrl: imageUrl
     });
 

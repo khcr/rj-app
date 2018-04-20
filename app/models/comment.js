@@ -1,13 +1,13 @@
 var config = require("../config");
 
 var http = require("http");
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable");
 
 function Comment(params) {
 
   params = params || {};
 
-  var viewModel = new Observable({
+  var viewModel = new observableModule.fromObject({
       id: params.id || null,
       message: params.message || "",
       author: params.author || "",

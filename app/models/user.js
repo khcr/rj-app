@@ -1,7 +1,7 @@
 var config = require("../config");
 
 var http = require("http");
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable");
 
 var Upload = require("./upload");
 
@@ -9,7 +9,7 @@ function User(params) {
 
     params = params || {};
 
-    var viewModel = new Observable({
+    var viewModel = new observableModule.fromObject({
         gender: params.gender || "",
         firstname: params.firstname || "",
         lastname: params.lastname || "",

@@ -36,7 +36,7 @@ exports.newPost = function() {
     post.set("message", "");
     post.set("imageField", null)
     var topmost = frameModule.topmost();
-    topmost.navigate("views/feed/feed");
+    topmost.navigate({ moduleName: "views/tabs/base/base", context: { reload: true }});
   });
 
 }

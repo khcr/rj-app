@@ -1,4 +1,4 @@
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable");
 var ObservableArray = require("data/observable-array").ObservableArray;
 var dialogsModule = require("ui/dialogs");
 
@@ -15,7 +15,7 @@ exports.loaded = function(args) {
   var postId = page.navigationContext.postId;
   comment = new Comment({ postId: postId });
 
-  page.bindingContext = new Observable({
+  page.bindingContext = new observableModule.fromObject({
     post: new Post(),
     comment: comment,
     isSignedIn: Session.getKey("isSignedIn"),
@@ -87,9 +87,16 @@ exports.deleteComment = function(e) {
   }).then(function(result) {
     if(result) {
       Comment.delete(id).then(function() {
-        commentTag.parent.parent.visibility = "collapse";
+        var indexOfComment = findCommentIn(comments, id);
+        comments.splice(indexOfComment, 1);
       });
     }
   });
 
+};
+
+var findCommentIn = function(comments, commentId) {
+  comments.forEach(function(comment, index) {
+    if (comment.id == commentId) { return index };
+  });
 };

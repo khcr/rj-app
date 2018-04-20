@@ -1,71 +1,32 @@
-var builderModule = require('ui/builder');
-var StackLayout = require("ui/layouts/stack-layout").StackLayout;
-var application = require("application");
-
 var BackButton = require("../../../helpers/back_button");
 
-var page, container;
+var Tabs = require("../../../helpers/tabs");
 
-var containers = {};
-var tabs = ["feed", "agenda", "testimonies", "plus"];
-var currentTab = "feed";
-var isLoaded = false;
-
-StackLayout.startEvent = "start";
+var page;
+var tabs = new Tabs();
 
 exports.loaded = function(args) {
 
   page = args.object;
-  container = page.getViewById("container");
-
-  if(!isLoaded) {
-    tabs.forEach(function(tab) {
-      loadModule("views/tabs/" + tab, tab);
-      containers[tab] = page.getViewById(tab);
-      containers[tab].notify({ eventName: "start", object: containers[tab] });
-    });
-    navigateTo(currentTab);
-    isLoaded = true;
-  }
 
   new BackButton(page).hide();
 
-  application.on(application.exitEvent, function() {
-    isLoaded = false;
-  });
+  tabs.load(page);
 
-}
-
-function loadModule(path, name) {
-  var view = builderModule.load({
-    path: path,
-    name: name,
-    page: page,
-    attributes: { actionBar: page.actionBar }
-  });
-
-  container.addChild(view);
-}
-
-function navigateTo(tab) {
-  containers[currentTab].visibility = "collapse";
-  containers[tab].notify({ eventName: "navigatedTo" })
-  containers[tab].visibility = "visible";
-  currentTab = tab;
 }
 
 exports.toAgenda = function() {
-  navigateTo("agenda");
+  tabs.navigateTo("agenda");
 }
 
 exports.toFeed = function() {
-  navigateTo("feed");
+  tabs.navigateTo("feed");
 }
 
 exports.toTestimonies = function() {
-  navigateTo("testimonies");
+  tabs.navigateTo("testimonies");
 }
 
 exports.toPlus = function() {
-  navigateTo("plus");
+  tabs.navigateTo("plus");
 }
