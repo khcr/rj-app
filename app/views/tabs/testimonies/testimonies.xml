@@ -1,7 +1,7 @@
 <StackLayout start="start" id="testimonies" class="wrapper" visibility="collapse">
   <GridLayout rows="auto, *" cols="*">
     <GridLayout columns="3*, *" rows="auto" row="0" visibility="{{ isSignedIn ? 'visible' : 'collapse'}}">
-      <TextView id="new-testimony" text="{{ message }}" height="90" col="0" hint="Laissez votre témoignage" class="new-testimony" />
+      <TextView id="new-testimony" text="{{ testimony.message }}" height="90" col="0" hint="Laissez votre témoignage" class="new-testimony" />
       <Button text="&#xE163;" tap="newTestimony" class="submit" col="1" class="submit material-font" />
     </GridLayout>
 
@@ -24,6 +24,8 @@
         </StackLayout>
       </Repeater.itemTemplate>
     </Repeater>
+    <ActivityIndicator busy="{{ loadingMore }}" row="0" width="50" />
+    <Button text="Voir plus" tap="loadMore" id="see-more" class="see-more" />
     <ActivityIndicator busy="{{ isLoading }}" row="1"/>
   </GridLayout>
 </StackLayout>

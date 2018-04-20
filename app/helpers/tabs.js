@@ -1,6 +1,7 @@
 var builderModule = require('ui/builder');
 var StackLayout = require("ui/layouts/stack-layout").StackLayout;
 var application = require("application");
+var timer = require("timer");
 
 function Tabs() {
 
@@ -35,8 +36,10 @@ function Tabs() {
 
   this.navigateTo = function(tab) {
     containers[currentTab].visibility = "collapse";
-    containers[tab].notify({ eventName: "navigatedTo" })
     containers[tab].visibility = "visible";
+    timer.setTimeout(function() {
+      containers[tab].notify({ eventName: "navigatedTo" })
+    }, 0)
     currentTab = tab;
   };
 

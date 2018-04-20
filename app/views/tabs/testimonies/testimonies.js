@@ -1,20 +1,27 @@
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable");
 var connectivity = require("connectivity");
 
-var dialogsModule = require("ui/dialogs");
-
+var Dialogs = require("../../../helpers/dialogs");
+var HelperFunctions = require("../../../helpers/helper_functions");
 var Testimony = require("../../../models/testimony");
 var TestimonyList = new Testimony.List()
 
-var page;
-var testimony = new Testimony();
+var page, testimony, testimonies, seeMoreTag;
 
 exports.start = function(args) {
 
   page = args.object;
-  page.bindingContext = testimony;
-  page.bindingContext.set("testimonies", TestimonyList);
-  page.bindingContext.set("isSignedIn", Session.getKey("isSignedIn"));
+
+  testimony = new Testimony();
+  testimonies = TestimonyList.items()
+
+  page.bindingContext = observableModule.fromObject({
+    testimony: testimony,
+    testimonies: testimonies,
+    isSignedIn: Session.getKey("isSignedIn")
+  })
+
+  seeMoreTag = page.getViewById("see-more");
 
   page.on("navigatedTo", function(){
     loadTestimonies();
@@ -24,21 +31,29 @@ exports.start = function(args) {
   page.actionBar.title = "Témoignage";
 };
 
+exports.loadMore = function(args) {
+  seeMoreTag.visibility = "collapse"
+  page.bindingContext.set("loadingMore", true);
+  TestimonyList.load().then(function(res) {
+    if(res) {
+      seeMoreTag.visibility = "visible";
+    }
+    page.bindingContext.set("loadingMore", false);
+  });
+};
+
 exports.newTestimony = function() {
   var message = testimony.get("message");
 
   if(message.trim() === "") {
-    dialogsModule.alert({
-      message: "Entrez un message",
-      okButtonText: "Compris"
-    });
+    Dialogs.error("Entrez un message");
     return;
   }
 
   page.getViewById("new-testimony").dismissSoftInput();
 
   testimony.save().then(function(res) {
-    TestimonyList.unshift(res);
+    testimonies.unshift(res);
     testimony.set("message", "");
   });
 
@@ -48,18 +63,9 @@ exports.editTestimony = function(e) {
   var testimonyTag = e.object.parent.parent.getViewById("testimony");
   var text = testimonyTag.text;
   var id = testimonyTag.testimonyId;
-  dialogsModule.prompt({
-    title: "Modifier",
-    okButtonText: "Enregistrer",
-    cancelButtonText: "Annuler",
-    defaultText: text,
-    inputType: dialogsModule.inputType.text
-  }).then(function(r) {
+  Dialogs.update(text).then(function(r) {
       if(r.text.trim() === "") {
-        dialogsModule.alert({
-          message: "Entrez un message",
-          okButtonText: "Compris"
-        });
+        Dialogs.error("Entrez un message");
       } else if(r.result) {
         var comment = new Testimony({ message: r.text, id: id });
         comment.update().then(function(res) {
@@ -72,15 +78,11 @@ exports.editTestimony = function(e) {
 exports.deleteTestimony = function(e) {
   var testimonyTag = e.object;
   var id = testimonyTag.testimonyId;
-  dialogsModule.confirm({
-    title: "Confirmation",
-    message: "Supprimer ce témoignage ?",
-    cancelButtonText: "Annuler",
-    okButtonText: "Confirmer"
-  }).then(function(result) {
+  Dialogs.delete("ce témoignage").then(function(result) {
     if(result) {
       Testimony.delete(id).then(function() {
-        testimonyTag.parent.parent.visibility = "collapse";
+        var indexOfTestimony = HelperFunctions.findByIdInArray(testimonies, id);
+        testimonies.splice(indexOfTestimony, 1);
       });
     }
   });
@@ -88,17 +90,16 @@ exports.deleteTestimony = function(e) {
 };
 
 function loadTestimonies() {
+  seeMoreTag.visibility = "collapse"
   var connectionType = connectivity.getConnectionType();
   if (connectionType == connectivity.connectionType.none) {
-    dialogsModule.alert({
-        message: "Pas de connexion internet",
-        okButtonText: "Compris"
-      });
+    Dialogs.no_internet();
   } else {
     TestimonyList.empty();
     page.bindingContext.set("isLoading", true);
-    TestimonyList.all().then(function() {
+    TestimonyList.load().then(function() {
       page.bindingContext.set("isLoading", false);
+      seeMoreTag.visibility = "visible"
     });
   }
 }

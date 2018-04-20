@@ -1,20 +1,26 @@
-var Observable = require("data/observable");
+var observableModule = require("data/observable");
 var frameModule = require("ui/frame");
-var dialogsModule = require("ui/dialogs");
 var connectivity = require("connectivity");
 
+var Dialogs = require("../../../helpers/dialogs");
+var HelperFunctions = require("../../../helpers/helper_functions");
 var Post = require("../../../models/post");
 
 var PostList = new Post.List();
 
-var page, seeMoreTag;
+var page, posts, seeMoreTag;
 
 exports.start = function(args) {
+
   page = args.object;
-  page.bindingContext = new Observable.fromObject({
-    posts: PostList.items(),
+
+  posts = PostList.items();
+
+  page.bindingContext = new observableModule.fromObject({
+    posts: posts,
     isAdmin: Session.getKey("isAdmin")
   });
+
   seeMoreTag = page.getViewById("see-more");
 
   page.on("navigatedTo", function(){
@@ -44,7 +50,7 @@ exports.loadMore = function(args) {
   page.bindingContext.set("loadingMore", true);
   PostList.load().then(function(res) {
     if(res) {
-      seeMoreTag,visibility = "visible";
+      seeMoreTag.visibility = "visible";
     }
     page.bindingContext.set("loadingMore", false);
   });
@@ -54,18 +60,9 @@ exports.editPost = function(e) {
   var postTag = e.object.parent.parent.getViewById("post");
   var text = postTag.text;
   var id = postTag.postId;
-  dialogsModule.prompt({
-    title: "Modifier",
-    okButtonText: "Enregistrer",
-    cancelButtonText: "Annuler",
-    defaultText: text,
-    inputType: dialogsModule.inputType.text
-  }).then(function(r) {
+  Dialogs.update(text).then(function(r) {
     if(r.text.trim() === "") {
-      dialogsModule.alert({
-        message: "Entrez un message",
-        okButtonText: "Compris"
-      });
+      Dialogs.error("Entrez un message");
     } else if(r.result) {
       var post = new Post({ message: r.text, id: id });
       post.update().then(function(res) {
@@ -78,15 +75,11 @@ exports.editPost = function(e) {
 exports.deletePost = function(e) {
   var postTag = e.object;
   var id = postTag.postId;
-  dialogsModule.confirm({
-    title: "Confirmation",
-    message: "Supprimer ce post ?",
-    cancelButtonText: "Annuler",
-    okButtonText: "Confirmer"
-  }).then(function(result) {
+  Dialogs.delete("ce post").then(function(result) {
     if(result) {
       Post.delete(id).then(function() {
-        postTag.parent.parent.visibility = "collapse";
+        var indexOfPost = HelperFunctions.findByIdInArray(posts, id);
+        posts.splice(indexOfPost, 1);
       });
     }
   });
@@ -96,10 +89,7 @@ function loadPosts() {
   seeMoreTag.visibility = "collapse"
   var connectionType = connectivity.getConnectionType();
   if (connectionType == connectivity.connectionType.none) {
-    dialogsModule.alert({
-      message: "Pas de connexion internet",
-      okButtonText: "Compris"
-    });
+    Dialogs.no_internet();
   } else {
     PostList.empty();
     page.bindingContext.set("isLoading", true);

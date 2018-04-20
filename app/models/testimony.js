@@ -2,6 +2,7 @@ var config = require("../config");
 
 var http = require("http");
 var observableModule = require("data/observable");
+var Observable = require("data/observable").Observable;
 var ObservableArray = require("data/observable-array").ObservableArray;
 
 function Testimony(params) {
@@ -57,26 +58,35 @@ function Testimony(params) {
 
 Testimony.List = function() {
 
-  var viewModel =  new ObservableArray();
+  this._items = new ObservableArray();
 
-  viewModel.all = function() {
+  this.items = function() {
+    return this._items;
+  };
+
+  this.pageNumber = 1;
+
+  this.load = function() {
+    var list = this;
     var token = Session.getKey("rememberToken");
-    return http.getJSON(config.apiUrl + "testimonies.json?remember_token=" + token).then(function(res) {
-      res.forEach(function(testimony) {
-        viewModel.push(testimony);
+    return http.getJSON(config.apiUrl + "testimonies.json?page=" + list.pageNumber + "&remember_token=" + token).then(function(res) {
+      if(!res.length) {
+        return false;
+      }
+      list.pageNumber++;
+      res.forEach(function(post) {
+        list._items.push(post);
       });
+      return list._items;
     }, function(e) {
       console.log(e);
     });
   };
 
-  viewModel.empty = function() {
-    while (viewModel.length) {
-      viewModel.pop();
-    }
+  this.empty = function() {
+    this.pageNumber = 1;
+    this._items.splice(0);
   };
-
-  return viewModel;
 
 }
 

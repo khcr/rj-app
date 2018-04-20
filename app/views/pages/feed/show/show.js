@@ -1,7 +1,8 @@
 var observableModule = require("data/observable");
 var ObservableArray = require("data/observable-array").ObservableArray;
-var dialogsModule = require("ui/dialogs");
 
+var Dialogs = require("../../../../helpers/dialogs");
+var HelperFunctions = require("../../../../helpers/helper_functions");
 var Post = require("../../../../models/post");
 var Comment = require("../../../../models/comment");
 
@@ -36,10 +37,7 @@ exports.newComment = function() {
   var message = comment.get("message");
 
   if(message.trim() === "") {
-    dialogsModule.alert({
-      message: "Entrez un message",
-      okButtonText: "Compris"
-    });
+    Dialogs.error("Entrez un message");
     return;
   }
 
@@ -55,18 +53,9 @@ exports.editComment = function(e) {
   var commentTag = e.object.parent.parent.getViewById("comment");
   var text = commentTag.text;
   var id = commentTag.commentId;
-  dialogsModule.prompt({
-    title: "Modifier",
-    okButtonText: "Enregistrer",
-    cancelButtonText: "Annuler",
-    defaultText: text,
-    inputType: dialogsModule.inputType.text
-  }).then(function(r) {
+  Dialogs.update(text).then(function(r) {
     if(r.text.trim() === "") {
-      dialogsModule.alert({
-        message: "Entrez un message",
-        okButtonText: "Compris"
-      });
+      Dialogs.error("Entrez un message");
     } else if(r.result) {
       var comment = new Comment({ message: r.text, id: id });
       comment.update().then(function(res) {
@@ -79,24 +68,13 @@ exports.editComment = function(e) {
 exports.deleteComment = function(e) {
   var commentTag = e.object;
   var id = commentTag.commentId;
-  dialogsModule.confirm({
-    title: "Confirmation",
-    message: "Supprimer ce commentaire ?",
-    cancelButtonText: "Annuler",
-    okButtonText: "Confirmer"
-  }).then(function(result) {
+  Dialogs.delete("ce commentaire").then(function(result) {
     if(result) {
       Comment.delete(id).then(function() {
-        var indexOfComment = findCommentIn(comments, id);
+        var indexOfComment = HelperFunctions.findByIdInArray(comments, id);
         comments.splice(indexOfComment, 1);
       });
     }
   });
 
-};
-
-var findCommentIn = function(comments, commentId) {
-  comments.forEach(function(comment, index) {
-    if (comment.id == commentId) { return index };
-  });
 };
