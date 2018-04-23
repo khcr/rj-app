@@ -9,6 +9,8 @@ function Upload(imageUrl) {
       imageUrl: imageUrl
     });
 
+    console.log(imageUrl)
+
     viewModel.save = function() {
       var session = bghttp.session("image-upload");
 
@@ -20,6 +22,7 @@ function Upload(imageUrl) {
           },
       };
 
+      console.log(this.get("imageUrl"))
       return session.uploadFile(this.get("imageUrl"), request);
 
     }

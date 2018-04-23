@@ -21,17 +21,10 @@ function Post(params = {}) {
 
     viewModel.save = function() {
       var post = this;
+
       if (post.get("imageField") === undefined) {
 
-        return http.request({
-          url: config.apiUrl + "posts.json",
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          content: JSON.stringify({
-            post: { message: post.get("message") },
-            remember_token: Session.getKey("rememberToken")
-          })
-        }).then(function(res) {
+        return viewModel.request().then(function(res) {
           var result = res.content.toJSON();
           if(res.statusCode !== 200) { throw result.errors; }
           return result;
@@ -53,15 +46,7 @@ function Post(params = {}) {
 
             var response = JSON.parse(e.data);
 
-            http.request({
-              url: config.apiUrl + "posts.json",
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              content: JSON.stringify({
-                post: { message: post.get("message"), image_id: response.id },
-                remember_token: Session.getKey("rememberToken")
-              })
-            }).then(function(res) {
+            viewModel.request(response.id).then(function(res) {
               var result = res.content.toJSON();
               if(res.statusCode !== 200) { throw result.errors; }
               resolve(result);
@@ -70,10 +55,20 @@ function Post(params = {}) {
             });
           });
         });
-
         return promise;
       }
+    };
 
+    viewModel.request = function(image_id) {
+      return http.request({
+        url: config.apiUrl + "posts.json",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        content: JSON.stringify({
+          post: { message: this.get("message"), image_id: image_id },
+          remember_token: Session.getKey("rememberToken")
+        })
+      });
     };
 
     viewModel.update = function() {

@@ -26,9 +26,12 @@ var Imagepicker = {
   },
 
   take: function() {
+    console.log("START")
     return camera.takePicture().then(function(imageAsset) {
+      console.log("TAKEN")
       return imageSource.fromAsset(imageAsset).then(function(imageSource) {
 
+        console.log("TOSOURCE")
         return Imagepicker._saveTempfile(imageSource);
 
       });
@@ -46,11 +49,12 @@ var Imagepicker = {
     return context.authorize().then(function() {
       return context.present();
     }).then(function(selection) {
-      return selection[0].getImage().then(function(imageSource) {
-        return Imagepicker._saveTempfile(imageSource);
+      var source = new imageSource.ImageSource();
+      return source.fromAsset(selection[0]).then(function(imageSource) {
+        return Imagepicker._saveTempfile(imageSource)
       });
     }).catch(function (e) {
-        console.log(e);
+      console.log(e);
     });
   },
 

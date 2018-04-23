@@ -1,19 +1,25 @@
 var frameModule = require("ui/frame");
-var dialogsModule = require("ui/dialogs");
+var observableModule = require("data/observable");
 
+var Dialogs = require("../../../../helpers/dialogs");
 var Imagepicker = require("../../../../helpers/imagepicker");
 var Post = require("../../../../models/post");
 
-var page;
+var page, imageTag;
 var post = new Post();
+
+var pageData = observableModule.fromObject({
+  post: post,
+  isLoading: false,
+  imageSrc: null
+});
 
 exports.loaded = function(args) {
   page = args.object;
 
   page.actionBar.title = "Nouveau";
 
-  page.bindingContext = post;
-  page.bindingContext.set("isLoading", false);
+  page.bindingContext = pageData
 
   Imagepicker.permission();
 };
@@ -23,10 +29,7 @@ exports.newPost = function() {
   var message = post.get("message");
 
   if(message.trim() === "") {
-    dialogsModule.alert({
-      message: "Entrez un message",
-      okButtonText: "Compris"
-    });
+    Dialogs.error("Entrez un message");
     page.bindingContext.set("isLoading", false);
     return;
   }
@@ -34,7 +37,7 @@ exports.newPost = function() {
   post.save().then(function() {
     page.bindingContext.set("isLoading", false);
     post.set("message", "");
-    post.set("imageField", null)
+    page.bindingContext.set("imageSrc", null);
     var topmost = frameModule.topmost();
     topmost.navigate({ moduleName: "views/tabs/base/base", context: { reload: true }});
   });
@@ -43,17 +46,17 @@ exports.newPost = function() {
 
 exports.selectImage = function() {
   Imagepicker.select().then(function(res) {
-    var imageTag = page.getViewById("preview");
-    imageTag.imageSource = res.source;
+    page.bindingContext.set("imageSrc", res.source);
     post.set("imageField", res.path);
   });
 
 }
 
 exports.takeImage = function() {
+  console.log("START PAGE");
   Imagepicker.take().then(function(res) {
-    var imageTag = page.getViewById("preview");
-    imageTag.imageSource = res.source;
+    console.dir(res)
+    page.bindingContext.set("imageSrc", res.source);
     post.set("imageField", res.path);
   });
 
