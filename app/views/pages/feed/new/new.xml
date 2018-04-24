@@ -1,4 +1,4 @@
-<GridLayout id="uploader" loaded="loaded" cols="auto" rows="auto, auto, auto, auto, auto, auto">
+<GridLayout loaded="loaded" cols="auto" rows="auto, auto, auto, auto, auto, auto">
   <TextView row="0" text="{{ post.message }}" height="200"/>
   <Button row="1" text="Choisir une photo" tap="selectImage" />
   <Button row="2" text="Prendre une photo" tap="takeImage" />

@@ -5,7 +5,7 @@ var Dialogs = require("../../../../helpers/dialogs");
 var Imagepicker = require("../../../../helpers/imagepicker");
 var Post = require("../../../../models/post");
 
-var page, imageTag;
+var page;
 var post = new Post();
 
 var pageData = observableModule.fromObject({
@@ -49,15 +49,11 @@ exports.selectImage = function() {
     page.bindingContext.set("imageSrc", res.source);
     post.set("imageField", res.path);
   });
-
 }
 
 exports.takeImage = function() {
-  console.log("START PAGE");
   Imagepicker.take().then(function(res) {
-    console.dir(res)
     page.bindingContext.set("imageSrc", res.source);
     post.set("imageField", res.path);
   });
-
 }

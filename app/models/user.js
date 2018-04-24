@@ -52,38 +52,6 @@ function User(params) {
       });
     };
 
-    viewModel.signUp = function() {
-      return http.request({
-        url: config.apiUrl + "users.json",
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        content: JSON.stringify({ user: this })
-      }).then(function(res) {
-        var result = res.content.toJSON();
-        if(res.statusCode !== 200) { throw result.errors; }
-        return result;
-      }, function(e) {
-        console.log(e);
-      });
-    };
-
-    viewModel.update = function() {
-      var token = Session.getKey("rememberToken");
-      return http.request({
-        url: config.apiUrl + "users/" + token + ".json",
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        content: JSON.stringify({ user: this })
-      }).then(function(res) {
-        var result = res.content.toJSON();
-        if(res.statusCode !== 200) { throw result.errors; }
-        Session.set(result);
-        return result;
-      }, function(e) {
-        console.log(e);
-      });
-    };
-
     viewModel.saveImage = function() {
       var user = this;
 

@@ -1,19 +1,12 @@
-<Page loaded="loaded">
-  <Page.actionBar>
-      <ActionBar title="Photo de profil" />
-  </Page.actionBar>
-  <ScrollView>
-    <StackLayout orientation="vertical" verticalAlignment="center">
+<StackLayout loaded="loaded" orientation="vertical" verticalAlignment="center">
 
-      <Image id="profile" src="{{ imageUrl }}" />
+  <Image id="profile" src="{{ imageUrl }}" />
 
-      <Button text="Choisir une photo" tap="selectImage" />
-      <Button text="Prendre une photo" tap="takeImage" />
-      
-      <Image id="preview" />
+  <Button text="Choisir une photo" tap="selectImage" />
+  <Button text="Prendre une photo" tap="takeImage" />
 
-      <Button text="Enregistrer" class="submit" tap="updateImage" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
-      <ActivityIndicator busy="{{ isLoading }}" width="50" />
-    </StackLayout>
-  </ScrollView>
-</Page>
+  <Image id="preview" src="{{ imageSrc }}" />
+
+  <Button text="Enregistrer" class="submit" tap="updateImage" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+  <ActivityIndicator busy="{{ isLoading }}" width="50" />
+</StackLayout>

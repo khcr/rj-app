@@ -2,9 +2,11 @@ var frameModule = require("ui/frame");
 
 var Router = {
 
-  navigateTo: function(pageName, pagePath, options = {}) {
+  navigateTo: function(pageName, pagePath, options = {}, contextOpts = {}) {
     var topmost = frameModule.topmost();
-    topmost.navigate({ moduleName: "views/pages/base/base", context: { pageName: pageName, pagePath: pagePath }, clearHistory: options["clearHistory"], animated: options["animated"] });
+    var context = Object.assign({ pageName: pageName, pagePath: pagePath }, contextOpts);
+    var entry = Object.assign({ moduleName: "views/pages/base/base", context: context }, options);
+    topmost.navigate(entry);
   }
 
 };

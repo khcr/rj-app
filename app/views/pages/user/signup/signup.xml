@@ -1,16 +1,1 @@
-
-<StackLayout loaded="loaded" orientation="vertical" verticalAlignment="center">
-
-  <Label text="&#xE24E;" class="material-font icon"/>
-
-  <ListPicker id="gender" items="{{ genders }}" />
-  <TextField text="{{ firstname }}" hint="Prénom" autocorrect="false" />
-  <TextField text="{{ lastname }}" hint="Nom" autocorrect="false" />
-  <TextField text="{{ email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-  <TextField hint="Mot de passe" text="{{ password }}" secure="true" />
-  <TextField hint="Confirmation" text="{{ password_confirmation }}" secure="true" />
-
-  <Button text="S'inscrire" class="submit" tap="signUp" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
-  <ActivityIndicator busy="{{ isLoading }}" width="50" />
-
-</StackLayout>
+{%raw%}<WebView loaded="loaded" src="{{ url }}" />{%endraw%}

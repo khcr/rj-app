@@ -18,16 +18,15 @@ exports.loaded = function(args) {
 };
 
 exports.toEdit = function() {
-  var topmost = frameModule.topmost();
-  topmost.navigate("views/user/account/edit/edit");
+  Router.navigateTo("edit", "user/account/edit");
 }
 
 exports.toImage = function() {
-  var topmost = frameModule.topmost();
-  topmost.navigate("views/user/account/image/image");
+  Router.navigateTo("image", "user/account/image");
 }
 
 exports.signOut = function() {
   User.signOut();
-  Router.navigateTo("signin", "user/signin", { clearHistory: true });
+  var topmost = frameModule.topmost();
+  topmost.navigate({ moduleName: "views/tabs/base/base", context: { reload: true }, clearHistory: true });
 };

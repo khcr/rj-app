@@ -33,6 +33,13 @@ var Dialogs = {
       message: text,
       okButtonText: "Compris"
     });
+  },
+
+  success: function(text) {
+    return dialogsModule.alert({
+      message: text,
+      okButtonText: "Merci"
+    });
   }
 
 };

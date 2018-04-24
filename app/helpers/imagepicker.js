@@ -28,12 +28,8 @@ var Imagepicker = {
   take: function() {
     console.log("START")
     return camera.takePicture().then(function(imageAsset) {
-      console.log("TAKEN")
       return imageSource.fromAsset(imageAsset).then(function(imageSource) {
-
-        console.log("TOSOURCE")
         return Imagepicker._saveTempfile(imageSource);
-
       });
     }).catch(function(e) {
       console.log(e);

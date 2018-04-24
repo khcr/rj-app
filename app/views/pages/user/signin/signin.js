@@ -1,6 +1,7 @@
-var dialogsModule = require("ui/dialogs");
 var frameModule = require("ui/frame");
+var observableModule = require("data/observable");
 
+var Dialogs = require("../../../../helpers/dialogs");
 var User = require("../../../../models/user");
 
 var page;
@@ -11,25 +12,24 @@ exports.loaded = function(args) {
 
   page.actionBar.title = "Signin";
 
-  page.bindingContext = user;
-  page.bindingContext.set("isLoading", false);
+  page.bindingContext = observableModule.fromObject({
+    user: user,
+    isLoading: false
+  });
 };
 
 exports.signIn = function() {
   page.bindingContext.set("isLoading", true);
   user.signIn().catch(function(e) {
-    dialogsModule.alert({
-      message: "Nous n'avons pas pu trouvé votre compte.",
-      okButtonText: "Compris"
-    });
+    Dialogs.error("Email ou/et mot de passe incorrect. Réessayer.")
     page.bindingContext.set("isLoading", false);
     return Promise.reject();
   }).then(function() {
-    Router.navigateTo("account", "user/account", { clearHistory: true })
+    var topmost = frameModule.topmost();
+    topmost.navigate({ moduleName: "views/tabs/base/base", context: { reload: true }, clearHistory: true });
   });
 }
 
 exports.toSignUp = function() {
-  var topmost = frameModule.topmost();
-  topmost.navigate({ moduleName: "views/user/signup/signup", animated: true });
+  Router.navigateTo("signup", "user/signup")
 }
