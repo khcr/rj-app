@@ -29,18 +29,21 @@ function Tabs() {
         containers[tab] = page.getViewById(tab);
         containers[tab].notify({ eventName: "start", object: containers[tab] });
       });
-      this.navigateTo(currentTab);
       isLoaded = true;
     }
+    this.navigateTo(currentTab);
   };
 
   this.navigateTo = function(tab) {
     containers[currentTab].visibility = "collapse";
     containers[tab].visibility = "visible";
+
     timer.setTimeout(function() {
       containers[tab].notify({ eventName: "navigatedTo" })
     }, 0)
+
     currentTab = tab;
+    page.bindingContext.set("currentTab", currentTab);
   };
 
   var loadModule = function(path, name) {

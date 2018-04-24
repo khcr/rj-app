@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <StackLayout row="1" id="navbar" orientation="horizontal">
 
-      <button id="toFeed" class="nav" tap="toFeed">
+      <button id="feedNav" class="{{ currentTab == 'feed' ? 'current nav' : 'nav' }}" tap="toFeed">
         <button.formattedText>
             <formattedString>
               <formattedString.spans>
@@ -31,7 +31,7 @@
             </formattedString>
         </button.formattedText>
       </button>
-      <button id="toAgenda" class="nav" tap="toAgenda">
+      <button id="agendNav" class="{{ currentTab == 'agenda' ? 'current nav' : 'nav' }}" tap="toAgenda">
         <button.formattedText>
             <formattedString>
               <formattedString.spans>
@@ -41,7 +41,7 @@
             </formattedString>
         </button.formattedText>
       </button>
-      <button id="toTestimonies" class="nav" tap="toTestimonies">
+      <button id="testimoniesNav" class="{{ currentTab == 'testimonies' ? 'current nav' : 'nav' }}" tap="toTestimonies">
         <button.formattedText>
             <formattedString>
               <formattedString.spans>
@@ -51,7 +51,7 @@
             </formattedString>
         </button.formattedText>
       </button>
-      <button id="toPlus" class="nav" tap="toPlus">
+      <button id="plusNav" class="{{ currentTab == 'plus' ? 'current nav' : 'nav' }}" tap="toPlus">
         <button.formattedText>
             <formattedString>
               <formattedString.spans>

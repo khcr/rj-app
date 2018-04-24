@@ -12,7 +12,7 @@ Button.nav {
 }
 
 Button.current {
-  background-color: #329597 !important;
-  border-color: #329597 !important;
-  color: #fff !important;
+  background-color: #329597;
+  border-color: #329597;
+  color: #fff;
 }
