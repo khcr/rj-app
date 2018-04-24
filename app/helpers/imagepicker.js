@@ -4,6 +4,8 @@ var permissions = require( "nativescript-permissions");
 var platformModule = require("platform");
 var camera = require("nativescript-camera");
 var imageSource = require("image-source");
+var enums = require("ui/enums");
+var bitmapFactory = require("nativescript-bitmap-factory");
 
 var Imagepicker = {
 
@@ -59,12 +61,25 @@ var Imagepicker = {
     var folder = fs.knownFolders.documents();
     var filename = "img_" + new Date().getTime() + ".jpeg";
     var path = fs.path.join(folder.path, filename);
-    var saved = imageSource.saveToFile(path, "jpeg");
+    var saved = Imagepicker.resize(imageSource).saveToFile(path, "jpeg");
     if(saved) {
       return { path: path, source: imageSource };
     }
 
     return false;
+  },
+
+  resize: function(imageSource) {
+
+    var mutableSource = bitmapFactory.makeMutable(imageSource);
+    var factory = bitmapFactory.create(imageSource.width, imageSource.height);
+
+    return factory.dispose(function(b) {
+      b.insert(mutableSource);
+      var b2 = b.resizeMax(1200);
+      var imageResized = b2.toImageSource();
+      return imageResized;
+    });
   }
 
 }

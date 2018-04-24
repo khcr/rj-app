@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "nativescript-background-http": "^2.5.1",
+    "nativescript-bitmap-factory": "^1.7.1",
     "nativescript-camera": "^4.0.2",
     "nativescript-google-maps-sdk": "^2.5.0",
     "nativescript-imagepicker": "^6.0.1",
