@@ -2,6 +2,7 @@ var application = require("application");
 var frameModule = require("ui/frame");
 var Session = require("./helpers/session");
 var Router = require("./helpers/router");
+var Push = require("./helpers/push");
 
 if (application.ios) {
   GMSServices.provideAPIKey("AIzaSyDvStGlE8wti9VDbJ9YTbn58ljwWI1hQQU");
@@ -9,6 +10,8 @@ if (application.ios) {
 
 global.Session = Session;
 global.Router = Router;
+
+Push.register();
 
 application.start({ moduleName: "views/tabs/base/base" });
 
