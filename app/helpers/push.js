@@ -1,5 +1,8 @@
 var dialogsModule = require("ui/dialogs");
 var pushPlugin = require("nativescript-push-notifications");
+var appSettings = require("application-settings");
+
+var Device = require("../models/device");
 
 var Push = {
 
@@ -15,7 +18,14 @@ var Push = {
   },
 
   register: function() {
-    pushPlugin.register(Push.pushSettings, function(){}, function(){});
+    var arePushRegistred = appSettings.getBoolean("arePushRegistred");
+    if(!arePushRegistred) {
+      pushPlugin.register(Push.pushSettings, function(token) {
+        var device = new Device(token);
+        device.save();
+        appSettings.setBoolean("arePushRegistred", true);
+      }, function(){});
+    }
   }
 
 }
