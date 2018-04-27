@@ -6,6 +6,9 @@
     "id": "com.id1lnx0as1aunq3r129xr5d",
     "tns-android": {
       "version": "3.4.2"
+    },
+    "tns-ios": {
+      "version": "3.4.1"
     }
   },
   "dependencies": {
