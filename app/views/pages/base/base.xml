@@ -3,7 +3,8 @@
   <Page.actionBar>
       <ActionBar>
         <StackLayout orientation="horizontal" horizontalAlignment="center">
-          <Image src="res://logorjpr" width="40px"></Image>
+          <Image visibility="{{ !isNavigating ? 'visible' : 'collapsed' }}" src="res://logorjpr" width="40px"></Image>
+          <ActivityIndicator visibility="{{ isNavigating ? 'visible' : 'collapsed' }}" width="40px" busy="{{ isNavigating }}" />
         </StackLayout>
       </ActionBar>
   </Page.actionBar>
@@ -11,10 +12,7 @@
   <!-- Content -->
 
   <ScrollView>
-    <StackLayout>
-      <ActivityIndicator busy="{{ isNavigating }}" />
-      <StackLayout id="container">
-      </StackLayout>
+    <StackLayout id="container">
     </StackLayout>
   </ScrollView>
 
