@@ -1,7 +1,7 @@
 <StackLayout start="start" id="feed" class="wrapper" visibility="collapse">
 
     <button tap="newPost" visibility="{{ isAdmin ? 'visible' : 'collapse' }}" text="Poster"/>
-    <button tap="refresh" text="Recharger"/>
+    <button tap="refresh" class="refresh" fontFamily="MaterialIcons-Regular" text="&#xE863;"/>
 
     <StackLayout orientation="vertical" class="list">
         <Repeater items="{{ posts }}">

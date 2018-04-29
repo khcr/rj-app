@@ -18,6 +18,14 @@ StackLayout.list {
   padding: 10px 10px 0 10px;
 }
 
+Button.refresh {
+  background-color: transparent;
+  color: #555;
+  border-color: transparent;
+  font-size: 20px;
+  border-width: 1;
+}
+
 /* Post */
 
 StackLayout.news {
