@@ -11,7 +11,9 @@ if (application.ios) {
 global.Session = Session;
 global.Router = Router;
 
-Push.register();
+application.on(application.launchEvent, function(args) {
+  Push.register();
+});
 
 application.start({ moduleName: "views/tabs/base/base" });
 
