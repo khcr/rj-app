@@ -1,8 +1,13 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="fill">
     <item>
-        <bitmap android:gravity="fill" android:src="@drawable/background" />
+      <shape android:shape="rectangle">
+        <solid android:color="#FFED00" />
+      </shape>
+    </item>
+    <item android:top="30dp" android:bottom="55dp">
+        <bitmap android:gravity="fill_horizontal|fill_vertical" android:src="@drawable/background" />
     </item>
     <item>
-        <bitmap android:gravity="center" android:src="@drawable/freedom" />
+        <bitmap android:gravity="center" android:src="@drawable/earth" />
     </item>
 </layer-list>
