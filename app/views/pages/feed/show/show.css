@@ -44,11 +44,11 @@ StackLayout.comment {
 
 GridLayout.infos-comment {
   padding: 10px 10px 0px 10px;
-  background-color: #329597;
+  background-color: #fffb00;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #329597;
-  color: #fff;
+  border-color: #fffb00;
+  color: #555;
   text-align: right;
 }
 
@@ -98,11 +98,11 @@ Label.title {
 
 GridLayout.infos {
   padding: 10px 10px 0px 10px;
-  background-color: #bd1347;
+  background-color: #fffb00;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #bd1347;
-  color: #fff;
+  border-color: #fffb00;
+  color: rgb(73, 73, 73);
 }
 
 Label.info-icon {

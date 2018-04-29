@@ -7,18 +7,18 @@ Label.day {
   font-size: 60px;
   color: #000;
   padding: 0 0 0 0;
-  font-family: "DELIRIUM";
+  font-family: "OpenSans-Light";
 }
 
 GridLayout.small {
-  padding: 15px 10px;
+  padding: 25px 10px;
   color: #000;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 TextView.time {
-  padding: 0 25px 0 0;
-  font-family: "Didot-Bold";
+  padding: 0 25px 0 10px;
+  font-family: "OpenSans-Light";
   border-width: 0;
   margin: 0;
   border-color: transparent;
@@ -26,7 +26,7 @@ TextView.time {
 }
 
 TextView.element {
-  font-family: "Didot-Bold";
+  font-family: "OpenSans-Light";
   border-width: 0;
   padding: 0;
   margin: 0;
@@ -38,11 +38,12 @@ GridLayout.big {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 200px;
+  height: 300px;
   color: #fff;
   border-width: 10 0 0 0;
-  border-color: #bd1347;
+  border-color: #fffb00;
   padding: 20px 10px 10px 10px;
+  margin: 20px 0;
 }
 
 GridLayout.big.long {
@@ -53,7 +54,7 @@ TextView.big-time {
   font-size: 30px;
   padding: 0 15px 0 0;
   margin: 0;
-  font-family: "Didot";
+  font-family: "OpenSans-Light";
   border-width: 0;
   border-color: transparent;
   background-color: transparent;
@@ -63,7 +64,7 @@ TextView.big-element {
   font-size: 30px;
   padding: 0;
   margin: 0;
-  font-family: "Didot";
+  font-family: "OpenSans-Light";
   border-width: 0;
   border-color: transparent;
   background-color: transparent;

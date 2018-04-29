@@ -31,10 +31,10 @@ StackLayout.news {
 
 GridLayout.infos {
   padding: 10px 10px 0px 10px;
-  background-color: #bd1347;
+  background-color: #fffb00;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #bd1347;
+  border-color: #fffb00;
   color: #fff;
 }
 
@@ -77,7 +77,7 @@ Button.action {
 
 TextView.message {
   padding: 15px 10px 20px 10px;
-  line-height: 200px;
+  /* line-height: 200px; */
   color: #555;
 }
 
@@ -123,7 +123,7 @@ TextView.last-comment-message {
 
 Button.see-more {
   margin: 0 0 20px 0;
-  background-color: #bd1347;
-  color: #fff;
+  background-color: #fffb00;
+  color: #555;
   border-color: transparent;
 }

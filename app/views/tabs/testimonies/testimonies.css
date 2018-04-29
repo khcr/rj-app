@@ -45,11 +45,11 @@ TextView.testimony-message {
 
 GridLayout.infos {
   padding: 10px 10px 0px 10px;
-  background-color: #31afd9;
+  background-color: #fffb00;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #31afd9;
-  color: #fff;
+  border-color: #fffb00;
+  color: #555;
 }
 
 Label.info-icon {
