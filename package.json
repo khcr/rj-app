@@ -4,11 +4,11 @@
   "repository": "https://github.com/khcr/rj-app",
   "nativescript": {
     "id": "com.id1lnx0as1aunq3r129xr5d",
-    "tns-ios": {
-      "version": "3.4.1"
-    },
     "tns-android": {
       "version": "3.4.2"
+    },
+    "tns-ios": {
+      "version": "4.0.1"
     }
   },
   "dependencies": {

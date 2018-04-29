@@ -3,7 +3,7 @@
     <button.formattedText>
         <formattedString>
           <formattedString.spans>
-              <span text="&#xE87C;   " fontFamily="MaterialIcons-Regular" />
+              <span text="&#xE87C;   " fontFamily="MaterialIcons-Regular, Material Icons" />
               <span text="{{ isSignedIn ? 'Mon compte' : 'Se connecter' }}" />
           </formattedString.spans>
         </formattedString>
@@ -13,7 +13,7 @@
     <button.formattedText>
         <formattedString>
           <formattedString.spans>
-              <span text="&#xE42E;   " fontFamily="MaterialIcons-Regular" />
+              <span text="&#xE42E;   " fontFamily="MaterialIcons-Regular, Material Icons" />
               <span text="Tips" />
           </formattedString.spans>
         </formattedString>
@@ -23,7 +23,7 @@
     <button.formattedText>
         <formattedString>
           <formattedString.spans>
-              <span text="&#xE55B;   " fontFamily="MaterialIcons-Regular" />
+              <span text="&#xE55B;   " fontFamily="MaterialIcons-Regular, Material Icons" />
               <span text="Carte" />
           </formattedString.spans>
         </formattedString>
@@ -33,7 +33,7 @@
     <button.formattedText>
         <formattedString>
           <formattedString.spans>
-              <span text="&#xE88E;   " fontFamily="MaterialIcons-Regular" />
+              <span text="&#xE88E;   " fontFamily="MaterialIcons-Regular, Material Icons" />
               <span text="About" />
           </formattedString.spans>
         </formattedString>

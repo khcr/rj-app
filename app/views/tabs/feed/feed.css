@@ -3,7 +3,7 @@
 /* Global */
 
 StackLayout.wrapper {
-  background-color: #e5e6e7;
+  background-color: #fff;
   font-family: "OpenSans-Light";
 }
 
@@ -16,6 +16,7 @@ TextView {
 
 StackLayout.list {
   padding: 10px 10px 0 10px;
+  background-color: #fff;
 }
 
 Button.refresh {
@@ -33,6 +34,8 @@ StackLayout.news {
   border-radius: 10px;
   box-shadow: 1px 1px 1px #000;
   margin: 0 0 50px 0;
+  border-color: #fffb00;
+  border-width: 2px;
 }
 
 /* Infos */

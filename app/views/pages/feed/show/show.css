@@ -1,5 +1,5 @@
 StackLayout.main {
-  background-color: #e5e6e7;
+  background-color: #fff;
   font-family: "OpenSans-Light";
   padding: 10px;
 }
@@ -153,7 +153,6 @@ TextView {
 
 TextView.message {
   padding: 15px 10px 20px 10px;
-  line-height: 200px;
   color: #555;
 }
 
