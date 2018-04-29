@@ -3,10 +3,11 @@ var config = require("../config");
 var http = require("http");
 var observableModule = require("data/observable");
 
-function Device(token) {
+function Device(token, platform) {
 
   var viewModel = new observableModule.fromObject({
-      token: token
+      token: token,
+      platform: platform
   });
 
   viewModel.save = function() {
@@ -14,7 +15,7 @@ function Device(token) {
       url: config.apiUrl + "devices.json",
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      content: JSON.stringify({ token: this.get("token") })
+      content: JSON.stringify({ token: this.get("token"), platform: this.get("platform") })
     }).then(function(res) {
       var result = res.content.toJSON();
       if(res.statusCode !== 200) { throw result.errors; }
