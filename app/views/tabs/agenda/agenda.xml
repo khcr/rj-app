@@ -76,7 +76,7 @@
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier04')">
       <TextView text="16h30" col="0" row="0" editable="false" class="big-time"/>
-      <TextView text="Atelier 4: Mission (salle du 2ème étage), avec Philippe Saehr" col="1" row="0" editable="false" class="big-element"/>
+      <TextView text="Atelier 5: Mission (salle du 2ème étage), avec Philippe Saehr" col="1" row="0" editable="false" class="big-element"/>
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="small">
       <TextView text="19h15" col="0" row="0" editable="false" class="time"/>
