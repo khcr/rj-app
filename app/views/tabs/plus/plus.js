@@ -8,8 +8,6 @@ exports.start = function(args) {
   page.bindingContext = {
     isSignedIn: Session.getKey("isSignedIn")
   }
-
-  page.actionBar.title = "Plus";
 };
 
 var toAccount = function() {

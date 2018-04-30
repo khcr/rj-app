@@ -15,6 +15,8 @@ exports.loaded = function(args) {
 
   tabs.load(page);
 
+  page.actionBar.title = "Home"
+
 }
 
 exports.toAgenda = function() {

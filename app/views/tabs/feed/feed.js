@@ -27,8 +27,6 @@ exports.start = function(args) {
     loadPosts();
     page.off("navigatedTo");
   });
-
-  page.actionBar.title = "Feed";
 };
 
 exports.refresh = function(args) {

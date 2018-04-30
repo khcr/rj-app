@@ -27,8 +27,6 @@ exports.start = function(args) {
     loadTestimonies();
     page.off("navigatedTo");
   });
-
-  page.actionBar.title = "Témoignage";
 };
 
 exports.loadMore = function(args) {
