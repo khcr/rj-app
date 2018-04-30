@@ -15,7 +15,7 @@ StackLayout#testimonies Button.submit {
   background-color: transparent;
   border-color: transparent;
   font-size: 50px;
-  color: #329597;
+  color: #555;
 }
 
 StackLayout#testimonies Label.connect {
@@ -28,7 +28,7 @@ StackLayout#testimonies Label.connect {
 StackLayout#testimonies StackLayout.testimony {
   border-radius: 10px;
   background-color: #fff;
-  margin: 0 0 20px 0;
+  margin: 30px 0 50px 0;
 }
 
 StackLayout#testimonies TextView.testimony-message {
@@ -69,13 +69,14 @@ StackLayout#testimonies Label.date {
   font-size: 12px;
   text-align: right;
   padding: 0 5px 0 0;
+  color: #999;
 }
 
 StackLayout#testimonies Button.action {
   padding: 0;
   margin: 0;
-  width: 50px;
-  font-size: 18px;
+  width: 70px;
+  font-size: 21px;
   background-color: transparent;
   border-color: transparent;
   border-width: 1;

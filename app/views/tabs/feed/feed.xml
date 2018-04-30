@@ -1,7 +1,9 @@
 <StackLayout start="start" id="feed" class="wrapper" visibility="collapse">
 
-    <button tap="newPost" visibility="{{ isAdmin ? 'visible' : 'collapse' }}" text="Poster"/>
-    <button tap="refresh" class="refresh" fontFamily="MaterialIcons-Regular, Material Icons" text="&#xE863;"/>
+    <StackLayout orientation="horizontal" horizontalAlignment="center">
+      <button tap="newPost" class="action-top" visibility="{{ isAdmin ? 'visible' : 'collapse' }}" fontFamily="MaterialIcons-Regular, Material Icons" text="&#xE89C;"/>
+      <button tap="refresh" class="action-top" fontFamily="MaterialIcons-Regular, Material Icons" text="&#xE863;"/>
+    </StackLayout>
 
     <StackLayout orientation="vertical" class="list">
         <Repeater items="{{ posts }}">

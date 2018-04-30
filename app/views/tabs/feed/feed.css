@@ -19,12 +19,13 @@ StackLayout.list {
   background-color: #fff;
 }
 
-Button.refresh {
+Button.action-top {
   background-color: transparent;
   color: #555;
   border-color: transparent;
-  font-size: 20px;
+  font-size: 30px;
   border-width: 1;
+  padding: 5px;
 }
 
 /* Post */
@@ -41,7 +42,7 @@ StackLayout.news {
 /* Infos */
 
 GridLayout.infos {
-  padding: 10px 10px 0px 10px;
+  padding: 10px 40px 0px 10px;
   background-color: #fffb00;
   border-radius: 10px;
   border-width: 0 0 10px 0;
@@ -73,13 +74,14 @@ Label.date {
   font-size: 12px;
   text-align: right;
   padding: 0 5px 0 0;
+  color: #999;
 }
 
 Button.action {
   padding: 0;
   margin: 0;
-  width: 50px;
-  font-size: 18px;
+  width: 70px;
+  font-size: 21px;
   background-color: transparent;
   border-color: transparent;
   border-width: 1;

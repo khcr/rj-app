@@ -31,7 +31,7 @@
             <!--<label text="&#xE0B9;" row="0" col="3" class="material-font info-icon-comment"/>-->
             <Image src="{{ authorImageUrl }}" row="0" col="3" class="author-image-comment"/>
           </GridLayout>
-          <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+          <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date-comment"></label>
           <StackLayout orientation="vertical">
             <TextView id="comment" editable="false" commentId="{{ id }}" text="{{ message }}" class="comment-message" />
           </StackLayout>

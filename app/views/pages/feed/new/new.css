@@ -1,8 +1,8 @@
 Button {
-  background-color: #329597;
+  background-color: #fffb00;
   border-width: 0;
   border-color: transparent;
-  color: #fff;
+  color: #555;
   padding: 20px;
   text-align: left;
   margin: 0;
@@ -13,5 +13,7 @@ Button {
 }
 
 Button.submit {
-  background-color: #bd1347;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
 }

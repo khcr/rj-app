@@ -26,7 +26,7 @@ Button.submit {
   background-color: transparent;
   border-color: transparent;
   font-size: 50px;
-  color: #329597;
+  color: #555;
 }
 
 Label.connect {
@@ -74,8 +74,8 @@ TextView.comment-message {
 Button.action {
   padding: 0;
   margin: 0;
-  width: 50px;
-  font-size: 18px;
+  width: 70px;
+  font-size: 21px;
   background-color: transparent;
   border-color: transparent;
   border-width: 1;
@@ -130,6 +130,14 @@ Label.date {
   font-size: 12px;
   text-align: right;
   padding: 0 5px 0 0;
+  color: #999;
+}
+
+Label.date-comment {
+  font-size: 12px;
+  text-align: left;
+  padding: 0 5px 0 0;
+  color: #999;
 }
 
 Label.comments {
