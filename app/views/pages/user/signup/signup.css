@@ -12,9 +12,9 @@ TextField {
 }
 
 Button.submit {
-  background-color: #329597;
-  border-color: #329597;
-  color: #fff;
+  background-color: #fffb00;
+  border-color: #fffb00;
+  color: #555;
   padding: 20px;
   margin: 10px;
 }

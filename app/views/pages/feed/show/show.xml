@@ -17,6 +17,7 @@
     <TextView text="{{ comment.message }}" height="90" col="0" row="0" class="new-comment" hint="Votre commentaire"/>
     <Button text="&#xE163;" tap="newComment" class="submit material-font" col="1" row="0"/>
   </GridLayout>
+  
   <label text="Connectez-vous pour commenter" visibility="{{ isSignedIn ? 'collapse' : 'visible'}}" class="connect"/>
 
   <Repeater items="{{ comments }}">

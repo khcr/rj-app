@@ -31,7 +31,7 @@ Button.submit {
 
 Label.connect {
   text-align: center;
-  padding: 0 10px 10px 10px;
+  padding: 40px 0;
 }
 
 StackLayout.comment {
@@ -87,17 +87,18 @@ TextView.message {
   background-color: transparent;
   border-color: transparent;
   padding: 0;
-  margin: 0;
+  margin: 20px 0;
 }
 
 Label.title {
   font-size: 20px;
   font-family: "BebasNeue Regular";
-  padding: 10px 0;
+  padding: 60px;
+  text-align: center;
 }
 
 GridLayout.infos {
-  padding: 10px 10px 0px 10px;
+  padding: 20px;
   background-color: #fffb00;
   border-radius: 10px;
   border-width: 0 0 10px 0;
@@ -114,9 +115,9 @@ Label.info-icon {
 Image.author-image {
   vertical-align: middle;
   text-align: center;
-  width: 60px;
-  border-radius: 30px;
-  margin-right: 20px;
+  width: 100px;
+  border-radius: 50px;
+  margin-right: 40px;
 }
 
 Label.author {
@@ -134,14 +135,15 @@ Label.date {
 Label.comments {
   text-align: center;
   font-size: 25px;
-  padding: 10px;
+  padding: 20px;
 }
 
 Image.author-image-comment {
   vertical-align: middle;
   text-align: center;
-  width: 60px;
-  border-radius: 30px;
+  width: 100px;
+  border-radius: 50px;
+  margin: 10px;
 }
 
 TextView {

@@ -46,7 +46,7 @@ GridLayout.infos {
   border-radius: 10px;
   border-width: 0 0 10px 0;
   border-color: #fffb00;
-  color: #fff;
+  color: #555;
 }
 
 Label.info-icon {
@@ -58,8 +58,9 @@ Label.info-icon {
 Image.author-image {
   vertical-align: middle;
   text-align: center;
-  width: 60px;
-  border-radius: 30px;
+  width: 100px;
+  border-radius: 50px;
+  margin: 20px 0;
 }
 
 Label.author {
@@ -101,7 +102,7 @@ Image {
 Label.comments {
   text-align: center;
   font-size: 25px;
-  padding: 10px;
+  padding: 40px;
 }
 
 Label.comments.text {
