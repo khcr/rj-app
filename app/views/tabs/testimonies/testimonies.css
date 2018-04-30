@@ -61,8 +61,8 @@ StackLayout#testimonies Label.author {
 StackLayout#testimonies Image.author-image {
   vertical-align: middle;
   text-align: center;
-  width: 60px;
-  border-radius: 30px;
+  width: 100px;
+  border-radius: 50px;
 }
 
 StackLayout#testimonies Label.date {
