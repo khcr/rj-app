@@ -14,8 +14,8 @@
             <!--<label text="&#xE029;" row="0" col="0" class="material-font info-icon"/>-->
             <Image src="{{ authorImageUrl }}" row="0" col="0" class="author-image"/>
             <label text="{{ author }}" row="0" col="1" class="author"></label>
-            <Button text="&#xE150;" fontFamily="MaterialIcons-Regular, Material Icons" row="0" col="2" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" />
-            <Button text="&#xE15C;" fontFamily="MaterialIcons-Regular, Material Icons" row="0" col="3" testimonyId="{{ id }}" tap="deleteTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" />
+            <Button class="action" text="&#xE150;" fontFamily="MaterialIcons-Regular, Material Icons" row="0" col="2" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" />
+            <Button class="action" text="&#xE15C;" fontFamily="MaterialIcons-Regular, Material Icons" row="0" col="3" testimonyId="{{ id }}" tap="deleteTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" />
           </GridLayout>
           <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
           <StackLayout orientation="vertical">

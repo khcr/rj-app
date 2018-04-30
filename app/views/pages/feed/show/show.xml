@@ -25,8 +25,8 @@
 
         <StackLayout orientation="vertical" class="comment">
           <GridLayout rows="auto" columns="auto, auto, *, auto" class="infos-comment">
-            <Button text="&#xE150;" row="0" col="0" fontFamily="MaterialIcons-Regular, Material Icons" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
-            <Button text="&#xE15C;" row="0" col="1" fontFamily="MaterialIcons-Regular, Material Icons" commentId="{{ id }}" tap="deleteComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+            <Button class="action" text="&#xE150;" row="0" col="0" fontFamily="MaterialIcons-Regular, Material Icons" tap="editComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
+            <Button class="action" text="&#xE15C;" row="0" col="1" fontFamily="MaterialIcons-Regular, Material Icons" commentId="{{ id }}" tap="deleteComment" visibility="{{ canEdit ? 'visible' : 'collapse' }}"/>
             <label text="{{ author }}" row="0" col="2" class="author-comment"></label>
             <!--<label text="&#xE0B9;" row="0" col="3" class="material-font info-icon-comment"/>-->
             <Image src="{{ authorImageUrl }}" row="0" col="3" class="author-image-comment"/>

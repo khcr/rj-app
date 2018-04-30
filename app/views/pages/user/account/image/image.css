@@ -14,6 +14,7 @@ Button {
 
 Button.submit {
   background-color: #bd1347;
+  color: #fff;
 }
 
 Image#profile {
