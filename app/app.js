@@ -5,7 +5,7 @@ var Router = require("./helpers/router");
 var Push = require("./helpers/push");
 
 if (application.ios) {
-  GMSServices.provideAPIKey("AIzaSyDvStGlE8wti9VDbJ9YTbn58ljwWI1hQQU");
+  GMSServices.provideAPIKey("AIzaSyD1mWpWTelqXo9WEgWqddzMgdeNUem_hqE");
 }
 
 global.Session = Session;
