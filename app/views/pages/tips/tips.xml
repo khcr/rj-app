@@ -1,8 +1,3 @@
-
-<StackLayout loaded="loaded" orientation="vertical" class="content">
-
-  <Page>
-    {%raw%}<WebView src="~/views/pages/tips/tips.html" />{%endraw%}
-  </Page>
-
-</StackLayout>
+<GridLayout loaded="loaded" class="content">
+  {%raw%}<WebView src="~/views/pages/tips/tips.html" />{%endraw%}
+</GridLayout>

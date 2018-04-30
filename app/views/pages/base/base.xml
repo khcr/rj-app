@@ -11,9 +11,7 @@
 
   <!-- Content -->
 
-  <ScrollView>
-    <StackLayout id="container">
-    </StackLayout>
-  </ScrollView>
+  <GridLayout id="container">
+  </GridLayout>
 
 </Page>
