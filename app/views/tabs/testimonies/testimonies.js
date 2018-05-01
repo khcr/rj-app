@@ -1,6 +1,5 @@
 var observableModule = require("data/observable");
 var connectivity = require("connectivity");
-var utilsModule = require("tns-core-modules/utils/utils");
 
 var Dialogs = require("../../../helpers/dialogs");
 var HelperFunctions = require("../../../helpers/helper_functions");
@@ -49,7 +48,7 @@ exports.newTestimony = function() {
     return;
   }
 
-  utilsModule.ad.dismissSoftInput();
+  page.getViewById("new-testimony").dismissSoftInput();
 
   testimony.save().then(function(res) {
     testimonies.unshift(res);

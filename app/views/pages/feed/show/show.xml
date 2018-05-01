@@ -16,7 +16,7 @@
     </StackLayout>
 
     <GridLayout columns="3*, *" rows="auto" visibility="{{ isSignedIn ? 'visible' : 'collapse'}}">
-      <TextView text="{{ comment.message }}" height="90" col="0" row="0" class="new-comment" hint="Votre commentaire"/>
+      <TextView text="{{ comment.message }}" height="90" col="0" row="0" id="new-comment" class="new-comment" hint="Votre commentaire"/>
       <Button text="&#xE163;" tap="newComment" class="submit material-font" col="1" row="0"/>
     </GridLayout>
 
