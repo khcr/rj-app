@@ -1,5 +1,6 @@
 var observableModule = require("data/observable");
 var ObservableArray = require("data/observable-array").ObservableArray;
+var utilsModule = require("tns-core-modules/utils/utils");
 
 var Dialogs = require("../../../../helpers/dialogs");
 var HelperFunctions = require("../../../../helpers/helper_functions");
@@ -9,6 +10,7 @@ var Comment = require("../../../../models/comment");
 var page, post, comment, comments;
 
 exports.loaded = function(args) {
+
   page = args.object;
 
   page.actionBar.title = "Post";
@@ -41,7 +43,7 @@ exports.newComment = function() {
     return;
   }
 
-  page.getViewById("new-comment").dismissSoftInput();
+  utilsModule.ad.dismissSoftInput();
 
   comment.save().then(function(res) {
     comments.unshift(res);

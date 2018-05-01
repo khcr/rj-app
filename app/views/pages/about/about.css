@@ -4,10 +4,14 @@ Page {
 }
 
 Label.version {
-  padding: 0 0 20px 0;
+  padding: 0 0 50px 0;
 }
 
 StackLayout {
   text-align: center;
-  padding: 30px;
+  padding: 100px 0 0 0;
+}
+
+Label.privacy {
+  padding: 60px 0 0 0;
 }

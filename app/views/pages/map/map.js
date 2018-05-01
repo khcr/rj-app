@@ -13,9 +13,9 @@ exports.loaded = function(args) {
 exports.mapReady = function(args) {
   var mapView = args.object;
   mapView.zoom = 16;
-  mapView.latitude = 46.6179385;
-  mapView.longitude = 7.0574878;
-  
+  mapView.latitude = 46.614952;
+  mapView.longitude = 7.049605;
+
   Marker.all().then(function (res) {
     points = res;
 
@@ -27,9 +27,9 @@ exports.mapReady = function(args) {
       mapsModule.Position.positionFromLatLng(46.615560, 7.049167)
     ]);
     polygon.visible = true;
-    polygon.fillColor = new Color('#329597');
-    polygon.strokeColor = new Color('#ffffff');
-    polygon.strokeWidth = 5;
+    polygon.fillColor = new Color('#fffb00');
+    polygon.strokeColor = new Color('#555');
+    polygon.strokeWidth = 1;
     mapView.addPolygon(polygon);
 
     points.forEach(function(point) {

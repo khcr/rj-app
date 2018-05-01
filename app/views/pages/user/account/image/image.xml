@@ -1,12 +1,14 @@
-<StackLayout loaded="loaded" orientation="vertical" verticalAlignment="center">
+<ScrollView loaded="loaded">
+  <StackLayout orientation="vertical" verticalAlignment="center">
 
-  <Image id="profile" src="{{ imageUrl }}" />
+    <Image id="profile" src="{{ imageUrl }}" />
 
-  <Button text="Choisir une photo" tap="selectImage" />
-  <Button text="Prendre une photo" tap="takeImage" />
+    <Button text="Choisir une photo" tap="selectImage" />
+    <Button text="Prendre une photo" tap="takeImage" />
 
-  <Image id="preview" src="{{ imageSrc }}" />
+    <Image id="preview" src="{{ imageSrc }}" />
 
-  <Button text="Enregistrer" class="submit" tap="updateImage" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
-  <ActivityIndicator busy="{{ isLoading }}" width="50" />
-</StackLayout>
+    <Button text="Enregistrer" class="submit" tap="updateImage" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+    <ActivityIndicator busy="{{ isLoading }}" width="50" />
+  </StackLayout>
+</ScrollView>

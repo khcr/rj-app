@@ -4,4 +4,6 @@
   <Label text="Développé par JS-Tech" />
   <Image src="res://jstech" width="90px"/>
   <Label text="we@jstech.ch" />
+  <Label text="Utilisation des données" class="privacy" />
+  <Label text="https://rencontredejeunesse.ch/privacy" />
 </StackLayout>
