@@ -1,5 +1,6 @@
 var frameModule = require("ui/frame");
 var observableModule = require("data/observable");
+var utilityModule = require("utils/utils");
 
 var Dialogs = require("../../../../helpers/dialogs");
 var User = require("../../../../models/user");
@@ -31,5 +32,5 @@ exports.signIn = function() {
 }
 
 exports.toSignUp = function() {
-  Router.navigateTo("signup", "user/signup")
+  Router.navigateTo("signup", "user/signup");
 }

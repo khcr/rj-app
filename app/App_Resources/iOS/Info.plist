@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="3.0.0">
+<plist version="3.1.3">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>fr</string>
@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>3.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>3.0.0</string>
+	<string>3.1.3</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIRequiresFullScreen</key>
@@ -40,6 +40,10 @@
 			<true/>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>We need access to your calendar in order to add events related to the RJ so that you won't miss anything of our activities.</string>
+	<string>Nous avons besoin de l'accès à ton calendrier afin que tu puisses ajouter les moments marquants directement dans ton téléphone.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Nous avons besoin de l'accès à la caméra afin que tu puisses ajouter une photo de profil à ton compte ou poster des images.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Nous avons besoin de l'accès à ta librairie photo afin que tu puisses ajouter une photo de profil à ton compte ou poster des images.</string>
 </dict>
 </plist>
