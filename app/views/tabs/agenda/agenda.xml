@@ -48,7 +48,7 @@
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier01')">
       <TextView text="13h30" col="0" row="0" editable="false" class="big-time"/>
-      <TextView text="Atelier 1: St-Esprit, avec David Guyaz" col="1" row="0" editable="false" class="big-element"/>
+      <TextView text="Atelier 1: Atelier sur le St-Esprit, avec David Guyaz" col="1" row="0" editable="false" class="big-element"/>
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="small">
       <TextView text="14h15" col="0" row="0" editable="false" class="time"/>
@@ -64,7 +64,7 @@
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier03')">
       <TextView text="15h30" col="0" row="0" editable="false" class="big-time"/>
-      <TextView text="Atelier 3: Regard du Père / Identité, avec Yves Bulundwe" col="1" row="0" editable="false" class="big-element"/>
+      <TextView text="Atelier 3: Un coeur qui bat pour toi, avec Yves Bulundwe" col="1" row="0" editable="false" class="big-element"/>
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="small">
       <TextView text="16h15" col="0" row="0" editable="false" class="time"/>
@@ -72,11 +72,11 @@
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier04')">
       <TextView text="16h30" col="0" row="0" editable="false" class="big-time"/>
-      <TextView text="Atelier 4: Alliance, avec Majo Ekundayo" col="1" row="0" editable="false" class="big-element"/>
+      <TextView text="Atelier 4: Dieu est-il schizophrène ? C’est Jésus le début ! avec Majo Ekundayo" col="1" row="0" editable="false" class="big-element"/>
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier04')">
       <TextView text="16h30" col="0" row="0" editable="false" class="big-time"/>
-      <TextView text="Atelier 5: Mission (salle du 2ème étage), avec Philippe Saehr" col="1" row="0" editable="false" class="big-element"/>
+      <TextView text="Atelier 5: La Mission (salle du 2ème étage), avec Donatien et Emilie Rabi" col="1" row="0" editable="false" class="big-element"/>
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="small">
       <TextView text="19h15" col="0" row="0" editable="false" class="time"/>
@@ -122,7 +122,7 @@
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere06')">
       <TextView text="13h30" col="0" row="0" editable="false" class="big-time"/>
-      <TextView text="Plénière avec Philipp Schmerold // Louange Dan Luiten" col="1" row="0" editable="false" class="big-element"/>
+      <TextView text="Plénière avec Patrice Martorano // Louange Dan Luiten" col="1" row="0" editable="false" class="big-element"/>
   </GridLayout>
   <GridLayout columns="auto, *" rows="auto, *" class="small">
       <TextView text="15h00" col="0" row="0" editable="false" class="time"/>
