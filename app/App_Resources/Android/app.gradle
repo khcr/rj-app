@@ -1,15 +1,35 @@
+// Add your native dependencies here:
+
+// Uncomment to add recyclerview-v7 dependency
+//dependencies {
+//	implementation 'com.android.support:recyclerview-v7:+'
+//}
+
+// If you want to add something to be applied before applying plugins' include.gradle files
+// e.g. project.ext.googlePlayServicesVersion = "15.0.1"
+// create a file named before-plugins.gradle in the current directory and place it there
+
 android {
   defaultConfig {
+    minSdkVersion 19
     generatedDensities = []
-    applicationId = "com.id1lnx0as1aunq3r129xr5d"
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"
   }
-  // Match the google play services & firebaseMessaging version
-  // to resolve a conflict between Google Maps SDK & Push Plugin
-  project.ext {
-    googlePlayServicesVersion = "12.0.1"
-    firebaseMessagingVersion = "12.0.1"
-  }
+}
+
+def settingsGradlePath
+
+if(project.hasProperty("appResourcesPath")){
+    settingsGradlePath = "$project.appResourcesPath/Android/settings.gradle";
+} else {
+    settingsGradlePath = "$rootDir/../../app/App_Resources/Android/settings.gradle";
+}
+
+def settingsGradleFile = new File(settingsGradlePath);
+
+if(settingsGradleFile.exists())
+{
+    apply from: settingsGradleFile;
 }

@@ -1,0 +1,23 @@
+<Page navigatingTo="onNavigatingTo">
+
+  <ActionBar>
+    <Label text="Photo de profil"/>
+  </ActionBar>
+
+  <StackLayout>
+    <ScrollView>
+      <StackLayout orientation="vertical" verticalAlignment="center">
+
+        <Image id="profile" src="{{ imageUrl }}" />
+
+        <Button text="Choisir une photo" tap="selectImage" />
+        <Button text="Prendre une photo" tap="takeImage" />
+
+        <Image id="preview" src="{{ imageSrc }}" />
+
+        <Button text="Enregistrer" class="submit" tap="updateImage" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+        <ActivityIndicator busy="{{ isLoading }}" width="50" />
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</Page>

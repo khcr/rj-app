@@ -1,1 +1,0 @@
-<WebView loaded="loaded" src="{{ url }}" />

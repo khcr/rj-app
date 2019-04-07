@@ -1,7 +1,29 @@
-/platforms
-/node_modules
+# NativeScript
+hooks/
+node_modules/
+platforms/
 
-app/App_Resources/Android/google-services.json
+# NativeScript Template
+*.js.map
+*.css
 
-app/App_Resources/iOS/GoogleService-Info.plist
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# General
 .DS_Store
+.AppleDouble
+.LSOverride
+.idea
+.cloud
+.project
+tmp/
+typings/
+
+# Secrets
+app/App_Resources/Android/google-services.json
+app/App_Resources/iOS/GoogleService-Info.plist

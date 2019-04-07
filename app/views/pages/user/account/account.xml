@@ -1,8 +1,0 @@
-
-<StackLayout loaded="loaded" orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
-  <Label text="{{ firstname + ' ' + lastname }}" />
-  <Label text="{{ email }}" />
-  <Button text="Modifer" tap="toEdit" class="submit" />
-  <Button text="Photo de profil" tap="toImage" class="submit" />
-  <Button text="Se déconnecter" tap="signOut" class="submit" />
-</StackLayout>

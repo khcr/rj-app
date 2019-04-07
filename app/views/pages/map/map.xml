@@ -1,3 +1,0 @@
-<GridLayout loaded="loaded" xmlns:maps="nativescript-google-maps-sdk" height="500">
-  <maps:mapView mapReady="mapReady" />
-</GridLayout>

@@ -1,0 +1,8 @@
+<Page navigatingTo="onNavigatingTo">
+
+  <ActionBar>
+    <Label text="Editer mon compte"/>
+  </ActionBar>
+
+  <WebView src="{{ url }}" />
+</Page>

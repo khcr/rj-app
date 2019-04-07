@@ -1,0 +1,8 @@
+<Page navigatingTo="onNavigatingTo">
+
+  <ActionBar>
+    <Label text="S'inscrire"/>
+  </ActionBar>
+
+  <WebView src="{{ url }}" />
+</Page>

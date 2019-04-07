@@ -1,0 +1,10 @@
+<Page navigatingTo="onNavigatingTo">
+
+  <ActionBar>
+    <Label text="Carte"/>
+  </ActionBar>
+
+  <GridLayout  xmlns:maps="nativescript-google-maps-sdk" height="500">
+    <maps:mapView mapReady="mapReady" />
+  </GridLayout>
+</Page>

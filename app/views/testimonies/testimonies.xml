@@ -1,0 +1,42 @@
+<Page navigatingTo="onNavigatingTo" id="testimonies" class="wrapper">
+
+  <ActionBar>
+    <Label text="Témoignage"/>
+  </ActionBar>
+
+  <StackLayout>
+    <ScrollView>
+      <StackLayout>
+        <StackLayout rows="auto, *" cols="*">
+          <GridLayout columns="3*, *" rows="auto" row="0" visibility="{{ isSignedIn ? 'visible' : 'collapse'}}">
+            <TextView id="new-testimony" text="{{ testimony.message }}" height="90" col="0" hint="Laissez votre témoignage" class="new-testimony" />
+            <Button text="&#xE163;" tap="newTestimony" class="submit" col="1" class="submit material-font" />
+          </GridLayout>
+
+          <label row="0" text="Connecte-toi pour laisser ton témoignage" visibility="{{ isSignedIn ? 'collapsed' : 'visible'}}" class="connect"/>
+
+          <Repeater row="1" items="{{ testimonies }}">
+            <Repeater.itemTemplate>
+              <StackLayout orientation="vertical" class="testimony">
+                <GridLayout rows="auto" columns="auto, *, auto, auto" class="infos">
+                  <!--<label text="&#xE029;" row="0" col="0" class="material-font info-icon"/>-->
+                  <Image src="{{ authorImageUrl }}" row="0" col="0" class="author-image"/>
+                  <label text="{{ author }}" row="0" col="1" class="author"></label>
+                  <Button class="action" text="&#xE150;" fontFamily="MaterialIcons-Regular, Material Icons" row="0" col="2" tap="editTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" />
+                  <Button class="action" text="&#xE15C;" fontFamily="MaterialIcons-Regular, Material Icons" row="0" col="3" testimonyId="{{ id }}" tap="deleteTestimony" visibility="{{ canEdit ? 'visible' : 'collapse' }}" />
+                </GridLayout>
+                <label text="{{'Posté le ' + createdAtDate + ' à ' + createdAtTime }}" row="1" col="1" class="date"></label>
+                <StackLayout orientation="vertical">
+                  <TextView editable="false" id="testimony" testimonyId="{{ id }}" text="{{ message }}" class="testimony-message" col="0" row="0"/>
+                </StackLayout>
+              </StackLayout>
+            </Repeater.itemTemplate>
+          </Repeater>
+          <ActivityIndicator busy="{{ loadingMore }}" row="0" width="50" />
+          <Button text="Voir plus" tap="loadMore" id="see-more" class="see-more" />
+          <ActivityIndicator busy="{{ isLoading }}" row="1"/>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</Page>

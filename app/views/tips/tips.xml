@@ -1,0 +1,10 @@
+<Page navigatingTo="onNavigatingTo" class="content">
+
+  <ActionBar>
+    <Label text="Tips"/>
+  </ActionBar>
+
+  <GridLayout>
+    {%raw%}<WebView src="~/views/tips/tips.html" />{%endraw%}
+  </GridLayout>
+</Page>

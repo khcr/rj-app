@@ -1,9 +1,6 @@
 {
+  "main": "app.js",
   "android": {
     "v8Flags": "--expose_gc"
-  },
-  "id": "com.id1lnx0as1aunq3r129xr5d",
-  "main": "app.js",
-  "name": "RJ",
-  "version": "3.2.0"
+  }
 }

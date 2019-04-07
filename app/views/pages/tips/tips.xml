@@ -1,3 +1,0 @@
-<GridLayout loaded="loaded" class="content">
-  {%raw%}<WebView src="~/views/pages/tips/tips.html" />{%endraw%}
-</GridLayout>

@@ -1,0 +1,16 @@
+<Page navigatingTo="onNavigatingTo">
+
+  <ActionBar>
+    <Label text="Se connecter"/>
+  </ActionBar>
+
+  <StackLayout orientation="vertical" verticalAlignment="center">
+    <Label text="&#xE0DA;" class="material-font icon"/>
+    <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading ? 'visible' : 'collapse' }}" row="0" width="50" />
+    <TextField text="{{ user.email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+    <TextField hint="Mot de passe" text="{{ user.password }}" secure="true" />
+
+    <Button text="Se connecter" class="submit" tap="signIn" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+    <Button text="Créer un compte" class="link" tap="toSignUp" />
+  </StackLayout>
+</Page>
