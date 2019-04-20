@@ -15,11 +15,17 @@ exports.onNavigatingTo = function(args) {
   testimony = new Testimony();
   testimonies = TestimonyList.items()
 
-  page.bindingContext = observableModule.fromObject({
-    testimony: testimony,
+  page.bindingContext = new observableModule.fromObjectRecursive({
     testimonies: testimonies,
-    isSignedIn: Session.getKey("isSignedIn")
-  })
+    testimony: testimony,
+  });
+  
+  connect = page.getViewById("connect");
+  connect.bind({
+    expression: "isSignedIn ? 'collapse' : 'visible'",
+    sourceProperty: "isSignedIn",
+    targetProperty: "visibility"
+  }, Session.viewModel)
 
   seeMoreTag = page.getViewById("see-more");
 

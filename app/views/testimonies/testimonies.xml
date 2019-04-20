@@ -1,4 +1,4 @@
-<Page navigatingTo="onNavigatingTo" id="testimonies" class="wrapper">
+<Page navigatingTo="onNavigatingTo" loaded="loaded" id="testimonies" class="wrapper">
 
   <ActionBar>
     <Label text="Témoignage"/>
@@ -13,7 +13,7 @@
             <Button text="&#xE163;" tap="newTestimony" class="submit" col="1" class="submit material-font" />
           </GridLayout>
 
-          <label row="0" text="Connecte-toi pour laisser ton témoignage" visibility="{{ isSignedIn ? 'collapsed' : 'visible'}}" class="connect"/>
+          <label row="0" text="Connecte-toi pour laisser ton témoignage" visibility="{{ session.isSignedIn ? 'collapsed' : 'visible'}}" class="connect" id="connect"/>
 
           <Repeater row="1" items="{{ testimonies }}">
             <Repeater.itemTemplate>

@@ -6,7 +6,7 @@ if (application.ios) {
   GMSServices.provideAPIKey("AIzaSyD1mWpWTelqXo9WEgWqddzMgdeNUem_hqE");
 }
 
-global.Session = Session;
+global.Session = new Session();
 
 application.on(application.launchEvent, function(args) {
   Push.register();

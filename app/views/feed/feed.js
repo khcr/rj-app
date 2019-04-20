@@ -12,7 +12,6 @@ var page, posts, seeMoreTag;
 
 exports.onNavigatingTo = function(args) {
   page = args.object;
-
   posts = PostList.items();
 
   page.bindingContext = new observableModule.fromObject({
@@ -22,8 +21,15 @@ exports.onNavigatingTo = function(args) {
   
   seeMoreTag = page.getViewById("see-more");
   
+  
   loadPosts();
 };
+
+// Loaded every time the user navigates to the tab, unlike #onNavigatingTo
+exports.loaded = function(args) {
+  page = args.object;
+  page.bindingContext.set("isAdmin", Session.getKey("isAdmin"));
+}
 
 exports.refresh = function(args) {
   loadPosts();

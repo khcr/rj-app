@@ -1,4 +1,4 @@
-<Page navigatingTo="onNavigatingTo" id="feed" class="wrapper">
+<Page navigatingTo="onNavigatingTo" id="feed" class="wrapper" loaded="loaded">
 
   <ActionBar>
     <Button tap="newPost" class="action-top" visibility="{{ isAdmin ? 'visible' : 'collapse' }}" fontFamily="MaterialIcons-Regular, Material Icons" text="&#xE89C;"/>
