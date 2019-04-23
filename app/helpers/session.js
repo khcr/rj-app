@@ -48,9 +48,13 @@ function Session() {
   };
 
   this.clear = function() {
-    this.viewModel = new observableModule.fromObject(defaultOptions);
+    for (var key in defaultOptions) {
+      this.viewModel.set(key, defaultOptions[key])
+    } 
     setSettings(defaultOptions);
   };
+
+  this.observable = this.viewModel;
 
 }
 

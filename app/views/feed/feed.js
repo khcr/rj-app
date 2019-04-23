@@ -15,28 +15,27 @@ exports.onNavigatingTo = function(args) {
   posts = PostList.items();
 
   page.bindingContext = new observableModule.fromObject({
-    posts: posts,
-    isAdmin: Session.getKey("isAdmin")
+    posts: posts
   });
   
+  var newPost = page.getViewById("newPost");
+  newPost.bind({
+    expression: "isAdmin ? 'visible' : 'collapse'",
+    sourceProperty: "isAdmin",
+    targetProperty: "visibility"
+  }, Session.observable);
+
   seeMoreTag = page.getViewById("see-more");
-  
   
   loadPosts();
 };
-
-// Loaded every time the user navigates to the tab, unlike #onNavigatingTo
-exports.loaded = function(args) {
-  page = args.object;
-  page.bindingContext.set("isAdmin", Session.getKey("isAdmin"));
-}
 
 exports.refresh = function(args) {
   loadPosts();
 };
 
 exports.newPost = function() {
-  Router.navigateTo("new", "feed/new");
+  page.frame.navigate("views/feed/new/new");
 };
 
 exports.toPost = function(e) {

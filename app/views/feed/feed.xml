@@ -1,8 +1,9 @@
 <Page navigatingTo="onNavigatingTo" id="feed" class="wrapper" loaded="loaded">
 
   <ActionBar>
-    <Button tap="newPost" class="action-top" visibility="{{ isAdmin ? 'visible' : 'collapse' }}" fontFamily="MaterialIcons-Regular, Material Icons" text="&#xE89C;"/>
-    <Button tap="refresh" class="action-top" fontFamily="MaterialIcons-Regular, Material Icons" text="&#xE863;"/>
+    <Label text="Feed"/>
+    <ActionItem tap="refresh" ios.systemIcon="13" android.systemIcon="ic_menu_refresh"></ActionItem>
+    <ActionItem tap="newPost" id="newPost" ios.systemIcon="4" android.systemIcon="ic_menu_add"></ActionItem>
   </ActionBar>
 
   <StackLayout>
