@@ -13,7 +13,7 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://village01')">
           <TextView text="18h30" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Ouverture du village et du Fun Park" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Ouverture de la billeterie, du village et du Fun Park" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="19h45" col="0" row="0" editable="false" class="time"/>
@@ -21,11 +21,15 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere02')">
           <TextView text="20h15" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Plénière avec Philipp Schmerold // Louange Dan Luiten" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Plénière // Louange" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="22h30" col="0" row="0" editable="false" class="time"/>
           <TextView text="Fin de la plénière" col="1" row="0" editable="false" class="element"/>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="small">
+          <TextView text="22h45" col="0" row="0" editable="false" class="time"/>
+          <TextView text="Dance floor au village" col="1" row="0" editable="false" class="element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="00h30" col="0" row="0" editable="false" class="time"/>
@@ -41,9 +45,13 @@
           <TextView text="09h15" col="0" row="0" editable="false" class="time"/>
           <TextView text="Ouverture des portes" col="1" row="0" editable="false" class="element"/>
       </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="small">
+          <TextView text="09h30" col="0" row="0" editable="false" class="time"/>
+          <TextView text="Animation" col="1" row="0" editable="false" class="element"/>
+      </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere03')">
-          <TextView text="09h45" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Plénière avec Patrice Martorano // Louange ECHO" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="09h55" col="0" row="0" editable="false" class="big-time"/>
+          <TextView text="Plénière // Louange" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="11h45" col="0" row="0" editable="false" class="time"/>
@@ -55,7 +63,11 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier01')">
           <TextView text="13h30" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Atelier 1: Atelier sur le St-Esprit, avec David Guyaz" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Atelier 1.1: Vous recevrez une puissance, Mattheus van der Steen" col="1" row="0" editable="false" class="big-element"/>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier01')">
+          <TextView text="13h30" col="0" row="0" editable="false" class="big-time"/>
+          <TextView text="Atelier 1.2: Injustice, JEM" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="14h15" col="0" row="0" editable="false" class="time"/>
@@ -63,7 +75,11 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big long" style="background-image: url('res://atelier02_1')">
           <TextView text="14h30" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Atelier 2: Des hommes et des femmes d'honneur, avec Philipp Schmerold" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Atelier 2.1: Un ordinaire extraordinaire, Aude et David Tripet" col="1" row="0" editable="false" class="big-element"/>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="big long" style="background-image: url('res://atelier02_1')">
+          <TextView text="14h30" col="0" row="0" editable="false" class="big-time"/>
+          <TextView text="Atelier 2.2: Foire aux questions réponses, atelier interactif" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="15h15" col="0" row="0" editable="false" class="time"/>
@@ -71,7 +87,11 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier03')">
           <TextView text="15h30" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Atelier 3: Un coeur qui bat pour toi, avec Yves Bulundwe" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Atelier 3.1: Single, sex & free, Yaëlle et Nicolas Frei" col="1" row="0" editable="false" class="big-element"/>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier03')">
+          <TextView text="15h30" col="0" row="0" editable="false" class="big-time"/>
+          <TextView text="Atelier 3.2: Dieu dans les rues de Bulle, atelier pratique avec Jérémie Bader" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="16h15" col="0" row="0" editable="false" class="time"/>
@@ -79,11 +99,15 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier04')">
           <TextView text="16h30" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Atelier 4: Dieu est-il schizophrène ? C’est Jésus le début ! avec Majo Ekundayo" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Atelier 4.1: Compo'sons, Hillsong France" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier04')">
           <TextView text="16h30" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Atelier 5: La Mission (salle du 2ème étage), avec Donatien et Emilie Rabi" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Atelier 4.2: Instagram and Facebook, Bastien Cuenot" col="1" row="0" editable="false" class="big-element"/>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier04')">
+          <TextView text="17h15" col="0" row="0" editable="false" class="big-time"/>
+          <TextView text="Debriefing de l'atelier Dieu dans les rues de Bulle" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="19h15" col="0" row="0" editable="false" class="time"/>
@@ -91,7 +115,7 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere04')">
           <TextView text="20h00" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Plénière avec Patrice Martorano // Louange Dan Luiten" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Plénière // Louange" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="22h30" col="0" row="0" editable="false" class="time"/>
@@ -99,7 +123,7 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="22h45" col="0" row="0" editable="false" class="time"/>
-          <TextView text="Scène du village" col="1" row="0" editable="false" class="element"/>
+          <TextView text="Dance floor au village" col="1" row="0" editable="false" class="element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="00h30" col="0" row="0" editable="false" class="time"/>
@@ -117,7 +141,7 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere05')">
           <TextView text="09h45" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Plénière avec Philipp Schmerold // Louange Dan Luiten" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Plénière // Louange" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="11h30" col="0" row="0" editable="false" class="time"/>
@@ -129,7 +153,7 @@
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere06')">
           <TextView text="13h30" col="0" row="0" editable="false" class="big-time"/>
-          <TextView text="Plénière avec Patrice Martorano // Louange Dan Luiten" col="1" row="0" editable="false" class="big-element"/>
+          <TextView text="Plénière // Louange" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="15h00" col="0" row="0" editable="false" class="time"/>
