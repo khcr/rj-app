@@ -1,5 +1,4 @@
-var frameModule = require("ui/frame");
-var observableModule = require("data/observable");
+var observableModule = require("tns-core-modules/data/observable");
 
 var Dialogs = require("../../../../helpers/dialogs");
 var Imagepicker = require("../../../../helpers/imagepicker");
@@ -38,8 +37,7 @@ exports.newPost = function() {
     page.bindingContext.set("isLoading", false);
     post.set("message", "");
     page.bindingContext.set("imageSrc", null);
-    var topmost = frameModule.topmost();
-    topmost.navigate({ moduleName: "views/tabs/base/base", context: { reload: true }});
+    page.frame.navigate("views/feed/feed");
   });
 
 }

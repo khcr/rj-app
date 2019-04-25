@@ -1,6 +1,4 @@
-var frameModule = require("ui/frame");
-var observableModule = require("data/observable");
-var utilityModule = require("utils/utils");
+var observableModule = require("tns-core-modules/data/observable");
 
 var Dialogs = require("../../../helpers/dialogs");
 var User = require("../../../models/user");

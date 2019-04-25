@@ -1,5 +1,5 @@
 var Imagepicker = require("../../../../helpers/imagepicker");
-var observableModule = require("data/observable");
+var observableModule = require("tns-core-modules/data/observable");
 
 var Dialogs = require("../../../../helpers/dialogs");
 var User = require("../../../../models/user");

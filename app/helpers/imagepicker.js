@@ -1,10 +1,9 @@
-var fs = require('file-system');
+var fs = require('tns-core-modules/file-system');
 var imagepickerModule = require("nativescript-imagepicker");
 var permissions = require( "nativescript-permissions");
-var platformModule = require("platform");
+var platformModule = require("tns-core-modules/platform");
 var camera = require("nativescript-camera");
-var imageSource = require("image-source");
-var enums = require("ui/enums");
+var imageSource = require("tns-core-modules/image-source");
 var bitmapFactory = require("nativescript-bitmap-factory");
 
 var Imagepicker = {

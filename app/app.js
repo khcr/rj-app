@@ -1,7 +1,6 @@
 const application = require("tns-core-modules/application");
 const Session = require("./helpers/session");
 const Push = require("./helpers/push");
-var dialogsModule = require("ui/dialogs");
 
 if (application.ios) {
   GMSServices.provideAPIKey("AIzaSyD1mWpWTelqXo9WEgWqddzMgdeNUem_hqE");

@@ -1,5 +1,5 @@
-var observableModule = require("data/observable");
-var connectivity = require("connectivity");
+var observableModule = require("tns-core-modules/data/observable");
+var connectivity = require("tns-core-modules/connectivity");
 
 var Dialogs = require("../../helpers/dialogs");
 var HelperFunctions = require("../../helpers/helper_functions");

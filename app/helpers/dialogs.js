@@ -1,4 +1,4 @@
-var dialogsModule = require("ui/dialogs");
+var dialogsModule = require("tns-core-modules/ui/dialogs");
 
 var Dialogs = {
 

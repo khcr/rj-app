@@ -1,5 +1,5 @@
-var appSettings = require("application-settings");
-var observableModule = require("data/observable");
+var appSettings = require("tns-core-modules/application-settings");
+var observableModule = require("tns-core-modules/data/observable");
 
 function Session() {
 

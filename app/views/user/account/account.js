@@ -1,6 +1,3 @@
-var Observable = require("data/observable").Observable;
-var frameModule = require("ui/frame");
-
 var User = require("../../../models/user");
 
 var page;

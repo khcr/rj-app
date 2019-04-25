@@ -1,7 +1,7 @@
-var dialogsModule = require("ui/dialogs");
+var dialogsModule = require("tns-core-modules/ui/dialogs");
 var pushPlugin = require("nativescript-push-notifications");
-var appSettings = require("application-settings");
-var application = require("application");
+var appSettings = require("tns-core-modules/application-settings");
+var application = require("tns-core-modules/application");
 var platformModule = require("tns-core-modules/platform");
 
 var Device = require("../models/device");

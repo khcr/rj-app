@@ -1,7 +1,7 @@
 var config = require("../config");
 
 var bghttp = require("nativescript-background-http");
-var observableModule = require("data/observable");
+var observableModule = require("tns-core-modules/data/observable");
 
 function Upload(imageUrl) {
 

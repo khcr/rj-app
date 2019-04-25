@@ -1,8 +1,8 @@
 var config = require("../config");
 
-var http = require("http");
-var observableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
+var http = require("tns-core-modules/http");
+var observableModule = require("tns-core-modules/data/observable");
+var ObservableArray = require("tns-core-modules/data/observable-array").ObservableArray;
 
 var Upload = require("./upload");
 

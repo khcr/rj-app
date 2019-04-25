@@ -1,4 +1,4 @@
-var frameModule = require("ui/frame");
+var frameModule = require("tns-core-modules/ui/frame");
 
 function BackButton(page) {
 

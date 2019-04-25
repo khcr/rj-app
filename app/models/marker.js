@@ -1,6 +1,6 @@
 var config = require("../config");
 
-var http = require("http");
+var http = require("tns-core-modules/http");
 
 var Marker = {
 

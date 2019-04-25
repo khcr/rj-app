@@ -1,5 +1,3 @@
-var frameModule = require("ui/frame");
-
 var page;
 
 exports.onNavigatingTo = function(args) {

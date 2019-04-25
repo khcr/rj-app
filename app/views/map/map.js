@@ -1,5 +1,5 @@
 var mapsModule = require("nativescript-google-maps-sdk");
-var Color = require("color").Color;
+var Color = require("tns-core-modules/color").Color;
 var Marker = require("../../models/marker");
 
 var page, points;
@@ -14,29 +14,29 @@ exports.mapReady = function(args) {
   mapView.latitude = 46.614952;
   mapView.longitude = 7.049605;
 
-  // Marker.all().then(function (res) {
-  //   points = res;
+  Marker.all().then(function (res) {
+    points = res;
 
-  //   var polygon = new mapsModule.Polygon();
-  //   polygon.addPoints([
-  //     mapsModule.Position.positionFromLatLng(46.615257, 7.047751),
-  //     mapsModule.Position.positionFromLatLng(46.614675, 7.047987),
-  //     mapsModule.Position.positionFromLatLng(46.614933, 7.049425),
-  //     mapsModule.Position.positionFromLatLng(46.615560, 7.049167)
-  //   ]);
-  //   polygon.visible = true;
-  //   polygon.fillColor = new Color('#fffb00');
-  //   polygon.strokeColor = new Color('#555');
-  //   polygon.strokeWidth = 1;
-  //   mapView.addPolygon(polygon);
+    var polygon = new mapsModule.Polygon();
+    polygon.addPoints([
+      mapsModule.Position.positionFromLatLng(46.615257, 7.047751),
+      mapsModule.Position.positionFromLatLng(46.614675, 7.047987),
+      mapsModule.Position.positionFromLatLng(46.614933, 7.049425),
+      mapsModule.Position.positionFromLatLng(46.615560, 7.049167)
+    ]);
+    polygon.visible = true;
+    polygon.fillColor = new Color('#fffb00');
+    polygon.strokeColor = new Color('#555');
+    polygon.strokeWidth = 1;
+    mapView.addPolygon(polygon);
 
-  //   points.forEach(function(point) {
-  //     var marker = new mapsModule.Marker();
-  //     marker.position = mapsModule.Position.positionFromLatLng(point.lat, point.lng);
-  //     marker.title = point.title;
-  //     marker.snippet = point.content;
-  //     mapView.addMarker(marker);
-  //   });
-  // });
+    points.forEach(function(point) {
+      var marker = new mapsModule.Marker();
+      marker.position = mapsModule.Position.positionFromLatLng(point.lat, point.lng);
+      marker.title = point.title;
+      marker.snippet = point.content;
+      mapView.addMarker(marker);
+    });
+  });
 
 }
