@@ -1,4 +1,5 @@
 @import url('~/post');
+@import '~/app-variables';
 
 /* Global */
 
@@ -35,7 +36,7 @@ StackLayout.news {
   border-radius: 10px;
   box-shadow: 1px 1px 1px #000;
   margin: 0 0 50px 0;
-  border-color: #fffb00;
+  border-color: $rj-color;
   border-width: 2px;
 }
 
@@ -43,10 +44,10 @@ StackLayout.news {
 
 GridLayout.infos {
   padding: 10px 40px 0px 10px;
-  background-color: #fffb00;
+  background-color: $rj-color;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #fffb00;
+  border-color: $rj-color;
   color: #555;
 }
 
@@ -137,7 +138,7 @@ TextView.last-comment-message {
 
 Button.see-more {
   margin: 0 0 20px 0;
-  background-color: #fffb00;
+  background-color: $rj-color;
   color: #555;
   border-color: transparent;
 }
@@ -178,7 +179,7 @@ StackLayout.news {
   border-radius: 10px;
   box-shadow: 1px 1px 1px #000;
   margin: 0 0 50px 0;
-  border-color: #fffb00;
+  border-color: $rj-color;
   border-width: 2px;
 }
 
@@ -186,10 +187,10 @@ StackLayout.news {
 
 GridLayout.infos {
   padding: 10px 40px 0px 10px;
-  background-color: #fffb00;
+  background-color: $rj-color;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #fffb00;
+  border-color: $rj-color;
   color: #555;
 }
 
@@ -280,7 +281,7 @@ TextView.last-comment-message {
 
 Button.see-more {
   margin: 0 0 20px 0;
-  background-color: #fffb00;
+  background-color: $rj-color;
   color: #555;
   border-color: transparent;
 }

@@ -69,6 +69,8 @@
           <TextView text="13h30" col="0" row="0" editable="false" class="big-time"/>
           <TextView text="Atelier 1.2: Injustice, JEM" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
+      <TextView text="Description de l'atelier 1.2: Cet atelier explorera des exemples de justice et d'injustice dans le monde et leurs conséquences. La vie en ce monde est-elle équitable pour tous, sur tous les continents et à tout moment ? Devrions-nous détourner le regard lorsque nous constatons une injustice ? Quelle est notre réponse aux problèmes d'injustice autour de nous et dans le monde ? Venez voir de véritables expériences internationales en images et témoignages de ceux qui expérimentent l'injustice et vivent dans des conditions d'extrême pauvreté. Une attention particulière sera donnée à la république démocratique du Congo." editable="false" class="description end-line"/>
+
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="14h15" col="0" row="0" editable="false" class="time"/>
           <TextView text="Pause" col="1" row="0" editable="false" class="element"/>
@@ -81,6 +83,14 @@
           <TextView text="14h30" col="0" row="0" editable="false" class="big-time"/>
           <TextView text="Atelier 2.2: Foire aux questions réponses, atelier interactif" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
+      <TextView text="Description de l'atelier 2.2: Atelier qui répondra aux questions en top tendance posées sur l'app sli.do :)
+
+Amaèle Bader a une passion de voir le Royaume de Dieu se manifester dans toutes les sphères de la société. Avec une équipe, elle leade l’école du Royaume ComeAndSee. Après avoir étudié trois ans à Bethel, elle est à présent étudiante de bachelor en relations internationales. 
+Sylvain Riard est marié depuis 2003, il a 4 enfants, et habite à Tramelan dans le Jura-Bernois !
+Secrétaire de jeunesse de l'Armée du Salut pour la Suisse romande depuis 2009, il a effectué une formation de base comme électronicien en Audio & Vidéo, mais surtout a un coeur pour la jeune génération et rêve qu'elle soit zélée pour Jésus.
+Sa spécialité est la gestion et l'organisation, notamment de la RJ." editable="false" class="description end-line"/>
+
+
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="15h15" col="0" row="0" editable="false" class="time"/>
           <TextView text="Pause" col="1" row="0" editable="false" class="element"/>
@@ -89,10 +99,16 @@
           <TextView text="15h30" col="0" row="0" editable="false" class="big-time"/>
           <TextView text="Atelier 3.1: Single, sex & free, Yaëlle et Nicolas Frei" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
+      <TextView text="Description de l'atelier 3.1: À l’heure où les séries hypersexualisées, la pornographie, les sex friend sont devenus standards, il devient souvent difficile de vivre l'attente du mariage ou un célibat serein, de choisir un chemin à contre courant et oser le défendre. 
+Yaëlle et Nicolas Frei, anciens porn addicts, croient que la sexualité est une magnifique invention de Dieu lorsqu’elle est vécue selon son plan. Ils aborderont les enjeux liés à la sexualité, au célibataire, à la masturbation et à la pornographie." editable="false" class="description"/>
+
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier03')">
           <TextView text="15h30" col="0" row="0" editable="false" class="big-time"/>
           <TextView text="Atelier 3.2: Dieu dans les rues de Bulle, atelier pratique avec Jérémie Bader" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
+      <TextView text="Description de l'atelier 3.2: Première partie en salle (15h30 - 16h15) puis dans les rues et retour à 17h15 en salle  pour débriefer." editable="false" class="description end-line"/>
+
+
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="16h15" col="0" row="0" editable="false" class="time"/>
           <TextView text="Pause" col="1" row="0" editable="false" class="element"/>
@@ -105,6 +121,11 @@
           <TextView text="16h30" col="0" row="0" editable="false" class="big-time"/>
           <TextView text="Atelier 4.2: Instagram and Facebook, Bastien Cuenot" col="1" row="0" editable="false" class="big-element"/>
       </GridLayout>
+      <TextView text="Description de l'atelier 4.2: Internet fait partie de notre quotidien. Imagine vivre sans ton smartphone ? Ça paraît impossible ! 
+Alors qu'on peut perdre énormement de temps derrière nos écrans, il y a aussi possibilité de transformer la vie de tes proches et de les faire cheminer jusqu'à Christ ! Preuves à l'appui ! 
+Bastien Cuenot, Community Manager chez yesHEis & CV, t'aidera à comprendre comment partir en mission pour Christ... simplement au bout des doigts et faire une réelle différence auprès de ceux qui sont derrière tes écrans !" editable="false" class="description"/>
+
+
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://atelier04')">
           <TextView text="17h15" col="0" row="0" editable="false" class="big-time"/>
           <TextView text="Debriefing de l'atelier Dieu dans les rues de Bulle" col="1" row="0" editable="false" class="big-element"/>

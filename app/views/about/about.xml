@@ -5,8 +5,8 @@
   </ActionBar>
 
   <StackLayout orientation="vertical">
-    <Label text="RJ App (2018)" />
-    <Label text="'Myosotis' version 3.0" class="version" />
+    <Label text="RJ App (2019)" />
+    <Label text="'Ophrys' version 4.0" class="version" />
     <Label text="Développé par JS-Tech" />
     <Image src="res://jstech" width="90px"/>
     <Label text="we@jstech.ch" />

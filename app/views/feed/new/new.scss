@@ -1,5 +1,7 @@
+@import '~/app-variables';
+
 Button {
-  background-color: #fffb00;
+  background-color: $rj-color;
   border-width: 0;
   border-color: transparent;
   color: #555;

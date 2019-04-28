@@ -4,20 +4,20 @@ tapping on some of the tabs or by swiping between the views.
 Learn more about the TabView component in this documentation article:
 http://docs.nativescript.org/cookbook/ui/tab-view
 -->
-<TabView androidTabsPosition="bottom">
+<TabView androidTabsPosition="bottom" id="bottom-nav">
   <TabViewItem title="Home" ios:iconSource="res://tabIcons/home" android:iconSource="res://home">
     <Frame defaultPage="views/feed/feed"></Frame>
   </TabViewItem>
 
-  <TabViewItem title="Agenda" ios:iconSource="res://tabIcons/home" android:iconSource="res://home">
+  <TabViewItem title="Agenda" ios:iconSource="res://tabIcons/clock" android:iconSource="res://clock">
     <Frame defaultPage="views/agenda/agenda"></Frame>
   </TabViewItem>
 
-  <TabViewItem title="Témoignage" ios:iconSource="res://tabIcons/home" android:iconSource="res://home">
+  <TabViewItem title="Témoignage" ios:iconSource="res://tabIcons/heart" android:iconSource="res://heart">
     <Frame defaultPage="views/testimonies/testimonies"></Frame>
   </TabViewItem>
 
-  <TabViewItem title="Plus" ios:iconSource="res://tabIcons/home" android:iconSource="res://home">
+  <TabViewItem title="Plus" ios:iconSource="res://tabIcons/plus" android:iconSource="res://plus">
     <Frame defaultPage="views/plus/plus"></Frame>
   </TabViewItem>
 </TabView>
