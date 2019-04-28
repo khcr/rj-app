@@ -11,6 +11,8 @@ global.Session = new Session();
 
 application.on(application.launchEvent, function(args) {
   Push.callbacks();
+});
+
 application.run({ moduleName: "app-root" });
 
 /*
