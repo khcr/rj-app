@@ -1,8 +1,10 @@
 <Page shownModally="onShownModally">
   <ScrollView loaded="loaded">
     <StackLayout orientation="vertical" class="main">
-
-      <Label text="{{ 'Commenter le post de ' + post.author }}" class="title" />
+      <StackLayout orientation="horizontal">
+        <Label text="clear" class="material-font close" />
+        <Label text="{{ 'Commenter le post de ' + post.author }}" class="title" />
+      </StackLayout>
 
       <StackLayout orientation="vertical" class="post">
         <GridLayout rows="auto, *" columns="auto, *" class="infos">
