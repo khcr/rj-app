@@ -8,8 +8,8 @@ if (application.ios) {
 
 global.Session = new Session();
 
-application.on(application.launchEvent, function(args) {
-  Push.register();
+application.on(application.launchEvent, function (args) {
+  // Push.register();
 });
 
 // application.on(application.launchEvent, (args) => {

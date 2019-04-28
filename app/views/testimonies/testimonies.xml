@@ -4,7 +4,7 @@
     <Label text="Témoignage"/>
   </ActionBar>
 
-  <StackLayout>
+  <StackLayout id="testimonies">
     <ScrollView>
       <StackLayout>
         <StackLayout rows="auto, *" cols="*">

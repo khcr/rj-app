@@ -1,3 +1,5 @@
+@import '~/app-variables';
+
 StackLayout.main {
   background-color: #fff;
   font-family: "OpenSans-Light";
@@ -44,10 +46,10 @@ StackLayout.comment {
 
 GridLayout.infos-comment {
   padding: 10px 10px 0px 10px;
-  background-color: #fffb00;
+  background-color: $rj-color;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #fffb00;
+  border-color: $rj-color;
   color: #555;
   text-align: right;
 }
@@ -99,10 +101,10 @@ Label.title {
 
 GridLayout.infos {
   padding: 20px;
-  background-color: #fffb00;
+  background-color: $rj-color;
   border-radius: 10px;
   border-width: 0 0 10px 0;
-  border-color: #fffb00;
+  border-color: $rj-color;
   color: rgb(73, 73, 73);
 }
 
