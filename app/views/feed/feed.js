@@ -4,6 +4,7 @@ var connectivity = require("tns-core-modules/connectivity");
 var Dialogs = require("../../helpers/dialogs");
 var HelperFunctions = require("../../helpers/helper_functions");
 var Post = require("../../models/post");
+var Push = require("../../helpers/push");
 
 var PostList = new Post.List();
 
@@ -25,6 +26,8 @@ exports.onNavigatingTo = function(args) {
   }, Session.observable);
 
   seeMoreTag = page.getViewById("see-more");
+
+  Push.ask();
   
   loadPosts();
 };
