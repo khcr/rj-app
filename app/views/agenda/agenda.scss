@@ -31,6 +31,22 @@ TextView.element {
   background-color: transparent;
 }
 
+TextView.description {
+  font-family: "OpenSans-Light";
+  font-style: italic;
+  border-width: 0;
+  padding: 5px 10px;
+  margin: 0;
+  border-color: transparent;
+  background-color: transparent;
+
+  &.end-line {
+    padding: 5px 10px 10px 10px;
+    border-width: 0 0 7 0;
+    border-color: $rj-color;
+  }
+}
+
 GridLayout.big {
   background-repeat: no-repeat;
   background-position: center;

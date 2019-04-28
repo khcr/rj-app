@@ -12,7 +12,7 @@
 TabView {
     tab-text-color: $blue-dark;
     selected-tab-text-color: $rj-color;
-    android-selected-tab-highlight-color: red;
+    android-selected-tab-highlight-color: $rj-color;
 }
 
 
