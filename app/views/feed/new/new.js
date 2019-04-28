@@ -1,8 +1,8 @@
 var observableModule = require("tns-core-modules/data/observable");
 
-var Dialogs = require("../../../../helpers/dialogs");
-var Imagepicker = require("../../../../helpers/imagepicker");
-var Post = require("../../../../models/post");
+var Dialogs = require("../../../helpers/dialogs");
+var Imagepicker = require("../../../helpers/imagepicker");
+var Post = require("../../../models/post");
 
 var page;
 var post = new Post();
@@ -13,7 +13,7 @@ var pageData = observableModule.fromObject({
   imageSrc: null
 });
 
-exports.loaded = function(args) {
+exports.onNavigatingTo = function(args) {
   page = args.object;
 
   page.actionBar.title = "Nouveau";
