@@ -75,5 +75,8 @@ exports.deleteComment = function(e) {
       });
     }
   });
+};
 
+exports.closeModal = function(args) {
+  args.object.closeModal();
 };
