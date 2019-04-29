@@ -1,1 +1,5 @@
-{"appId":"com.id1lnx0as1aunq3r129xr5d","minSdkVersion":19,"targetSdkVersion":null}
+{
+  "appId": "com.id1lnx0as1aunq3r129xr5d",
+  "minSdkVersion": 19,
+  "targetSdkVersion": 28
+}

@@ -12,8 +12,13 @@ Firebase need the development and production iOS certificates to be uploaded in 
 
 You need:
 - nvm to manager your node.js/npm versions, installed using homebrew
-- nativescript CLI, installed using npm
+- Nativescript CLI, installed using npm
 - Xcode
-- andoid SDK, installed via homebrew cask
+- Android SDK, installed via homebrew cask
 - install the platform tools using sdkmanager CLI
 - set JAVA_HOME and ANDROID_HOME correctly
+
+````
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export ANDROID_HOME=/usr/local/Caskroom/android-sdk/4333796
+````
