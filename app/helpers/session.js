@@ -10,7 +10,8 @@ function Session() {
     "email": "",
     "imageUrl": "",
     "isAdmin": false,
-    "isSignedIn": false
+    "isSignedIn": false,
+    "imageUrl": ""
   };
 
   var setSettings = function(params) {

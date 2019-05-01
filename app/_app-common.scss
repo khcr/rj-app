@@ -32,6 +32,10 @@ Button.submit {
   border-width: 1px;
 }
 
+TabView {
+  tab-text-font-size: 8;
+}
+
 TabViewItem.current {
   background-color: #fffb00;
   border-color: #e6e200;

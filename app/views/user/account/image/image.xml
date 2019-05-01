@@ -7,7 +7,7 @@
   <StackLayout>
     <ScrollView>
       <StackLayout orientation="vertical" verticalAlignment="center">
-
+      
         <Image id="profile" src="{{ imageUrl }}" />
 
         <Button text="Choisir une photo" tap="selectImage" />
