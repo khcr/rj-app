@@ -26,11 +26,13 @@ exports.onNavigatingTo = function(args) {
   }, Session.observable);
 
   seeMoreTag = page.getViewById("see-more");
-
-  Push.ask();
   
   loadPosts();
 };
+
+exports.onNavigatedTo = function(args) {
+  Push.ask();
+}
 
 exports.refresh = function(args) {
   loadPosts();

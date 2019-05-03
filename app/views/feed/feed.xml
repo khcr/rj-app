@@ -1,4 +1,4 @@
-<Page navigatingTo="onNavigatingTo" id="feed" class="wrapper" loaded="loaded">
+<Page navigatingTo="onNavigatingTo" navigatedTo="onNavigatedTo" id="feed" class="wrapper" loaded="loaded">
 
   <ActionBar>
     <Label text="Feed"/>

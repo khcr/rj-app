@@ -54,14 +54,15 @@ var Push = {
     } else {
       message = (message !== undefined && message.data.aps.alert !== undefined ? message.data.aps.alert : "");
     }
-    //dialogsModule.alert(JSON.stringify(message));
-    setTimeout(() => {
-      dialogsModule.alert({
-        title: "Notification",
-        message: message,
-        okButtonText: "Compris"
-      });
-    }, 500);
+    if (message != "") {
+      setTimeout(() => {
+        dialogsModule.alert({
+          title: "Notification",
+          message: message,
+          okButtonText: "Compris"
+        });
+      }, 500);
+    }
   }
 
 }

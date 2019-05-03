@@ -136,6 +136,10 @@ Bastien Cuenot, Community Manager chez yesHEis & CV, t'aidera à comprendre comm
           <TextView text="19h15" col="0" row="0" editable="false" class="time"/>
           <TextView text="Ouverture des portes" col="1" row="0" editable="false" class="element"/>
       </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="small">
+          <TextView text="19h30" col="0" row="0" editable="false" class="time"/>
+          <TextView text="Animation" col="1" row="0" editable="false" class="element"/>
+      </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere04')">
           <TextView text="20h00" col="0" row="0" editable="false" class="big-time"/>
           <TextView text="Plénière // Louange" col="1" row="0" editable="false" class="big-element"/>
@@ -161,6 +165,10 @@ Bastien Cuenot, Community Manager chez yesHEis & CV, t'aidera à comprendre comm
       <GridLayout columns="auto, *" rows="auto, *" class="small">
           <TextView text="09h15" col="0" row="0" editable="false" class="time"/>
           <TextView text="Ouverture des portes" col="1" row="0" editable="false" class="element"/>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, *" class="small">
+          <TextView text="09h30" col="0" row="0" editable="false" class="time"/>
+          <TextView text="Animation" col="1" row="0" editable="false" class="element"/>
       </GridLayout>
       <GridLayout columns="auto, *" rows="auto, *" class="big" style="background-image: url('res://pleniere05')">
           <TextView text="09h45" col="0" row="0" editable="false" class="big-time"/>
