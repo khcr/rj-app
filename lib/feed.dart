@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'models/post.dart';
-import 'layouts/main_menu.dart';
 import 'feed/post.dart';
 import 'forms/post.dart';
 
@@ -23,10 +22,7 @@ class _FeedPageState extends State<FeedPage> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(),
-      body: Column(children: [
+    return Column(children: [
         PostForm(onSaved: addPost),
         Flexible(child:
           FutureBuilder<List<Post>>(
@@ -42,9 +38,7 @@ class _FeedPageState extends State<FeedPage> {
             }
           )
         )
-      ]),
-      bottomNavigationBar: MainMenu(),
-    );
+      ]);
 
   }
 

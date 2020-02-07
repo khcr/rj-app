@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'feed.dart';
+import 'layouts/main.dart';
 
 void main() => runApp(RJ());
 
@@ -12,7 +12,7 @@ class RJ extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange
       ),
-      home: FeedPage(),
+      home: MainLayout(),
     );
   }
 }
