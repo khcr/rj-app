@@ -47,7 +47,11 @@ class _LoginFormState extends State<LoginForm> {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 User.login(email: this.email, password: this.password).then((user) {
-                  widget.onSaved(user);
+                  if(user != null) {
+                    widget.onSaved(user);
+                  } else {
+                    _failureDialog();
+                  }
                 });
               }
             },
@@ -57,14 +61,34 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  _validateEmail(String value) {
+  Future<void> _failureDialog() {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Echec'),
+          content: Text("Le nom d'utilisateur et le mot de passe ne correspondent pas."),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Réessayer'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  String _validateEmail(String value) {
     if (value.isEmpty) { 
       return "Le message est vide."; 
     }
     return null;
   }
 
-  _validatePassword(String value) {
+  String _validatePassword(String value) {
     if (value.isEmpty) { 
       return "Le message est vide."; 
     }

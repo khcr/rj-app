@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../lib/session.dart';
 
 class User {
 
@@ -19,14 +20,22 @@ class User {
     );
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'id': this.id, 'name': this.name, 'email': this.email, 'rememberToken': this.rememberToken
+    };
+  }
+
   static Future<User> login({email, password}) async {
     final response = await http.post('http://192.168.1.154:3000/api/users/signin.json', body: json.encode({ 
       'user' : { 'email': email, 'password': password }
     }), headers: { "Content-Type": "application/json" });
     if (response.statusCode == 200) {
-      return User.fromJson(json.decode(response.body));
+      final user = User.fromJson(json.decode(response.body));
+      Session.login(user);
+      return user;
     } else {
-      throw Exception("L'authentification a échouée.");
+      return null;
     }
   }
 

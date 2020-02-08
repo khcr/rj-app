@@ -4,12 +4,18 @@ import '../settings.dart';
 
 class MainLayout extends StatefulWidget {
 
+  final int startPage;
+
+  MainLayout({this.startPage = 0});
+
   @override
-  _MainLayoutState createState() => _MainLayoutState();
+  _MainLayoutState createState() => _MainLayoutState(startPage);
 
 }
 
 class _MainLayoutState extends State<MainLayout> {
+
+  _MainLayoutState(this.selectedIndex);
 
   static List<Widget> _pages = [
     FeedPage(),
@@ -18,11 +24,11 @@ class _MainLayoutState extends State<MainLayout> {
     SettingsPage()
   ];
 
-  int _selectedIndex = 0;
+  int selectedIndex = 0;
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 
@@ -30,7 +36,7 @@ class _MainLayoutState extends State<MainLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("RJ20"), centerTitle: true),
-      body: _pages.elementAt(_selectedIndex),
+      body: _pages.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
@@ -51,7 +57,7 @@ class _MainLayoutState extends State<MainLayout> {
             title: Text("Compte"),
           )
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: selectedIndex,
         onTap: _onItemTapped,
       )
     );
